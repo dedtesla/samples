@@ -1,6 +1,6 @@
 /**
- * Контроллер единого налога от 21 года.
- * Новые проводки.
+ * РљРѕРЅС‚СЂРѕР»Р»РµСЂ РµРґРёРЅРѕРіРѕ РЅР°Р»РѕРіР° РѕС‚ 21 РіРѕРґР°.
+ * РќРѕРІС‹Рµ РїСЂРѕРІРѕРґРєРё.
  * classes/prov/fillJoManager.php
  *
  * 12.20 - 01.21
@@ -113,9 +113,9 @@ Ext.define('Buh.controller.SingleTax', {
         Ext.util.Format.thousandSeparator = " ";
 
         let labelText = iif(me.yearToCalcEN == 2021,
-                        "Программа подставляет автоматически сумму остатков со сч.68.1 и сч.68.25.",
-                        "Программа подставляет автоматически сумму долга по итогам налогового периода из прошлогодней формы Уплата УСН.");
-        labelText += "<br><br>Значение со знаком 'минус' означает переплату, со знаком 'плюс' - долг.";
+                        "РџСЂРѕРіСЂР°РјРјР° РїРѕРґСЃС‚Р°РІР»СЏРµС‚ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё СЃСѓРјРјСѓ РѕСЃС‚Р°С‚РєРѕРІ СЃРѕ СЃС‡.68.1 Рё СЃС‡.68.25.",
+                        "РџСЂРѕРіСЂР°РјРјР° РїРѕРґСЃС‚Р°РІР»СЏРµС‚ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё СЃСѓРјРјСѓ РґРѕР»РіР° РїРѕ РёС‚РѕРіР°Рј РЅР°Р»РѕРіРѕРІРѕРіРѕ РїРµСЂРёРѕРґР° РёР· РїСЂРѕС€Р»РѕРіРѕРґРЅРµР№ С„РѕСЂРјС‹ РЈРїР»Р°С‚Р° РЈРЎРќ.");
+        labelText += "<br><br>Р—РЅР°С‡РµРЅРёРµ СЃРѕ Р·РЅР°РєРѕРј 'РјРёРЅСѓСЃ' РѕР·РЅР°С‡Р°РµС‚ РїРµСЂРµРїР»Р°С‚Сѓ, СЃРѕ Р·РЅР°РєРѕРј 'РїР»СЋСЃ' - РґРѕР»Рі.";
         let button = Ext.String.format('<a class="ico-faq-small tooltip-container" data-qtip="{0}"></a>&nbsp;&nbsp;', labelText);
 
         let _add = [
@@ -131,7 +131,7 @@ Ext.define('Buh.controller.SingleTax', {
                 xtype: 'label',
                 hidden: true,
                 name: 'lbl-dolg',
-                html: 'Долг/переплата за прошлые налоговые периоды ' + button
+                html: 'Р”РѕР»Рі/РїРµСЂРµРїР»Р°С‚Р° Р·Р° РїСЂРѕС€Р»С‹Рµ РЅР°Р»РѕРіРѕРІС‹Рµ РїРµСЂРёРѕРґС‹ ' + button
             },
             {
                 xtype: 'textfield',
@@ -336,7 +336,7 @@ Ext.define('Buh.controller.SingleTax', {
                             'nalog_id': res.nalogId,
                             'f5': res.f5,
                             'f14': res.nalogPeriod,
-                            'f3': 'ТП',
+                            'f3': 'РўРџ',
                             'summav': Math.round(rec.data.p1_nalog_to_pay),
                             'nds_id': '4',
                             'f0': org_status,
@@ -344,7 +344,7 @@ Ext.define('Buh.controller.SingleTax', {
                             'nalog_penja': 0,
                             'f2': my_oktmo,
                             'id_j_dr': res.id_j_dr,
-                            'title': 'Уплата налога - Налог УСН',
+                            'title': 'РЈРїР»Р°С‚Р° РЅР°Р»РѕРіР° - РќР°Р»РѕРі РЈРЎРќ',
                             'bank_other_nm_id_j_dr': res.bank_other_nm_id_j_dr,
                             'model': 'nalog',
                             'kv': rec.data.kvartal
@@ -376,7 +376,7 @@ Ext.define('Buh.controller.SingleTax', {
 
         bankEdit({
             '_id': rec.data.id_bank_pay,
-            'title': 'Уплата налога - Налог УСН',
+            'title': 'РЈРїР»Р°С‚Р° РЅР°Р»РѕРіР° - РќР°Р»РѕРі РЈРЎРќ',
             'model': 'nalog',
             'callback': _callback
         });

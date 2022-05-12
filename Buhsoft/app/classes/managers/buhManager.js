@@ -67,7 +67,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                  } else {
 */
 
-                    // Сделки
+                    // РЎРґРµР»РєРё
                     if (me.source == 1) {
                         tabName = "mn1-1-01";
                         gridName2 = 'docsGrid100';
@@ -145,7 +145,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                         if (!me.disableFilter && filterCount) {
                             let _btn = panel.down('#btnMainFilt');
                             _btn.filt = flt;
-                            _btn.setText("<i>" + filterCount + "</i>Р¤РёР»СЊС‚СЂ");
+                            _btn.setText("<i>" + filterCount + "</i>Р В¤Р С‘Р В»РЎРЉРЎвЂљРЎР‚");
                             _btn.setIcon("");
                             _btn.addCls('ico_number');
                         }
@@ -161,25 +161,25 @@ Ext.define('Buh.classes.managers.buhManager', {
                                         panel.down('#btnAddSB').org_nam = _rec.name;
                                         panel.down('#btnAddSB').handler();
                                         if (me.taskAction == 10) {
-                                            /** GBS-11937. Открытие вкладки Документы в карточке сделки. */
-                                            // Добавить счет-фактуру исходящий
-                                            // Добавить ТОРГ-12 исходящий
-                                            // Добавить акт выполненных работ исходящий
-                                            // Добавить акт оказанных услуг исходящий
-                                            // Добавить доверенность
+                                            /** GBS-11937. РћС‚РєСЂС‹С‚РёРµ РІРєР»Р°РґРєРё Р”РѕРєСѓРјРµРЅС‚С‹ РІ РєР°СЂС‚РѕС‡РєРµ СЃРґРµР»РєРё. */
+                                            // Р”РѕР±Р°РІРёС‚СЊ СЃС‡РµС‚-С„Р°РєС‚СѓСЂСѓ РёСЃС…РѕРґСЏС‰РёР№
+                                            // Р”РѕР±Р°РІРёС‚СЊ РўРћР Р“-12 РёСЃС…РѕРґСЏС‰РёР№
+                                            // Р”РѕР±Р°РІРёС‚СЊ Р°РєС‚ РІС‹РїРѕР»РЅРµРЅРЅС‹С… СЂР°Р±РѕС‚ РёСЃС…РѕРґСЏС‰РёР№
+                                            // Р”РѕР±Р°РІРёС‚СЊ Р°РєС‚ РѕРєР°Р·Р°РЅРЅС‹С… СѓСЃР»СѓРі РёСЃС…РѕРґСЏС‰РёР№
+                                            // Р”РѕР±Р°РІРёС‚СЊ РґРѕРІРµСЂРµРЅРЅРѕСЃС‚СЊ
                                             _fnAddDoc = function () {
                                                 let _win = Ext.getCmp('winSbCard');
                                                 _win.down('[name=tbPanel]').setActiveTab(3);
                                             }
                                             Ext.defer(_fnAddDoc, 200);
                                         } else if (me.taskAction == 20) {
-                                            // Оприходовать/Реализовать товар (me.taskData = 5)
-                                            // Оприходовать канцтовары (me.taskData = 3)
-                                            // Оприходовать/Реализовать материал (me.taskData = 3)
-                                            // Оприходовать/Реализовать основное средство (me.taskData = 1)
-                                            // Оприходовать/Реализовать НМА (me.taskData = 2)
-                                            // Оприходовать РБП (me.taskData = 32)
-                                            // Реализовать продукцию (me.taskData = 4)
+                                            // РћРїСЂРёС…РѕРґРѕРІР°С‚СЊ/Р РµР°Р»РёР·РѕРІР°С‚СЊ С‚РѕРІР°СЂ (me.taskData = 5)
+                                            // РћРїСЂРёС…РѕРґРѕРІР°С‚СЊ РєР°РЅС†С‚РѕРІР°СЂС‹ (me.taskData = 3)
+                                            // РћРїСЂРёС…РѕРґРѕРІР°С‚СЊ/Р РµР°Р»РёР·РѕРІР°С‚СЊ РјР°С‚РµСЂРёР°Р» (me.taskData = 3)
+                                            // РћРїСЂРёС…РѕРґРѕРІР°С‚СЊ/Р РµР°Р»РёР·РѕРІР°С‚СЊ РѕСЃРЅРѕРІРЅРѕРµ СЃСЂРµРґСЃС‚РІРѕ (me.taskData = 1)
+                                            // РћРїСЂРёС…РѕРґРѕРІР°С‚СЊ/Р РµР°Р»РёР·РѕРІР°С‚СЊ РќРњРђ (me.taskData = 2)
+                                            // РћРїСЂРёС…РѕРґРѕРІР°С‚СЊ Р Р‘Рџ (me.taskData = 32)
+                                            // Р РµР°Р»РёР·РѕРІР°С‚СЊ РїСЂРѕРґСѓРєС†РёСЋ (me.taskData = 4)
                                             _fnSetSostavType = function () {
                                                 let _win = Ext.getCmp('winSbCard'),
                                                     _grid = _win.down('[name=grd_sostav]'),
@@ -258,7 +258,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                     break;
                 // }
             case 3:
-                //Банк
+                //Р‘Р°РЅРє
                 me.allowLoadBank = false;
                 me.docId = me.docId || 0;
 
@@ -335,15 +335,15 @@ Ext.define('Buh.classes.managers.buhManager', {
                                 break;
                             default:
                                 if (me.taskAction == 10) {
-                                    // Загрузить выписку клиент-банка
+                                    // Р—Р°РіСЂСѓР·РёС‚СЊ РІС‹РїРёСЃРєСѓ РєР»РёРµРЅС‚-Р±Р°РЅРєР°
                                     let _btn = Ext.ComponentQuery.query('filefield[name=filename]');
                                     _btn[0].fileInputEl.dom.click();
                                 } else if (me.taskAction == 20) {
-                                    // Реестр банковских документов
-                                    // Печать исходящих платежных документов
-                                    // Анализ счета
-                                    // Оборотно-сальдовая ведомость по счету
-                                    // Карточка счета
+                                    // Р РµРµСЃС‚СЂ Р±Р°РЅРєРѕРІСЃРєРёС… РґРѕРєСѓРјРµРЅС‚РѕРІ
+                                    // РџРµС‡Р°С‚СЊ РёСЃС…РѕРґСЏС‰РёС… РїР»Р°С‚РµР¶РЅС‹С… РґРѕРєСѓРјРµРЅС‚РѕРІ
+                                    // РђРЅР°Р»РёР· СЃС‡РµС‚Р°
+                                    // РћР±РѕСЂРѕС‚РЅРѕ-СЃР°Р»СЊРґРѕРІР°СЏ РІРµРґРѕРјРѕСЃС‚СЊ РїРѕ СЃС‡РµС‚Сѓ
+                                    // РљР°СЂС‚РѕС‡РєР° СЃС‡РµС‚Р°
                                     let _bank = panel.down('[name=bankSet]').getValue();
                                     PrnAnSchOSV_New(panel, _bank);
                                 }
@@ -423,7 +423,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case 5:
-                // Авансовые отчеты
+                // РђРІР°РЅСЃРѕРІС‹Рµ РѕС‚С‡РµС‚С‹
                 document.getElementById("mn1-1-05").click();
                 if (me.taskAction == 10) {
                     createAO();
@@ -442,16 +442,16 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case 6:
-                // Производство
+                // РџСЂРѕРёР·РІРѕРґСЃС‚РІРѕ
                 document.getElementById("mn1-1-06").click();
 
                 let panel = Ext.getCmp('PRMainScreen');
 
                 if (me.taskAction == 10) {
-                    // Добавить норму производства
+                    // Р”РѕР±Р°РІРёС‚СЊ РЅРѕСЂРјСѓ РїСЂРѕРёР·РІРѕРґСЃС‚РІР°
                     prodNormaEdit(0);
                 } else if (me.taskAction == 20) {
-                    // Списать материалы
+                    // РЎРїРёСЃР°С‚СЊ РјР°С‚РµСЂРёР°Р»С‹
                     panel.down('[name=bottomTabs]').setActiveTab(1);
 
                     if (me.task == 'filter') {
@@ -499,7 +499,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                     }
 
                 } else if (me.taskAction == 30) {
-                    // Выпустить продукцию
+                    // Р’С‹РїСѓСЃС‚РёС‚СЊ РїСЂРѕРґСѓРєС†РёСЋ
                     panel.down('[name=bottomTabs]').setActiveTab(2);
 
                     if (me.task == 'filter') {
@@ -546,7 +546,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                     }
 
                 } else if (me.taskAction == 40) {
-                    // Незавершенное производство
+                    // РќРµР·Р°РІРµСЂС€РµРЅРЅРѕРµ РїСЂРѕРёР·РІРѕРґСЃС‚РІРѕ
                     let dt = new Date;
                     panel.down('[name=bottomTabs]').setActiveTab(3);
                     panel.down('[name=period]').setValue("" + (dt.getMonth() + 1));
@@ -554,7 +554,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case 7:
-                // Расчет амортизации
+                // Р Р°СЃС‡РµС‚ Р°РјРѕСЂС‚РёР·Р°С†РёРё
                 tabName = "mn1-1-07";
                 document.getElementById(tabName).click();
 
@@ -583,18 +583,18 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case 9:
-                // Журнал операций и отчеты
+                // Р–СѓСЂРЅР°Р» РѕРїРµСЂР°С†РёР№ Рё РѕС‚С‡РµС‚С‹
                 tabName = "mn1-1-09";
                 document.getElementById(tabName).click();
 
                 if (me.taskAction == 10) {
-                    // Добавить операцию
+                    // Р”РѕР±Р°РІРёС‚СЊ РѕРїРµСЂР°С†РёСЋ
                     joEdit(0);
                     let panel = Ext.getCmp('scFEdit');
                     let _d = new Date();
                     panel.down('form').down('[name=dat]').setValue(Ext.Date.format(_d, 'Y-m-d'));
                 } else if (me.taskAction == 15) {
-                    // Выделить операцию
+                    // Р’С‹РґРµР»РёС‚СЊ РѕРїРµСЂР°С†РёСЋ
                     let panel = Ext.getCmp('joMainSceern');
                     panel.down('[name=headerPanel]').setActiveTab(0);
                     let _fn = function () {
@@ -620,7 +620,7 @@ Ext.define('Buh.classes.managers.buhManager', {
 
 
                 } else if (me.taskAction == 20) {
-                    // Оборотно-сальдовая ведомость
+                    // РћР±РѕСЂРѕС‚РЅРѕ-СЃР°Р»СЊРґРѕРІР°СЏ РІРµРґРѕРјРѕСЃС‚СЊ
                     let panel = Ext.getCmp('joMainSceern');
 
                     let _fn = function () {
@@ -680,7 +680,7 @@ Ext.define('Buh.classes.managers.buhManager', {
 
                     Ext.defer(_fn, 3000);
                 } else if (me.taskAction == 30) {
-                    // Карточка счета
+                    // РљР°СЂС‚РѕС‡РєР° СЃС‡РµС‚Р°
                     let panel = Ext.getCmp('joMainSceern');
 
                     me.d1 = new Date(currYear, 0, 1);
@@ -720,34 +720,34 @@ Ext.define('Buh.classes.managers.buhManager', {
 
                     Ext.defer(_fn, 4000);
                 } else if (me.taskAction == 40) {
-                    // Главная книга
+                    // Р“Р»Р°РІРЅР°СЏ РєРЅРёРіР°
                     let panel = Ext.getCmp('joMainSceern');
                     panel.down('[name=headerPanel]').setActiveTab(3);
                     win_jocheckperiod();
                 } else if (me.taskAction == 50) {
-                    // Анализ счета
+                    // РђРЅР°Р»РёР· СЃС‡РµС‚Р°
                     let panel = Ext.getCmp('joMainSceern');
                     panel.down('[name=headerPanel]').setActiveTab(3);
                     analitSc();
                 } else if (me.taskAction == 60) {
-                    // Расшифровка бухгалтерской отчетности
+                    // Р Р°СЃС€РёС„СЂРѕРІРєР° Р±СѓС…РіР°Р»С‚РµСЂСЃРєРѕР№ РѕС‚С‡РµС‚РЅРѕСЃС‚Рё
                     let panel = Ext.getCmp('joMainSceern');
                     panel.down('[name=headerPanel]').setActiveTab(3);
                     let _btn = panel.down('[name=headerPanel]').down('[name=bookpanel]').down('[name=btnPrintJSF_JO]');
                     printJSF_JO('frm_buh_ras_1.php');
                 } else if (me.taskAction == 70) {
-                    // Расшифровка бух. отчетности для МП
+                    // Р Р°СЃС€РёС„СЂРѕРІРєР° Р±СѓС…. РѕС‚С‡РµС‚РЅРѕСЃС‚Рё РґР»СЏ РњРџ
                     let panel = Ext.getCmp('joMainSceern');
                     panel.down('[name=headerPanel]').setActiveTab(3);
                     printJSF_JO('frm_buh_ras_m_1.php');
                 } else if (me.taskAction == 80) {
-                    // Скачать отчёт для импорта остатков
+                    // РЎРєР°С‡Р°С‚СЊ РѕС‚С‡С‘С‚ РґР»СЏ РёРјРїРѕСЂС‚Р° РѕСЃС‚Р°С‚РєРѕРІ
                     let panel = Ext.getCmp('joMainSceern');
                     panel.down('[name=headerPanel]').setActiveTab(3);
                     window.location.href = dir_start_buh_ + "./frm_osv_rep_imp.php";
                 } else if (me.taskAction == 90) {
-                    // НМА.Журнал операций
-                    // ОС.Журнал операций
+                    // РќРњРђ.Р–СѓСЂРЅР°Р» РѕРїРµСЂР°С†РёР№
+                    // РћРЎ.Р–СѓСЂРЅР°Р» РѕРїРµСЂР°С†РёР№
                     let panel = Ext.getCmp('joMainSceern');
                     panel.down('[name=headerPanel]').setActiveTab(0);
 
@@ -791,7 +791,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                         Ext.defer(_fn, 1000);
                     }
                 } else if (me.taskAction == 100) {
-                    // Закрыть счета
+                    // Р—Р°РєСЂС‹С‚СЊ СЃС‡РµС‚Р°
                     if (currYear < 2021) {
                         closeSc();
                     } else {
@@ -802,29 +802,29 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case 10:
-                // Журнал документов
+                // Р–СѓСЂРЅР°Р» РґРѕРєСѓРјРµРЅС‚РѕРІ
                 document.getElementById("mn1-1-10").click();
                 break;
 
             case 11:
-                // Книга доходов и расходов
+                // РљРЅРёРіР° РґРѕС…РѕРґРѕРІ Рё СЂР°СЃС…РѕРґРѕРІ
                 document.getElementById("mn1-1-11").click();
 
                 if (me.taskAction == 10) {
-                    // Заполнить книгу
+                    // Р—Р°РїРѕР»РЅРёС‚СЊ РєРЅРёРіСѓ
                     kndrFill();
                 } else if (me.taskAction == 20) {
-                    // Распечатать книгу
+                    // Р Р°СЃРїРµС‡Р°С‚Р°С‚СЊ РєРЅРёРіСѓ
                     if (gl_obj_nal != 2 && gl_obj_nal != 3) {
                         window.location.href = dir_start_buh_ + "./frm_kndr.php";
                     } else {
                         window.location.href = dir_start_buh_ + "./frm_kndr_eshn.php";
                     }
                 } else if (me.taskAction == 30) {
-                    // Посмотреть отчет о списании товаров в Книгу
+                    // РџРѕСЃРјРѕС‚СЂРµС‚СЊ РѕС‚С‡РµС‚ Рѕ СЃРїРёСЃР°РЅРёРё С‚РѕРІР°СЂРѕРІ РІ РљРЅРёРіСѓ
                     kndrBook();
                 } else if (me.taskAction == 40) {
-                    // Заполнение КУДиР из УСН
+                    // Р—Р°РїРѕР»РЅРµРЅРёРµ РљРЈР”РёР  РёР· РЈРЎРќ
                     let _fn = function() {
                         let win = Ext.getCmp('mainPanelKudir'),
                             btn = win.down('[action=fillbook]');
@@ -837,14 +837,14 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case 12:
-                // НКО
+                // РќРљРћ
                 document.getElementById("mn1-1-12").click();
 
                 if (me.taskAction == 10) {
-                    // Добавить начисление
+                    // Р”РѕР±Р°РІРёС‚СЊ РЅР°С‡РёСЃР»РµРЅРёРµ
                     addNach();
                 } else if (me.taskAction == 20) {
-                    // 	Поступление средств
+                    // 	РџРѕСЃС‚СѓРїР»РµРЅРёРµ СЃСЂРµРґСЃС‚РІ
                     let panel = Ext.getCmp('NKOMainScreen');
                     panel.down('[name=bottomTabs]').setActiveTab(1);
                     addPost(0);
@@ -852,11 +852,11 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case 13:
-                // Расчет и уплата налога УСН
+                // Р Р°СЃС‡РµС‚ Рё СѓРїР»Р°С‚Р° РЅР°Р»РѕРіР° РЈРЎРќ
                 document.getElementById("_mn1-1-13").click();
 
                 if (me.taskAction == 10) {
-                    // Уплатить налог
+                    // РЈРїР»Р°С‚РёС‚СЊ РЅР°Р»РѕРі
                     _fn = function () {
                         win = Ext.getCmp('main_winSDPay');
                         win.down('tabpanel').setActiveTab(2);
@@ -866,7 +866,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case 15:
-                // Уплата налогов
+                // РЈРїР»Р°С‚Р° РЅР°Р»РѕРіРѕРІ
                 // let _f5, _f14, _kv;
                 let _arr_nalog_bank = {'2': '2', '3': '11', '1': '4', '7': '7', '8': '27', '4': '8', '5': '9', '6': '10'};
 
@@ -894,14 +894,14 @@ Ext.define('Buh.classes.managers.buhManager', {
                 document.getElementById("mn1-1-15").click();
 
                 if (me.taskAction == null) {
-                    // Открыть раздел
-                    // Уплатить НДС
+                    // РћС‚РєСЂС‹С‚СЊ СЂР°Р·РґРµР»
+                    // РЈРїР»Р°С‚РёС‚СЊ РќР”РЎ
                     let panel = Ext.ComponentQuery.query('[name=placeNalogPay]');
                     panel[0].down('tabpanel').setActiveTab(0);
                     panel[0].down('tabpanel').down('tabpanel').setActiveTab(0);
                 } else if (me.taskAction == 1) {
-                    // Открыть раздел НДС
-                    // Начислить
+                    // РћС‚РєСЂС‹С‚СЊ СЂР°Р·РґРµР» РќР”РЎ
+                    // РќР°С‡РёСЃР»РёС‚СЊ
                     let panel = Ext.ComponentQuery.query('[name=placeNalogPay]');
                     panel[0].down('tabpanel').setActiveTab(0);
                     panel[0].down('tabpanel').down('tabpanel').setActiveTab(0);
@@ -914,9 +914,9 @@ Ext.define('Buh.classes.managers.buhManager', {
                     }
                     Ext.defer(_fn, 500);
                 } else if (me.taskAction == 2) {
-                    // Открыть раздел НДС
-                    // Пени
-                    // Выделить текущий квартал
+                    // РћС‚РєСЂС‹С‚СЊ СЂР°Р·РґРµР» РќР”РЎ
+                    // РџРµРЅРё
+                    // Р’С‹РґРµР»РёС‚СЊ С‚РµРєСѓС‰РёР№ РєРІР°СЂС‚Р°Р»
                     let panel = Ext.ComponentQuery.query('[name=placeNalogPay]'),
                         dt = new Date,
                         quarter = Math.floor((dt.getMonth() + 3) / 3);
@@ -929,9 +929,9 @@ Ext.define('Buh.classes.managers.buhManager', {
                     }
                     Ext.defer(_fn, 2000);
                 } else if (me.taskAction == 3) {
-                    // Открыть раздел НДС
-                    // Пени
-                    // Добавить оплату
+                    // РћС‚РєСЂС‹С‚СЊ СЂР°Р·РґРµР» РќР”РЎ
+                    // РџРµРЅРё
+                    // Р”РѕР±Р°РІРёС‚СЊ РѕРїР»Р°С‚Сѓ
                     let panel = Ext.ComponentQuery.query('[name=placeNalogPay]');
                     panel[0].down('tabpanel').setActiveTab(0);
 
@@ -944,8 +944,8 @@ Ext.define('Buh.classes.managers.buhManager', {
                         let _subFn = function () {
                             grid.getSelectionModel().select(quarter - 1);
                             /**
-                             * _vn - метка налога
-                             * 1 - НДС
+                             * _vn - РјРµС‚РєР° РЅР°Р»РѕРіР°
+                             * 1 - РќР”РЎ
                              */
                             let rec = grid.getSelectionModel().getSelection()[0];
                             let _f14 = '0' + (rec.data.period - 12) + "." + currYear;
@@ -1013,8 +1013,8 @@ Ext.define('Buh.classes.managers.buhManager', {
                     }
                     Ext.defer(_fn, 3000);
                 } else if (me.taskAction == 4) {
-                    // Открыть раздел НДС
-                    // Добавить платеж
+                    // РћС‚РєСЂС‹С‚СЊ СЂР°Р·РґРµР» РќР”РЎ
+                    // Р”РѕР±Р°РІРёС‚СЊ РїР»Р°С‚РµР¶
                     let panel = Ext.ComponentQuery.query('[name=placeNalogPay]');
 
                     let _fn = function() {
@@ -1064,7 +1064,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                                 'nalog_id': _arr_nalog_bank[1],
                                 'f5': '\u041a\u0412',
                                 'f14': _f14,
-                                'f3': 'ТП',
+                                'f3': 'РўРџ',
                                 'summav': rec.data.nach,
                                 'nds_id': '4',
                                 'f0': org_status,
@@ -1085,7 +1085,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                     }
                     Ext.defer(_fn, 1500);
                 } else if (me.taskAction == 10) {
-                    // Начислить налог на прибыль в федеральный бюджет
+                    // РќР°С‡РёСЃР»РёС‚СЊ РЅР°Р»РѕРі РЅР° РїСЂРёР±С‹Р»СЊ РІ С„РµРґРµСЂР°Р»СЊРЅС‹Р№ Р±СЋРґР¶РµС‚
                     let _fn = function() {
                         let panel = Ext.ComponentQuery.query('[name=placeNalogPay]');
                         panel[0].down('tabpanel').setActiveTab(1);
@@ -1093,9 +1093,9 @@ Ext.define('Buh.classes.managers.buhManager', {
                     }
                     Ext.defer(_fn, 1500);
                 } else if (me.taskAction == 11) {
-                    // Открыть раздел Налог на прибыль в федеральный бюджет
-                    // Пени
-                    // Выделить текущий квартал
+                    // РћС‚РєСЂС‹С‚СЊ СЂР°Р·РґРµР» РќР°Р»РѕРі РЅР° РїСЂРёР±С‹Р»СЊ РІ С„РµРґРµСЂР°Р»СЊРЅС‹Р№ Р±СЋРґР¶РµС‚
+                    // РџРµРЅРё
+                    // Р’С‹РґРµР»РёС‚СЊ С‚РµРєСѓС‰РёР№ РєРІР°СЂС‚Р°Р»
                     let panel = Ext.ComponentQuery.query('[name=placeNalogPay]');
                     panel[0].down('tabpanel').setActiveTab(1);
 
@@ -1106,8 +1106,8 @@ Ext.define('Buh.classes.managers.buhManager', {
                     }
                     Ext.defer(_fn, 3000);
                 } else if (me.taskAction == 12) {
-                    // Открыть раздел налог на прибыль в федеральный бюджет
-                    // Добавить платеж
+                    // РћС‚РєСЂС‹С‚СЊ СЂР°Р·РґРµР» РЅР°Р»РѕРі РЅР° РїСЂРёР±С‹Р»СЊ РІ С„РµРґРµСЂР°Р»СЊРЅС‹Р№ Р±СЋРґР¶РµС‚
+                    // Р”РѕР±Р°РІРёС‚СЊ РїР»Р°С‚РµР¶
                     let panel = Ext.ComponentQuery.query('[name=placeNalogPay]');
                     let _fn = function() {
                         panel[0].down('tabpanel').setActiveTab(1);
@@ -1183,9 +1183,9 @@ Ext.define('Buh.classes.managers.buhManager', {
                     }
                     Ext.defer(_fn, 3000);
                 } else if (me.taskAction == 13) {
-                    // Открыть раздел налог на прибыль в федеральный бюджет
-                    // Открыть вкладку Пени
-                    // Добавить платеж
+                    // РћС‚РєСЂС‹С‚СЊ СЂР°Р·РґРµР» РЅР°Р»РѕРі РЅР° РїСЂРёР±С‹Р»СЊ РІ С„РµРґРµСЂР°Р»СЊРЅС‹Р№ Р±СЋРґР¶РµС‚
+                    // РћС‚РєСЂС‹С‚СЊ РІРєР»Р°РґРєСѓ РџРµРЅРё
+                    // Р”РѕР±Р°РІРёС‚СЊ РїР»Р°С‚РµР¶
                     let panel = Ext.ComponentQuery.query('[name=placeNalogPay]');
                     let _fn = function () {
                         panel[0].down('tabpanel').setActiveTab(1);
@@ -1201,8 +1201,8 @@ Ext.define('Buh.classes.managers.buhManager', {
                             grid.getSelectionModel().select(quarter - 1);
 
                             /**
-                             * _vn - метка налога
-                             * 2 - Налог на прибыль в ФБ
+                             * _vn - РјРµС‚РєР° РЅР°Р»РѕРіР°
+                             * 2 - РќР°Р»РѕРі РЅР° РїСЂРёР±С‹Р»СЊ РІ Р¤Р‘
                              */
                             let rec = grid.getSelectionModel().getSelection()[0];
                             let _f14 = '0' + (rec.data.period - 12) + "." + currYear;
@@ -1269,7 +1269,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                     }
                     Ext.defer(_fn, 3000);
                 } else if (me.taskAction == 20) {
-                    // Начислить налог на прибыль в региональный бюджет
+                    // РќР°С‡РёСЃР»РёС‚СЊ РЅР°Р»РѕРі РЅР° РїСЂРёР±С‹Р»СЊ РІ СЂРµРіРёРѕРЅР°Р»СЊРЅС‹Р№ Р±СЋРґР¶РµС‚
                     let panel = Ext.ComponentQuery.query('[name=placeNalogPay]');
                     let _fn = function() {
                         panel[0].down('tabpanel').setActiveTab(2);
@@ -1277,8 +1277,8 @@ Ext.define('Buh.classes.managers.buhManager', {
                     }
                     Ext.defer(_fn, 1000);
                 } else if (me.taskAction == 22) {
-                    // Открыть раздел налог на прибыль в региональный бюджет
-                    // Добавить платеж
+                    // РћС‚РєСЂС‹С‚СЊ СЂР°Р·РґРµР» РЅР°Р»РѕРі РЅР° РїСЂРёР±С‹Р»СЊ РІ СЂРµРіРёРѕРЅР°Р»СЊРЅС‹Р№ Р±СЋРґР¶РµС‚
+                    // Р”РѕР±Р°РІРёС‚СЊ РїР»Р°С‚РµР¶
                     let panel = Ext.ComponentQuery.query('[name=placeNalogPay]');
 
                     let _fn = function() {
@@ -1356,9 +1356,9 @@ Ext.define('Buh.classes.managers.buhManager', {
                     }
                     Ext.defer(_fn, 2000);
                 } else if (me.taskAction == 21) {
-                    // Открыть раздел Налог на прибыль в региональный бюджет
-                    // Пени
-                    // Выделить текущий квартал
+                    // РћС‚РєСЂС‹С‚СЊ СЂР°Р·РґРµР» РќР°Р»РѕРі РЅР° РїСЂРёР±С‹Р»СЊ РІ СЂРµРіРёРѕРЅР°Р»СЊРЅС‹Р№ Р±СЋРґР¶РµС‚
+                    // РџРµРЅРё
+                    // Р’С‹РґРµР»РёС‚СЊ С‚РµРєСѓС‰РёР№ РєРІР°СЂС‚Р°Р»
                     let panel = Ext.ComponentQuery.query('[name=placeNalogPay]');
                     panel[0].down('tabpanel').setActiveTab(2);
 
@@ -1369,9 +1369,9 @@ Ext.define('Buh.classes.managers.buhManager', {
                     }
                     Ext.defer(_fn, 2000);
                 } else if (me.taskAction == 23) {
-                    // Открыть раздел Налог на прибыль в региональный бюджет
-                    // Открыть вкладку Пени
-                    // Добавить оплату
+                    // РћС‚РєСЂС‹С‚СЊ СЂР°Р·РґРµР» РќР°Р»РѕРі РЅР° РїСЂРёР±С‹Р»СЊ РІ СЂРµРіРёРѕРЅР°Р»СЊРЅС‹Р№ Р±СЋРґР¶РµС‚
+                    // РћС‚РєСЂС‹С‚СЊ РІРєР»Р°РґРєСѓ РџРµРЅРё
+                    // Р”РѕР±Р°РІРёС‚СЊ РѕРїР»Р°С‚Сѓ
                     let panel = Ext.ComponentQuery.query('[name=placeNalogPay]');
                     let _fn = function () {
                         panel[0].down('tabpanel').setActiveTab(2);
@@ -1386,8 +1386,8 @@ Ext.define('Buh.classes.managers.buhManager', {
                         let _subFn = function () {
                             grid.getSelectionModel().select(quarter - 1);
                             /**
-                             * _vn - метка налога
-                             * 3 - Налог на прибыль в РБ
+                             * _vn - РјРµС‚РєР° РЅР°Р»РѕРіР°
+                             * 3 - РќР°Р»РѕРі РЅР° РїСЂРёР±С‹Р»СЊ РІ Р Р‘
                              */
                             let rec = grid.getSelectionModel().getSelection()[0];
                             let _f14 = '0' + (rec.data.period - 12) + "." + currYear;
@@ -1454,35 +1454,35 @@ Ext.define('Buh.classes.managers.buhManager', {
                     }
                     Ext.defer(_fn, 3000);
                 } else if (me.taskAction == 30) {
-                    // Уплатить налог на имущество
+                    // РЈРїР»Р°С‚РёС‚СЊ РЅР°Р»РѕРі РЅР° РёРјСѓС‰РµСЃС‚РІРѕ
                     let _fn = function() {
                         let panel = Ext.ComponentQuery.query('[name=placeNalogPay]');
                         panel[0].down('tabpanel').setActiveTab(3);
                     }
                     Ext.defer(_fn, 2000);
                 } else if (me.taskAction == 40) {
-                    // Уплатить земельный налог
+                    // РЈРїР»Р°С‚РёС‚СЊ Р·РµРјРµР»СЊРЅС‹Р№ РЅР°Р»РѕРі
                     let _fn = function() {
                         let panel = Ext.ComponentQuery.query('[name=placeNalogPay]');
                         panel[0].down('tabpanel').setActiveTab(4);
                     }
                     Ext.defer(_fn, 2000);
                 } else if (me.taskAction == 50) {
-                    // Уплатить водный налог
+                    // РЈРїР»Р°С‚РёС‚СЊ РІРѕРґРЅС‹Р№ РЅР°Р»РѕРі
                     let _fn = function() {
                         let panel = Ext.ComponentQuery.query('[name=placeNalogPay]');
                         panel[0].down('tabpanel').setActiveTab(5);
                     }
                     Ext.defer(_fn, 2000);
                 } else if (me.taskAction == 60) {
-                    // Уплатить транспортный налог
+                    // РЈРїР»Р°С‚РёС‚СЊ С‚СЂР°РЅСЃРїРѕСЂС‚РЅС‹Р№ РЅР°Р»РѕРі
                     let _fn = function() {
                         let panel = Ext.ComponentQuery.query('[name=placeNalogPay]');
                         panel[0].down('tabpanel').setActiveTab(6);
                     }
                     Ext.defer(_fn, 2000);
                 } else if (me.taskAction == 70) {
-                    // Уплатить торговый сбор
+                    // РЈРїР»Р°С‚РёС‚СЊ С‚РѕСЂРіРѕРІС‹Р№ СЃР±РѕСЂ
                     let _fn = function() {
                         let panel = Ext.ComponentQuery.query('[name=placeNalogPay]');
                         panel[0].down('tabpanel').setActiveTab(7);
@@ -1492,7 +1492,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case 17:
-                // Склад
+                // РЎРєР»Р°Рґ
                 tabName = "mn1-1-17";
                 document.getElementById(tabName).click();
 
@@ -1500,11 +1500,11 @@ Ext.define('Buh.classes.managers.buhManager', {
                     let panel = Ext.getCmp('skladMainPanel');
                     panel.down('[name=bottomTabs]').setActiveTab(0);
                 } else if (me.taskAction == 10) {
-                    // Посмотреть остатки
+                    // РџРѕСЃРјРѕС‚СЂРµС‚СЊ РѕСЃС‚Р°С‚РєРё
                     let panel = Ext.getCmp('skladMainPanel');
                     panel.down('[name=bottomTabs]').setActiveTab(1);
                 } else if (me.taskAction == 20) {
-                    // Посмотреть обороты
+                    // РџРѕСЃРјРѕС‚СЂРµС‚СЊ РѕР±РѕСЂРѕС‚С‹
                     let panel = Ext.getCmp('skladMainPanel'),
                         gridName = 'docsGrid549',
                         grid = Ext.getCmp(gridName),
@@ -1586,10 +1586,10 @@ Ext.define('Buh.classes.managers.buhManager', {
 
                     Ext.defer(_fn, 2000);
                 } else if (me.taskAction == 30) {
-                    // Оформить перемещение
+                    // РћС„РѕСЂРјРёС‚СЊ РїРµСЂРµРјРµС‰РµРЅРёРµ
                     openSkldaDoc(0, 10);
                 } else if (me.taskAction == 40) {
-                    // Провести инвентаризацию
+                    // РџСЂРѕРІРµСЃС‚Рё РёРЅРІРµРЅС‚Р°СЂРёР·Р°С†РёСЋ
                     openSkldaDoc(0, 13);
                     let win = Ext.ComponentQuery.query("#winSkladDocId")[0],
                         btn = win.down('[name=btnRashod]');
@@ -1598,7 +1598,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                     }
                     Ext.defer(_fn, 300);
                 } else if (me.taskAction == 50) {
-                    // Списать материалы (канцтовары)
+                    // РЎРїРёСЃР°С‚СЊ РјР°С‚РµСЂРёР°Р»С‹ (РєР°РЅС†С‚РѕРІР°СЂС‹)
                     if (currYear == 2020) {
                         openSkldaDoc(0, 0);
                     } else {
@@ -1608,7 +1608,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case 18:
-                // Счета
+                // РЎС‡РµС‚Р°
                 tabName = "mn1-1-18";
                 document.getElementById(tabName).click();
 
@@ -1623,7 +1623,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                     '(function(_div) { buysalebookWin.call(this, _div, '+ (me.subTab) +') })', '1');
                 break;
             case 71:
-                // Расходы будущих периодов
+                // Р Р°СЃС…РѕРґС‹ Р±СѓРґСѓС‰РёС… РїРµСЂРёРѕРґРѕРІ
                 tabName = "mn1-1-71";
                 document.getElementById(tabName).click();
 
@@ -1650,7 +1650,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case 72:
-                // Акт сверки
+                // РђРєС‚ СЃРІРµСЂРєРё
                 let d = new Date(), _contragent = null
 
                 startASV = d.getTime();
@@ -1664,7 +1664,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case 73:
-                // Новые доверенности.
+                // РќРѕРІС‹Рµ РґРѕРІРµСЂРµРЅРЅРѕСЃС‚Рё.
                 document.getElementById("mn1-1-91").click();
 
                 if (me.taskAction == 10) {
@@ -1674,19 +1674,19 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case 1301:
-                // Бухгалтерия.Сервис.Импорт из прошлого года
+                // Р‘СѓС…РіР°Р»С‚РµСЂРёСЏ.РЎРµСЂРІРёСЃ.РРјРїРѕСЂС‚ РёР· РїСЂРѕС€Р»РѕРіРѕ РіРѕРґР°
                 tabName = "_mn1-3-01";
                 document.getElementById(tabName).click();
                 break;
 
             case 1302:
-                // Бухгалтерия.Сервис.Импорт из 1с
+                // Р‘СѓС…РіР°Р»С‚РµСЂРёСЏ.РЎРµСЂРІРёСЃ.РРјРїРѕСЂС‚ РёР· 1СЃ
                 tabName = "_mn1-3-02";
                 document.getElementById(tabName).click();
                 break;
 
             case 1306:
-                // Еще.ЛК.Расчетные счета
+                // Р•С‰Рµ.Р›Рљ.Р Р°СЃС‡РµС‚РЅС‹Рµ СЃС‡РµС‚Р°
                 tabName = "_mn1-3-06";
                 document.getElementById(tabName).click();
 
@@ -1697,13 +1697,13 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case 1307:
-                // Бухгалтерия.Сервис.Импорт из ОФД
+                // Р‘СѓС…РіР°Р»С‚РµСЂРёСЏ.РЎРµСЂРІРёСЃ.РРјРїРѕСЂС‚ РёР· РћР¤Р”
                 tabName = "mn1-3-07";
                 document.getElementById(tabName).click();
                 break;
 
             case 5106:
-                // Еще.Инструменты.Создать ярлык на рабочем столе
+                // Р•С‰Рµ.РРЅСЃС‚СЂСѓРјРµРЅС‚С‹.РЎРѕР·РґР°С‚СЊ СЏСЂР»С‹Рє РЅР° СЂР°Р±РѕС‡РµРј СЃС‚РѕР»Рµ
                 tabName = "mn5-1-06";
                 document.getElementById(tabName).click();
                 break;
@@ -1727,7 +1727,7 @@ Ext.define('Buh.classes.managers.buhManager', {
         let _input = {}, sprav = me.source, _fn, _subFn, grid, inputFind;
         switch (me.source) {
             case 1:
-                //ОС
+                //РћРЎ
                 _input = {
                     _task: 0,
                     _sprav: sprav,
@@ -1737,7 +1737,7 @@ Ext.define('Buh.classes.managers.buhManager', {
 
                 openSpravTotal(_input);
 
-                // GBS-11937. Фикс открытия окна редактирования.
+                // GBS-11937. Р¤РёРєСЃ РѕС‚РєСЂС‹С‚РёСЏ РѕРєРЅР° СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ.
                 _fn = function() {
                     grid = Ext.getCmp('gridSpravOverAll');
                     let inputFind = Ext.ComponentQuery.query('[itemId=fndField]'), rec;
@@ -1763,7 +1763,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case 2:
-                //НМА
+                //РќРњРђ
                 _input = {
                     _task: 0,
                     _sprav: sprav,
@@ -1773,7 +1773,7 @@ Ext.define('Buh.classes.managers.buhManager', {
 
                 openSpravTotal(_input);
 
-                // GBS-11937. Фикс открытия окна редактирования.
+                // GBS-11937. Р¤РёРєСЃ РѕС‚РєСЂС‹С‚РёСЏ РѕРєРЅР° СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ.
                 _fn = function() {
                     grid = Ext.getCmp('gridSpravOverAll');
                     let inputFind = Ext.ComponentQuery.query('[itemId=fndField]'), rec;
@@ -1799,9 +1799,9 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case 3:
-                //Материал
-                //Услуга полученная (_rec.vid == 1)
-                //РБП (_rec.vid == 2)
+                //РњР°С‚РµСЂРёР°Р»
+                //РЈСЃР»СѓРіР° РїРѕР»СѓС‡РµРЅРЅР°СЏ (_rec.vid == 1)
+                //Р Р‘Рџ (_rec.vid == 2)
                 if (_rec.vid == 1) sprav = 31;
                 if (_rec.vid == 2) sprav = 32;
                 _input = {
@@ -1823,7 +1823,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                         });
                     }
                 } else {
-                    // GBS-11937. Фикс открытия окна редактирования.
+                    // GBS-11937. Р¤РёРєСЃ РѕС‚РєСЂС‹С‚РёСЏ РѕРєРЅР° СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ.
                     _fn = function () {
                         grid = Ext.getCmp('gridSpravOverAll');
                         let inputFind = Ext.ComponentQuery.query('[itemId=fndField]'), rec;
@@ -1850,8 +1850,8 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case 4:
-                //Продукция
-                //Услуга оказанная (_rec.vid == 1)
+                //РџСЂРѕРґСѓРєС†РёСЏ
+                //РЈСЃР»СѓРіР° РѕРєР°Р·Р°РЅРЅР°СЏ (_rec.vid == 1)
                 if (_rec.vid == 1) sprav = 41;
                 _input = {
                     _task: 0,
@@ -1862,7 +1862,7 @@ Ext.define('Buh.classes.managers.buhManager', {
 
                 openSpravTotal(_input);
 
-                // GBS-11937. Фикс открытия окна редактирования.
+                // GBS-11937. Р¤РёРєСЃ РѕС‚РєСЂС‹С‚РёСЏ РѕРєРЅР° СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ.
                 _fn = function() {
                     grid = Ext.getCmp('gridSpravOverAll');
                     let inputFind = Ext.ComponentQuery.query('[itemId=fndField]'), rec;
@@ -1888,7 +1888,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case 5:
-                //Товар
+                //РўРѕРІР°СЂ
                 _input = {
                     _task: 0,
                     _sprav: sprav,
@@ -1899,7 +1899,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                 openSpravTotal(_input);
 
                 _fn = function() {
-                    // GBS-11937. Фикс открытия окна редактирования.
+                    // GBS-11937. Р¤РёРєСЃ РѕС‚РєСЂС‹С‚РёСЏ РѕРєРЅР° СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ.
                     grid = Ext.getCmp('gridSpravOverAll');
                     let inputFind = Ext.ComponentQuery.query('[itemId=fndField]'), rec;
                     inputFind[0].inputEl.dom.value = me.name;
@@ -1933,19 +1933,19 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case 9:
-                // Виды деятельности
+                // Р’РёРґС‹ РґРµСЏС‚РµР»СЊРЅРѕСЃС‚Рё
                 document.getElementById('_mn1-2-11').click();
                 break;
 
             case 11:
-                // Аналитика 91 счета
-                //GBS-11937. В меню пункт скрыт, открываем напрямую.
+                // РђРЅР°Р»РёС‚РёРєР° 91 СЃС‡РµС‚Р°
+                //GBS-11937. Р’ РјРµРЅСЋ РїСѓРЅРєС‚ СЃРєСЂС‹С‚, РѕС‚РєСЂС‹РІР°РµРј РЅР°РїСЂСЏРјСѓСЋ.
                 // document.getElementById('_mn1-2-12').click();
                 win11.showWin(0, false);
                 break;
 
             case 15:
-                // Договоры
+                // Р”РѕРіРѕРІРѕСЂС‹
                 document.getElementById('_mn1-2-13').click();
 
                 if (me.task == 'add') {
@@ -1955,7 +1955,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case 20:
-                // Единицы измерения
+                // Р•РґРёРЅРёС†С‹ РёР·РјРµСЂРµРЅРёСЏ
                 document.getElementById('_mn1-2-15').click();
 
                 if (me.task == 'add') {
@@ -1965,29 +1965,29 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case 21:
-                // Кассы
+                // РљР°СЃСЃС‹
                 document.getElementById('_mn1-2-14').click();
                 break;
 
             case 25:
-                // Склады
-                //GBS-11937. В меню пункт скрыт, открываем напрямую.
+                // РЎРєР»Р°РґС‹
+                //GBS-11937. Р’ РјРµРЅСЋ РїСѓРЅРєС‚ СЃРєСЂС‹С‚, РѕС‚РєСЂС‹РІР°РµРј РЅР°РїСЂСЏРјСѓСЋ.
                 // document.getElementById('_mn1-2-16').click();
                 win25.showWin(0, false);
                 break;
 
             case 600:
-                // Контрагенты
+                // РљРѕРЅС‚СЂР°РіРµРЅС‚С‹
                 document.getElementById('_mn1-2-08').click();
                 break;
 
             case "planSc":
-                // План счетов
+                // РџР»Р°РЅ СЃС‡РµС‚РѕРІ
                 document.getElementById('_mn1-2-01').click();
                 break;
 
             case "ostatki":
-                // Остатки
+                // РћСЃС‚Р°С‚РєРё
                 document.getElementById('_mn1-2-02').click();
 
                 if (me.task == 10) {
@@ -2036,7 +2036,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                 break;
 
             case "kdr":
-                // Доходы/Расходы
+                // Р”РѕС…РѕРґС‹/Р Р°СЃС…РѕРґС‹
                 document.getElementById('_mn1-2-10').click();
                 break;
 
@@ -2055,7 +2055,7 @@ Ext.define('Buh.classes.managers.buhManager', {
         me.docId = _rec.data.source_id;
         me.origin = _rec.data.origin;
         me.provId = _rec.data.id;
-        if (_rec.data.source == 1) {  // покупки
+        if (_rec.data.source == 1) {  // РїРѕРєСѓРїРєРё
 
             _ajax(
                 dir_start_buh_ + 'jo_manager.php',
@@ -2073,7 +2073,7 @@ Ext.define('Buh.classes.managers.buhManager', {
             );
         }
 
-        if (_rec.data.source == 2) {  // продажи
+        if (_rec.data.source == 2) {  // РїСЂРѕРґР°Р¶Рё
 
             _ajax(
                 dir_start_buh_ + 'jo_manager.php',
@@ -2092,7 +2092,7 @@ Ext.define('Buh.classes.managers.buhManager', {
         }
 
         if (_rec.data.source == 3 || _rec.data.source == 4) {
-            //Банк
+            //Р‘Р°РЅРє
             _ajax(
                 dir_start_buh_ + 'jo_manager.php',
                 {
@@ -2113,7 +2113,7 @@ Ext.define('Buh.classes.managers.buhManager', {
             );
         }
 
-        //Касса
+        //РљР°СЃСЃР°
         if (_rec.data.source == 5 || _rec.data.source == 6) {
 
             _ajax(
@@ -2148,7 +2148,7 @@ Ext.define('Buh.classes.managers.buhManager', {
 
                     if (Ext.getCmp('mainPanelAmort')) {
                         if (Ext.get(Ext.getCmp('mainPanelAmort').renderTo)) {
-                            if (Ext.getCmp('mainPanelAmort').down('#tpAmort').getActiveTab().title != "Бухгалтерский учет")
+                            if (Ext.getCmp('mainPanelAmort').down('#tpAmort').getActiveTab().title != "Р‘СѓС…РіР°Р»С‚РµСЂСЃРєРёР№ СѓС‡РµС‚")
                                 Ext.getCmp('mainPanelAmort').down('#tpAmort').setActiveTab(0);
                             else
                                 Ext.getCmp('mainPanelAmort').refresh();
@@ -2250,7 +2250,7 @@ Ext.define('Buh.classes.managers.buhManager', {
             );
         }
 
-        if (_rec.data.source == 24) {  // покупки
+        if (_rec.data.source == 24) {  // РїРѕРєСѓРїРєРё
 
             _ajax(
                 dir_start_buh_ + 'jo_manager.php',
@@ -2337,7 +2337,7 @@ Ext.define('Buh.classes.managers.buhManager', {
                 let docTypeUrl = typeDocValues[Ext.Array.indexOf(typeDocKeys, rc.data.typ_doc)];
 
                 if (docTypeUrl == _dummy) {
-                    _alert_win('РћС€РёР±РєР°', 'РџРµС‡Р°С‚СЊ РґРѕРєСѓРјРµРЅС‚Р° РЅРµРґРѕСЃС‚СѓРїРЅР°.');
+                    _alert_win('Р С›РЎв‚¬Р С‘Р В±Р С”Р В°', 'Р СџР ВµРЎвЂЎР В°РЎвЂљРЎРЉ Р Т‘Р С•Р С”РЎС“Р СР ВµР Р…РЎвЂљР В° Р Р…Р ВµР Т‘Р С•РЎРѓРЎвЂљРЎС“Р С—Р Р…Р В°.');
                     return false;
                 }
 

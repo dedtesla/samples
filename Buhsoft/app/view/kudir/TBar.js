@@ -1,5 +1,5 @@
 /**
- * Верхняя панель инструментов Книги доходов и расходов.
+ * Р’РµСЂС…РЅСЏСЏ РїР°РЅРµР»СЊ РёРЅСЃС‚СЂСѓРјРµРЅС‚РѕРІ РљРЅРёРіРё РґРѕС…РѕРґРѕРІ Рё СЂР°СЃС…РѕРґРѕРІ.
  *
  * GBS-6829|8558|14108
  * @since 08/20
@@ -15,7 +15,7 @@ Ext.define('Buh.view.kudir.TBar', {
         {
             xtype: 'button',
             cls: 'grey-btn',
-            text: 'Заполнить',
+            text: 'Р—Р°РїРѕР»РЅРёС‚СЊ',
             action: 'fillbook',
             itemId: 'btnFillKudir'
         },
@@ -28,7 +28,7 @@ Ext.define('Buh.view.kudir.TBar', {
             action: 'setbookinterval'
         },
         {
-            text: 'Фильтр',
+            text: 'Р¤РёР»СЊС‚СЂ',
             xtype: 'button',
             name: 'filterButton',
             icon: '/img/filter-icon.svg',
@@ -39,26 +39,26 @@ Ext.define('Buh.view.kudir.TBar', {
         },
         {
             xtype: 'button',
-            text: 'Печать',
+            text: 'РџРµС‡Р°С‚СЊ',
             icon: _icons.print,
             action: 'printbook'
         },
         {
-            text: 'Проверить',
+            text: 'РџСЂРѕРІРµСЂРёС‚СЊ',
             xtype: 'button',
             icon: '/img/dgrey-galka.svg',
             action: 'checkbook',
             hidden: true
         },
         {
-            text: 'Добавить запись',
+            text: 'Р”РѕР±Р°РІРёС‚СЊ Р·Р°РїРёСЃСЊ',
             xtype: 'button',
             name: 'editorButton',
             icon: '/img/gplus-icon.svg',
             action: 'openaddbookrecord',
             menu: [
                 {
-                    text: 'Новое ОС',
+                    text: 'РќРѕРІРѕРµ РћРЎ',
                     action: 'addFixedAssets',
                     width: 160,
                     handler: function () {
@@ -80,7 +80,7 @@ Ext.define('Buh.view.kudir.TBar', {
                     }
                 },
                 {
-                    text: 'Новое НМА',
+                    text: 'РќРѕРІРѕРµ РќРњРђ',
                     action: 'addIntangibleAssets',
                     width: 160,
                     handler: function () {
@@ -129,7 +129,7 @@ Ext.define('Buh.view.kudir.TBar', {
             xtype: 'tbfill'
         },
         {
-            text: 'Рассчитать УСН',
+            text: 'Р Р°СЃСЃС‡РёС‚Р°С‚СЊ РЈРЎРќ',
             xtype: "button",
             name: 'calcEn',
             class: 'float-right',
@@ -153,13 +153,13 @@ Ext.define('Buh.view.kudir.TBar', {
             }
         },
         {
-            text: 'Детализация',
+            text: 'Р”РµС‚Р°Р»РёР·Р°С†РёСЏ',
             xtype: "button",
             class: 'float-right',
             menu: [
                 {
-//                    text: 'Отчет по списанию товаров',
-                    text: 'Отчет будет доступен в ближайшее время.<br>Пока рекомендуем пользоваться расшифровкой по <br>каждой строке операций <br>Расходы на приобретение товаров.',
+//                    text: 'РћС‚С‡РµС‚ РїРѕ СЃРїРёСЃР°РЅРёСЋ С‚РѕРІР°СЂРѕРІ',
+                    text: 'РћС‚С‡РµС‚ Р±СѓРґРµС‚ РґРѕСЃС‚СѓРїРµРЅ РІ Р±Р»РёР¶Р°Р№С€РµРµ РІСЂРµРјСЏ.<br>РџРѕРєР° СЂРµРєРѕРјРµРЅРґСѓРµРј РїРѕР»СЊР·РѕРІР°С‚СЊСЃСЏ СЂР°СЃС€РёС„СЂРѕРІРєРѕР№ РїРѕ <br>РєР°Р¶РґРѕР№ СЃС‚СЂРѕРєРµ РѕРїРµСЂР°С†РёР№ <br>Р Р°СЃС…РѕРґС‹ РЅР° РїСЂРёРѕР±СЂРµС‚РµРЅРёРµ С‚РѕРІР°СЂРѕРІ.',
 
                     /*
                                         handler: function () {
@@ -187,7 +187,7 @@ Ext.define('Buh.view.kudir.TBar', {
             if (me.down('[name=help_button]') != null && me.down('[name=help_button]') != undefined) {
                 Ext.create('Ext.tip.ToolTip', {
                     target: me.down('[name=help_button]').getId(),
-                    html: 'Инструкция в справочной системе Бухсофт',
+                    html: 'РРЅСЃС‚СЂСѓРєС†РёСЏ РІ СЃРїСЂР°РІРѕС‡РЅРѕР№ СЃРёСЃС‚РµРјРµ Р‘СѓС…СЃРѕС„С‚',
                     showDelay: 300
                 });
             }

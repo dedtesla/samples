@@ -1,9 +1,9 @@
 /**
- * Контроллер Книги Доходов и расходов 2020/2021.
+ * РљРѕРЅС‚СЂРѕР»Р»РµСЂ РљРЅРёРіРё Р”РѕС…РѕРґРѕРІ Рё СЂР°СЃС…РѕРґРѕРІ 2020/2021.
  *
- * C 2021г. реализована бесшовность базы данных.
- * Все значения состояний портированы в базу данных (tr_states),
- * кукисы отменены.
+ * C 2021Рі. СЂРµР°Р»РёР·РѕРІР°РЅР° Р±РµСЃС€РѕРІРЅРѕСЃС‚СЊ Р±Р°Р·С‹ РґР°РЅРЅС‹С….
+ * Р’СЃРµ Р·РЅР°С‡РµРЅРёСЏ СЃРѕСЃС‚РѕСЏРЅРёР№ РїРѕСЂС‚РёСЂРѕРІР°РЅС‹ РІ Р±Р°Р·Сѓ РґР°РЅРЅС‹С… (tr_states),
+ * РєСѓРєРёСЃС‹ РѕС‚РјРµРЅРµРЅС‹.
  *
  * GBS-6829|GBS-8558|14108
  * 08.2020
@@ -100,7 +100,7 @@ Ext.define('Buh.controller.KuDiR', {
                 tabchange: this.tabChange
             },
 
-            // Кнопки панели инструментов
+            // РљРЅРѕРїРєРё РїР°РЅРµР»Рё РёРЅСЃС‚СЂСѓРјРµРЅС‚РѕРІ
             'kudirtbar button[action=fillbook]': {
                 click: this.fillKudir
             },
@@ -123,7 +123,7 @@ Ext.define('Buh.controller.KuDiR', {
                 click: this.addRecord
             },
 
-            // Гриды на вкладках
+            // Р“СЂРёРґС‹ РЅР° РІРєР»Р°РґРєР°С…
             'kudirsection1grid': {
                 itemcontextmenu: this.contextMenu,
                 gotoDoc: this.goToDocument,
@@ -174,7 +174,7 @@ Ext.define('Buh.controller.KuDiR', {
                 delete: this.deleteRecord,
             },
 
-            // Форма добавления/редактирования
+            // Р¤РѕСЂРјР° РґРѕР±Р°РІР»РµРЅРёСЏ/СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ
             'editkudirpopup': {
                 afterRender: this.winRender,
                 onScroll: this.winRender
@@ -189,7 +189,7 @@ Ext.define('Buh.controller.KuDiR', {
                 click: this.cancelWindow
             },
 
-            // Форма добавления/редактирования OC|НМА
+            // Р¤РѕСЂРјР° РґРѕР±Р°РІР»РµРЅРёСЏ/СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ OC|РќРњРђ
             'editcardkudirpopup': {
                 afterRender: this.winRender,
                 onScroll: this.winRender
@@ -264,7 +264,7 @@ Ext.define('Buh.controller.KuDiR', {
         tp.taxMode = me.taxMode;
 
         if (_lbl != _dummy) {
-            _lbl.el.dom.innerHTML = '<a class="link-darkgray" data-qtip="Изменить ставку">' + tp.taxStavka + ' (' + tp.taxModes[tp.taxMode] + ')' + '</a>';
+            _lbl.el.dom.innerHTML = '<a class="link-darkgray" data-qtip="РР·РјРµРЅРёС‚СЊ СЃС‚Р°РІРєСѓ">' + tp.taxStavka + ' (' + tp.taxModes[tp.taxMode] + ')' + '</a>';
         }
 
         me.saveState('yeartohold', me.holdYear);
@@ -508,90 +508,90 @@ Ext.define('Buh.controller.KuDiR', {
     },
 
     /**
-     * Метод contextMenuConfig
-     * Отрисовка меню грида 1,2,4,5 разделов.
-     * См. описание https://conf.action-media.ru/pages/viewpage.action?pageId=208911041
+     * РњРµС‚РѕРґ contextMenuConfig
+     * РћС‚СЂРёСЃРѕРІРєР° РјРµРЅСЋ РіСЂРёРґР° 1,2,4,5 СЂР°Р·РґРµР»РѕРІ.
+     * РЎРј. РѕРїРёСЃР°РЅРёРµ https://conf.action-media.ru/pages/viewpage.action?pageId=208911041
      *
-     * @param grid Активный грид
-     * @param record Текущая запись
+     * @param grid РђРєС‚РёРІРЅС‹Р№ РіСЂРёРґ
+     * @param record РўРµРєСѓС‰Р°СЏ Р·Р°РїРёСЃСЊ
      */
     contextMenuConfig: function (grid, record) {
         let tab = Ext.getCmp('mainPanelKudir').down('tabpanel').activeTab.itemId,
             rec = record.data;
 
         /**
-         * Новый тип записи с расшифровкой.
-         * По умолчанию скрытый.
+         * РќРѕРІС‹Р№ С‚РёРї Р·Р°РїРёСЃРё СЃ СЂР°СЃС€РёС„СЂРѕРІРєРѕР№.
+         * РџРѕ СѓРјРѕР»С‡Р°РЅРёСЋ СЃРєСЂС‹С‚С‹Р№.
          */
-        grid.menu.down('[name=menuExplain]').hide(); //Расшифровка
+        grid.menu.down('[name=menuExplain]').hide(); //Р Р°СЃС€РёС„СЂРѕРІРєР°
 
         if (rec.auto == 2) {
-            /** Автозаполненная запись. */
-            grid.menu.down('[name=menuDelete]').hide(); //Удалить
+            /** РђРІС‚РѕР·Р°РїРѕР»РЅРµРЅРЅР°СЏ Р·Р°РїРёСЃСЊ. */
+            grid.menu.down('[name=menuDelete]').hide(); //РЈРґР°Р»РёС‚СЊ
 
             if (tab != 2) {
-                /** Кроме 2 раздела. */
-                grid.menu.down('[name=menuGoToCard]').hide(); //Открыть карточку
-                grid.menu.down('[name=menuGoToRef]').hide(); //Перейти в справочник
+                /** РљСЂРѕРјРµ 2 СЂР°Р·РґРµР»Р°. */
+                grid.menu.down('[name=menuGoToCard]').hide(); //РћС‚РєСЂС‹С‚СЊ РєР°СЂС‚РѕС‡РєСѓ
+                grid.menu.down('[name=menuGoToRef]').hide(); //РџРµСЂРµР№С‚Рё РІ СЃРїСЂР°РІРѕС‡РЅРёРє
 
-                /** Новый тип записи с расшифровкой. */
+                /** РќРѕРІС‹Р№ С‚РёРї Р·Р°РїРёСЃРё СЃ СЂР°СЃС€РёС„СЂРѕРІРєРѕР№. */
                 if (rec.id_op == 4) {
-                    grid.menu.down('[name=menuExplain]').show(); //Расшифровка
-                    grid.menu.down('[name=menuGoToDoc]').hide(); //Перейти к документу
-                    grid.menu.down('[name=menuRollback]').hide(); //Отменить исправления
-                    grid.menu.down('[name=menuGoEditor]').hide(); //Изменить
+                    grid.menu.down('[name=menuExplain]').show(); //Р Р°СЃС€РёС„СЂРѕРІРєР°
+                    grid.menu.down('[name=menuGoToDoc]').hide(); //РџРµСЂРµР№С‚Рё Рє РґРѕРєСѓРјРµРЅС‚Сѓ
+                    grid.menu.down('[name=menuRollback]').hide(); //РћС‚РјРµРЅРёС‚СЊ РёСЃРїСЂР°РІР»РµРЅРёСЏ
+                    grid.menu.down('[name=menuGoEditor]').hide(); //РР·РјРµРЅРёС‚СЊ
                 } else {
                     if (rec.is_dirty == 1) {
-                        /** Запись исправлена */
-                        grid.menu.down('[name=menuRollback]').show(); //Отменить исправления
-                        grid.menu.down('[name=menuGoToDoc]').hide(); //Перейти к документу
+                        /** Р—Р°РїРёСЃСЊ РёСЃРїСЂР°РІР»РµРЅР° */
+                        grid.menu.down('[name=menuRollback]').show(); //РћС‚РјРµРЅРёС‚СЊ РёСЃРїСЂР°РІР»РµРЅРёСЏ
+                        grid.menu.down('[name=menuGoToDoc]').hide(); //РџРµСЂРµР№С‚Рё Рє РґРѕРєСѓРјРµРЅС‚Сѓ
                     } else {
-                        grid.menu.down('[name=menuGoToDoc]').show(); //Перейти к документу
-                        grid.menu.down('[name=menuRollback]').hide(); //Отменить исправления
+                        grid.menu.down('[name=menuGoToDoc]').show(); //РџРµСЂРµР№С‚Рё Рє РґРѕРєСѓРјРµРЅС‚Сѓ
+                        grid.menu.down('[name=menuRollback]').hide(); //РћС‚РјРµРЅРёС‚СЊ РёСЃРїСЂР°РІР»РµРЅРёСЏ
                     }
-                    grid.menu.down('[name=menuGoEditor]').show(); //Изменить
+                    grid.menu.down('[name=menuGoEditor]').show(); //РР·РјРµРЅРёС‚СЊ
                 }
             } else {
-                /** Только для Раздела 2. */
-                grid.menu.down('[name=menuGoToDoc]').hide(); //Перейти к документу
-                grid.menu.down('[name=menuRollback]').hide(); //Отменить исправления
-                grid.menu.down('[name=menuGoEditor]').hide(); //Изменить
-                grid.menu.down('[name=menuGoToRef]').show(); //Перейти в справочник
+                /** РўРѕР»СЊРєРѕ РґР»СЏ Р Р°Р·РґРµР»Р° 2. */
+                grid.menu.down('[name=menuGoToDoc]').hide(); //РџРµСЂРµР№С‚Рё Рє РґРѕРєСѓРјРµРЅС‚Сѓ
+                grid.menu.down('[name=menuRollback]').hide(); //РћС‚РјРµРЅРёС‚СЊ РёСЃРїСЂР°РІР»РµРЅРёСЏ
+                grid.menu.down('[name=menuGoEditor]').hide(); //РР·РјРµРЅРёС‚СЊ
+                grid.menu.down('[name=menuGoToRef]').show(); //РџРµСЂРµР№С‚Рё РІ СЃРїСЂР°РІРѕС‡РЅРёРє
             }
         } else {
-            /** Запись, добавленная вручную. */
+            /** Р—Р°РїРёСЃСЊ, РґРѕР±Р°РІР»РµРЅРЅР°СЏ РІСЂСѓС‡РЅСѓСЋ. */
             if (tab != 2) {
-                /** Кроме 2 раздела. */
-                grid.menu.down('[name=menuGoEditor]').show(); //Изменить
-                grid.menu.down('[name=menuGoToCard]').hide(); //Открыть карточку
+                /** РљСЂРѕРјРµ 2 СЂР°Р·РґРµР»Р°. */
+                grid.menu.down('[name=menuGoEditor]').show(); //РР·РјРµРЅРёС‚СЊ
+                grid.menu.down('[name=menuGoToCard]').hide(); //РћС‚РєСЂС‹С‚СЊ РєР°СЂС‚РѕС‡РєСѓ
             } else {
-                /** Только для Раздела 2. */
-                grid.menu.down('[name=menuGoToCard]').show(); //Открыть карточку
-                grid.menu.down('[name=menuGoEditor]').hide(); //Изменить
+                /** РўРѕР»СЊРєРѕ РґР»СЏ Р Р°Р·РґРµР»Р° 2. */
+                grid.menu.down('[name=menuGoToCard]').show(); //РћС‚РєСЂС‹С‚СЊ РєР°СЂС‚РѕС‡РєСѓ
+                grid.menu.down('[name=menuGoEditor]').hide(); //РР·РјРµРЅРёС‚СЊ
             }
 
-            grid.menu.down('[name=menuRollback]').hide(); //Отменить исправления
-            grid.menu.down('[name=menuGoToDoc]').hide(); //Перейти к документу
-            grid.menu.down('[name=menuGoToRef]').hide(); //Перейти в справочник
-            grid.menu.down('[name=menuDelete]').show(); //Удалить
+            grid.menu.down('[name=menuRollback]').hide(); //РћС‚РјРµРЅРёС‚СЊ РёСЃРїСЂР°РІР»РµРЅРёСЏ
+            grid.menu.down('[name=menuGoToDoc]').hide(); //РџРµСЂРµР№С‚Рё Рє РґРѕРєСѓРјРµРЅС‚Сѓ
+            grid.menu.down('[name=menuGoToRef]').hide(); //РџРµСЂРµР№С‚Рё РІ СЃРїСЂР°РІРѕС‡РЅРёРє
+            grid.menu.down('[name=menuDelete]').show(); //РЈРґР°Р»РёС‚СЊ
         }
 
         if (rec.iskl == 1) {
-            /** Запись исключена. */
-            grid.menu.down('[name=menuCopy]').hide(); //Копировать
-            grid.menu.down('[name=menuInclude]').show(); //Вернуть запись
-            grid.menu.down('[name=menuExclude]').hide(); //Исключить
+            /** Р—Р°РїРёСЃСЊ РёСЃРєР»СЋС‡РµРЅР°. */
+            grid.menu.down('[name=menuCopy]').hide(); //РљРѕРїРёСЂРѕРІР°С‚СЊ
+            grid.menu.down('[name=menuInclude]').show(); //Р’РµСЂРЅСѓС‚СЊ Р·Р°РїРёСЃСЊ
+            grid.menu.down('[name=menuExclude]').hide(); //РСЃРєР»СЋС‡РёС‚СЊ
         } else {
-            /** Запись не исключена. */
+            /** Р—Р°РїРёСЃСЊ РЅРµ РёСЃРєР»СЋС‡РµРЅР°. */
             if (rec.id_op == 4 || rec.source == 1000009) {
-                /** Новый тип записи с расшифровкой + запись из сделки. */
-                grid.menu.down('[name=menuCopy]').hide(); //Копировать
+                /** РќРѕРІС‹Р№ С‚РёРї Р·Р°РїРёСЃРё СЃ СЂР°СЃС€РёС„СЂРѕРІРєРѕР№ + Р·Р°РїРёСЃСЊ РёР· СЃРґРµР»РєРё. */
+                grid.menu.down('[name=menuCopy]').hide(); //РљРѕРїРёСЂРѕРІР°С‚СЊ
             } else {
-                /** Любая другая запись. */
-                grid.menu.down('[name=menuCopy]').show(); //Копировать
+                /** Р›СЋР±Р°СЏ РґСЂСѓРіР°СЏ Р·Р°РїРёСЃСЊ. */
+                grid.menu.down('[name=menuCopy]').show(); //РљРѕРїРёСЂРѕРІР°С‚СЊ
             }
-            grid.menu.down('[name=menuExclude]').show(); //Исключить
-            grid.menu.down('[name=menuInclude]').hide(); //Вернуть запись
+            grid.menu.down('[name=menuExclude]').show(); //РСЃРєР»СЋС‡РёС‚СЊ
+            grid.menu.down('[name=menuInclude]').hide(); //Р’РµСЂРЅСѓС‚СЊ Р·Р°РїРёСЃСЊ
         }
     },
 
@@ -707,7 +707,7 @@ Ext.define('Buh.controller.KuDiR', {
 
                     _filterBtn.filterData = {};
                     _filterBtn.filterCount = 0;
-                    _filterBtn.setText("Фильтр");
+                    _filterBtn.setText("Р¤РёР»СЊС‚СЂ");
                     _filterBtn.setIcon('/img/filter-icon.svg');
                     _filterBtn.removeCls('ico_number');
                     Ext.getCmp('mainPanelKudir').down('kudirtbar').doComponentLayout();
@@ -889,21 +889,21 @@ Ext.define('Buh.controller.KuDiR', {
             }
 
             if (rec.n_doc != null && rec.n_doc.length) {
-                numDoc = iif(tab === 1 && rec.id_op == 4, rec.n_doc, ' №' + rec.n_doc + ' от ' + rec.doc_date);
+                numDoc = iif(tab === 1 && rec.id_op == 4, rec.n_doc, ' в„–' + rec.n_doc + ' РѕС‚ ' + rec.doc_date);
             } else {
-                numDoc = 'Без документа от ' + rec.doc_date;
+                numDoc = 'Р‘РµР· РґРѕРєСѓРјРµРЅС‚Р° РѕС‚ ' + rec.doc_date;
             }
 
             msg = iif(tab !== 2,
-                'Исключится запись ' + iif(rec.short_name !== _dummy && rec.short_name !== null, rec.short_name, '') +
+                'РСЃРєР»СЋС‡РёС‚СЃСЏ Р·Р°РїРёСЃСЊ ' + iif(rec.short_name !== _dummy && rec.short_name !== null, rec.short_name, '') +
                 numDoc +
                 iif(rec.operation != 'null' && rec.operation != _dummy, ' &mdash; ' + rec.operation, '') + '.',
-                'Исключится запись ' + rec.name + '.');
+                'РСЃРєР»СЋС‡РёС‚СЃСЏ Р·Р°РїРёСЃСЊ ' + rec.name + '.');
 
             let _confirm = Ext.create('Buh.view.kudir.service.Confirm', {
-                title: 'Исключить запись из Книги?',
+                title: 'РСЃРєР»СЋС‡РёС‚СЊ Р·Р°РїРёСЃСЊ РёР· РљРЅРёРіРё?',
                 msg: msg,
-                btn1: 'Исключить',
+                btn1: 'РСЃРєР»СЋС‡РёС‚СЊ',
                 fn1: function () {
                     _fn = function () {
                         grid.store.reload(_options);
@@ -974,20 +974,20 @@ Ext.define('Buh.controller.KuDiR', {
             });
 
             if (rec.n_doc != null && rec.n_doc.length) {
-                numDoc = iif(tab === 1 && rec.id_op == 4, rec.n_doc, ' №' + rec.n_doc + ' от ' + rec.doc_date);
+                numDoc = iif(tab === 1 && rec.id_op == 4, rec.n_doc, ' в„–' + rec.n_doc + ' РѕС‚ ' + rec.doc_date);
             } else {
-                numDoc = 'Без документа от ' + rec.doc_date;
+                numDoc = 'Р‘РµР· РґРѕРєСѓРјРµРЅС‚Р° РѕС‚ ' + rec.doc_date;
             }
 
             msg = iif(tab != 2,
-                'Удалится запись ' + numDoc +
+                'РЈРґР°Р»РёС‚СЃСЏ Р·Р°РїРёСЃСЊ ' + numDoc +
                 iif(rec.operation != 'null' && rec.operation != _dummy, ' &mdash; ' + rec.operation, '') + '.',
-                'Удалится запись ' + rec.name + '.');
+                'РЈРґР°Р»РёС‚СЃСЏ Р·Р°РїРёСЃСЊ ' + rec.name + '.');
 
             let _confirm = Ext.create('Buh.view.kudir.service.Confirm', {
-                title: 'Удалить запись в Книге?',
+                title: 'РЈРґР°Р»РёС‚СЊ Р·Р°РїРёСЃСЊ РІ РљРЅРёРіРµ?',
                 msg: msg,
-                btn1: 'Удалить',
+                btn1: 'РЈРґР°Р»РёС‚СЊ',
                 fn1: function () {
                     _fn = function () {
                         grid.store.remove(record);

@@ -1,7 +1,7 @@
 /**
- * Панель вкладки Книга доходов и расходов.
- * Содержит сквозную, общую для всех вкладок, панель инструментов
- * и панель вкладок разделов Книги.
+ * РџР°РЅРµР»СЊ РІРєР»Р°РґРєРё РљРЅРёРіР° РґРѕС…РѕРґРѕРІ Рё СЂР°СЃС…РѕРґРѕРІ.
+ * РЎРѕРґРµСЂР¶РёС‚ СЃРєРІРѕР·РЅСѓСЋ, РѕР±С‰СѓСЋ РґР»СЏ РІСЃРµС… РІРєР»Р°РґРѕРє, РїР°РЅРµР»СЊ РёРЅСЃС‚СЂСѓРјРµРЅС‚РѕРІ
+ * Рё РїР°РЅРµР»СЊ РІРєР»Р°РґРѕРє СЂР°Р·РґРµР»РѕРІ РљРЅРёРіРё.
  *
  * GBS-8588
  * 08.2020
@@ -43,10 +43,10 @@ Ext.define('Buh.view.kudir.Panel', {
             name: 'bottomTabs',
             taxMode: null,
             taxStavka: '',
-            taxModes: ['доходы минус расходы', 'доходы'],
+            taxModes: ['РґРѕС…РѕРґС‹ РјРёРЅСѓСЃ СЂР°СЃС…РѕРґС‹', 'РґРѕС…РѕРґС‹'],
             items: [
                 {
-                    title: 'Раздел 1',
+                    title: 'Р Р°Р·РґРµР» 1',
                     itemId: 1,
                     layout: {
                         type: 'vbox',
@@ -62,7 +62,7 @@ Ext.define('Buh.view.kudir.Panel', {
                                 extend: 'Ext.data.Model',
                                 fields: ['txt', 'prihod', 'rashod'],
                                 data: [
-                                    {"txt": "Всего за год:", "prihod": "", "rashod": ""}
+                                    {"txt": "Р’СЃРµРіРѕ Р·Р° РіРѕРґ:", "prihod": "", "rashod": ""}
                                 ]
                             }),
                             columns: [
@@ -95,7 +95,7 @@ Ext.define('Buh.view.kudir.Panel', {
                     ]
                 },
                 {
-                    title: 'Справка',
+                    title: 'РЎРїСЂР°РІРєР°',
                     itemId: 10,
                     cls: 'container-align-middle',
                     layout: {
@@ -108,7 +108,7 @@ Ext.define('Buh.view.kudir.Panel', {
                     ]
                 },
                 {
-                    title: 'Раздел 2',
+                    title: 'Р Р°Р·РґРµР» 2',
                     itemId: 2,
                     cls: 'container-align-middle',
                     layout: {
@@ -126,7 +126,7 @@ Ext.define('Buh.view.kudir.Panel', {
                                 fields: ['txt', 'base_cost', 'quarter_fees', 'tax_fees', 'previous_fees', 'future_fees'],
                                 data: [
                                     {
-                                        "txt": "Всего за год:",
+                                        "txt": "Р’СЃРµРіРѕ Р·Р° РіРѕРґ:",
                                         "base_cost": "",
                                         "quarter_fees": "",
                                         "tax_fees": "",
@@ -184,7 +184,7 @@ Ext.define('Buh.view.kudir.Panel', {
                     ]
                 },
                 {
-                    title: 'Раздел 3',
+                    title: 'Р Р°Р·РґРµР» 3',
                     itemId: 3,
                     cls: 'container-align-middle',
                     layout: {
@@ -195,7 +195,7 @@ Ext.define('Buh.view.kudir.Panel', {
                     items: Ext.create('Buh.view.kudir.grid.GridSection3')
                 },
                 {
-                    title: 'Раздел 4',
+                    title: 'Р Р°Р·РґРµР» 4',
                     itemId: 4,
                     cls: 'container-align-middle',
                     layout: {
@@ -213,7 +213,7 @@ Ext.define('Buh.view.kudir.Panel', {
                                 fields: ['txt', 'ops', 'oss', 'oms', 'fss_trauma', 'benefit', 'fss_voluntary'],
                                 data: [
                                     {
-                                        "txt": "Всего за год:",
+                                        "txt": "Р’СЃРµРіРѕ Р·Р° РіРѕРґ:",
                                         "ops": "",
                                         "oss": "",
                                         "oms": "",
@@ -279,7 +279,7 @@ Ext.define('Buh.view.kudir.Panel', {
                     ]
                 },
                 {
-                    title: 'Раздел 5',
+                    title: 'Р Р°Р·РґРµР» 5',
                     itemId: 5,
                     cls: 'container-align-middle',
                     layout: {
@@ -296,7 +296,7 @@ Ext.define('Buh.view.kudir.Panel', {
                                 extend: 'Ext.data.Model',
                                 fields: ['txt', 'summa'],
                                 data: [
-                                    {"txt": "Всего за год:", "summa": ""}
+                                    {"txt": "Р’СЃРµРіРѕ Р·Р° РіРѕРґ:", "summa": ""}
                                 ]
                             }),
                             columns: [
@@ -343,7 +343,7 @@ Ext.define('Buh.view.kudir.Panel', {
                             },
                             {
                                 xtype: 'component',
-                                html: '<a class="link-darkgray" data-qtip="Изменить ставку">' + panel.taxStavka + ' (' + panel.taxModes[panel.taxMode] + ')' + '</a>',
+                                html: '<a class="link-darkgray" data-qtip="РР·РјРµРЅРёС‚СЊ СЃС‚Р°РІРєСѓ">' + panel.taxStavka + ' (' + panel.taxModes[panel.taxMode] + ')' + '</a>',
                                 id: 'lblTaxUsno',
                                 name: 'lbl-tax',
                                 cls: 'txt-grey',
@@ -391,18 +391,18 @@ Ext.define('Buh.view.kudir.Panel', {
             if (Ext.util.Cookies.get('kdrf' + tab) != _dummy) {
                 btnFilter.data = Ext.decode(Ext.util.Cookies.get('kdrf' + tab));
                 if (btnFilter.data != _dummy && btnFilter.data.count > 0) {
-                    btnFilter.setText("<i>" + btnFilter.data.count + "</i>Фильтр");
+                    btnFilter.setText("<i>" + btnFilter.data.count + "</i>Р¤РёР»СЊС‚СЂ");
                     btnFilter.setIcon("");
                     btnFilter.addCls('ico_number');
                 } else {
-                    btnFilter.setText("Фильтр");
+                    btnFilter.setText("Р¤РёР»СЊС‚СЂ");
                     btnFilter.setIcon('/img/filter-icon.svg');
                     btnFilter.removeCls('ico_number');
                 }
             } else {
                 btnFilter.data = {};
                 btnFilter.data.count = 0;
-                btnFilter.setText("Фильтр");
+                btnFilter.setText("Р¤РёР»СЊС‚СЂ");
                 btnFilter.setIcon('/img/filter-icon.svg');
                 btnFilter.removeCls('ico_number');
             }
