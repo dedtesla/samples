@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Реализация интеграции с внутренней поисковой машиной.
+ */
+
 include "auth.php";
 require_once("./php_func.php");
 
