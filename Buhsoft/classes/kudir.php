@@ -2,15 +2,12 @@
 
 namespace businessmodels;
 
-require_once __DIR__ . "/../../classes.php";
-require_once __DIR__ . "/../../../../classes/Book.php";
-
 /**
  * Class Kudir
- * Обрабатывает бизнес-логику Книги доходов и расходов-21.
+ * РћР±СЂР°Р±Р°С‚С‹РІР°РµС‚ Р±РёР·РЅРµСЃ-Р»РѕРіРёРєСѓ РљРЅРёРіРё РґРѕС…РѕРґРѕРІ Рё СЂР°СЃС…РѕРґРѕРІ-21.
  *
  *
- * Эпик GBS-6829, GBS-8590.
+ * Р­РїРёРє GBS-6829, GBS-8590.
  * 08.20
  */
 class kudir extends \businessmodels\repo
@@ -33,8 +30,8 @@ class kudir extends \businessmodels\repo
     }
 
     /**
-     * Метод buildTotals
-     * Подготовка данных для итоговых строк гридов разделов КУДиР.
+     * РњРµС‚РѕРґ buildTotals
+     * РџРѕРґРіРѕС‚РѕРІРєР° РґР°РЅРЅС‹С… РґР»СЏ РёС‚РѕРіРѕРІС‹С… СЃС‚СЂРѕРє РіСЂРёРґРѕРІ СЂР°Р·РґРµР»РѕРІ РљРЈР”РёР .
      *
      * @param ...$args
      *
@@ -45,7 +42,7 @@ class kudir extends \businessmodels\repo
         if (!$args) return [];
         $args = $args[0];
 
-        /** Раздел 1 */
+        /** Р Р°Р·РґРµР» 1 */
         if ($args['section'] === 1) {
             return [
                 'id' => '',
@@ -81,7 +78,7 @@ class kudir extends \businessmodels\repo
                 'tovar_text' => ''
             ];
         } else if ($args['section'] === 4) {
-            /** Раздел 4 */
+            /** Р Р°Р·РґРµР» 4 */
             return [
                 'id' => '',
                 'id_op' => '',
@@ -119,8 +116,8 @@ class kudir extends \businessmodels\repo
     }
 
     /**
-     * Метод getPosition
-     * Вычисление позиции записи в гриде КУДиР.
+     * РњРµС‚РѕРґ getPosition
+     * Р’С‹С‡РёСЃР»РµРЅРёРµ РїРѕР·РёС†РёРё Р·Р°РїРёСЃРё РІ РіСЂРёРґРµ РљРЈР”РёР .
      *
      * @param ...$args
      *
@@ -205,8 +202,8 @@ class kudir extends \businessmodels\repo
 
 
     /**
-     * Метод getTotalSumSection1.
-     * Возвращает итоговые суммы прихода и расхода по заданным условиям.
+     * РњРµС‚РѕРґ getTotalSumSection1.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РёС‚РѕРіРѕРІС‹Рµ СЃСѓРјРјС‹ РїСЂРёС…РѕРґР° Рё СЂР°СЃС…РѕРґР° РїРѕ Р·Р°РґР°РЅРЅС‹Рј СѓСЃР»РѕРІРёСЏРј.
      *
      * @param array ...$args
      */
@@ -311,8 +308,8 @@ class kudir extends \businessmodels\repo
     }
 
     /**
-     * Метод readSection1.
-     * Возвращает данные Раздела 1 Книги.
+     * РњРµС‚РѕРґ readSection1.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РґР°РЅРЅС‹Рµ Р Р°Р·РґРµР»Р° 1 РљРЅРёРіРё.
      *
      * @param array ...$args
      */
@@ -372,8 +369,8 @@ class kudir extends \businessmodels\repo
 
         $this->filter = count($_filter) ? " AND " . implode(" AND ", $_filter) : "";
 
-        $v1 = iconv('WINDOWS-1251', 'UTF-8', '<br>Оплачены ранее реализованные товары');
-        $v2 = iconv('WINDOWS-1251', 'UTF-8', '<br>Реализованы оплаченные товары');
+        $v1 = iconv('WINDOWS-1251', 'UTF-8', '<br>РћРїР»Р°С‡РµРЅС‹ СЂР°РЅРµРµ СЂРµР°Р»РёР·РѕРІР°РЅРЅС‹Рµ С‚РѕРІР°СЂС‹');
+        $v2 = iconv('WINDOWS-1251', 'UTF-8', '<br>Р РµР°Р»РёР·РѕРІР°РЅС‹ РѕРїР»Р°С‡РµРЅРЅС‹Рµ С‚РѕРІР°СЂС‹');
         $sql = "SELECT 
                 a.id, 
                 a.id_op, 
@@ -479,8 +476,8 @@ class kudir extends \businessmodels\repo
     }
 
     /**
-     * Метод readSection2.
-     * Возвращает данные Раздела 2 Книги.
+     * РњРµС‚РѕРґ readSection2.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РґР°РЅРЅС‹Рµ Р Р°Р·РґРµР»Р° 2 РљРЅРёРіРё.
      *
      * @param array ...$args
      */
@@ -533,9 +530,9 @@ class kudir extends \businessmodels\repo
         ]);
 
         /**
-         * Записи, добавленные вручную.
-         * Ручные записи физически живут в одном экземпляре, для фронта и печати
-         * выполняется их виртуальное тиражирование.
+         * Р—Р°РїРёСЃРё, РґРѕР±Р°РІР»РµРЅРЅС‹Рµ РІСЂСѓС‡РЅСѓСЋ.
+         * Р СѓС‡РЅС‹Рµ Р·Р°РїРёСЃРё С„РёР·РёС‡РµСЃРєРё Р¶РёРІСѓС‚ РІ РѕРґРЅРѕРј СЌРєР·РµРјРїР»СЏСЂРµ, РґР»СЏ С„СЂРѕРЅС‚Р° Рё РїРµС‡Р°С‚Рё
+         * РІС‹РїРѕР»РЅСЏРµС‚СЃСЏ РёС… РІРёСЂС‚СѓР°Р»СЊРЅРѕРµ С‚РёСЂР°Р¶РёСЂРѕРІР°РЅРёРµ.
          *
          * GBS-13946
          */
@@ -590,8 +587,8 @@ class kudir extends \businessmodels\repo
     }
 
     /**
-     * Метод readSection3.
-     * Возвращает данные Раздела 3 Книги.
+     * РњРµС‚РѕРґ readSection3.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РґР°РЅРЅС‹Рµ Р Р°Р·РґРµР»Р° 3 РљРЅРёРіРё.
      *
      * @param array ...$args
      */
@@ -661,8 +658,8 @@ class kudir extends \businessmodels\repo
     }
 
     /**
-     * Метод readSection4.
-     * Возвращает данные Раздела 4 Книги.
+     * РњРµС‚РѕРґ readSection4.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РґР°РЅРЅС‹Рµ Р Р°Р·РґРµР»Р° 4 РљРЅРёРіРё.
      *
      * @param array ...$args
      */
@@ -768,15 +765,15 @@ class kudir extends \businessmodels\repo
 
         if ($_data) {
             $qtSign = [
-                1 => 'За I квартал итого:',
-                2 => 'За II квартал итого:',
-                3 => 'За III квартал итого:',
-                4 => 'За IY квартал итого:'
+                1 => 'Р—Р° I РєРІР°СЂС‚Р°Р» РёС‚РѕРіРѕ:',
+                2 => 'Р—Р° II РєРІР°СЂС‚Р°Р» РёС‚РѕРіРѕ:',
+                3 => 'Р—Р° III РєРІР°СЂС‚Р°Р» РёС‚РѕРіРѕ:',
+                4 => 'Р—Р° IY РєРІР°СЂС‚Р°Р» РёС‚РѕРіРѕ:'
             ];
 
             $periodText = [
-                2 => 'За полугодие итого:',
-                3 => 'За 9 месяцев итого:'
+                2 => 'Р—Р° РїРѕР»СѓРіРѕРґРёРµ РёС‚РѕРіРѕ:',
+                3 => 'Р—Р° 9 РјРµСЃСЏС†РµРІ РёС‚РѕРіРѕ:'
             ];
 
             if ($period <= 4) {
@@ -899,8 +896,8 @@ class kudir extends \businessmodels\repo
     }
 
     /**
-     * Метод readSection5.
-     * Возвращает данные Раздела 5 Книги.
+     * РњРµС‚РѕРґ readSection5.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РґР°РЅРЅС‹Рµ Р Р°Р·РґРµР»Р° 5 РљРЅРёРіРё.
      *
      * @param array ...$args
      */
@@ -988,8 +985,8 @@ class kudir extends \businessmodels\repo
     }
 
     /**
-     * Метод readReference.
-     * Возвращает данные Справки к 1 Разделу Книги.
+     * РњРµС‚РѕРґ readReference.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РґР°РЅРЅС‹Рµ РЎРїСЂР°РІРєРё Рє 1 Р Р°Р·РґРµР»Сѓ РљРЅРёРіРё.
      *
      * @param array ...$args
      */
@@ -1063,7 +1060,7 @@ class kudir extends \businessmodels\repo
 
     /**
      * Method fillSummaryTable
-     * Заполнение таблицы суммарных значений КУДиР.
+     * Р—Р°РїРѕР»РЅРµРЅРёРµ С‚Р°Р±Р»РёС†С‹ СЃСѓРјРјР°СЂРЅС‹С… Р·РЅР°С‡РµРЅРёР№ РљРЈР”РёР .
      *
      * @param array $args
      */
@@ -1098,8 +1095,8 @@ class kudir extends \businessmodels\repo
     }
 
     /**
-     * Метод fillKudir.
-     * Выполняет заполнение Книги доходов и расходов.
+     * РњРµС‚РѕРґ fillKudir.
+     * Р’С‹РїРѕР»РЅСЏРµС‚ Р·Р°РїРѕР»РЅРµРЅРёРµ РљРЅРёРіРё РґРѕС…РѕРґРѕРІ Рё СЂР°СЃС…РѕРґРѕРІ.
      *
      */
     public function fillKudir(...$args)
@@ -1136,54 +1133,54 @@ class kudir extends \businessmodels\repo
 
     /**
      * Method fillSection1
-     * Автоматическое заполнение Раздела 1.
+     * РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ Р·Р°РїРѕР»РЅРµРЅРёРµ Р Р°Р·РґРµР»Р° 1.
      *
      * @param array $args
      */
     private function fillSection1($args)
     {
-        // Комиссионные сделки
+        // РљРѕРјРёСЃСЃРёРѕРЅРЅС‹Рµ СЃРґРµР»РєРё
         $this->fillComission($args);
 
-        // Сделки со взаимозачетом
+        // РЎРґРµР»РєРё СЃРѕ РІР·Р°РёРјРѕР·Р°С‡РµС‚РѕРј
         $this->fillNetting($args);
 
-        // Сделки с электронными платежами
+        // РЎРґРµР»РєРё СЃ СЌР»РµРєС‚СЂРѕРЅРЅС‹РјРё РїР»Р°С‚РµР¶Р°РјРё
         $this->fillElectronicPayment($args);
 
-        // Доходы с банковскими платежами, привязанные к сделкам
+        // Р”РѕС…РѕРґС‹ СЃ Р±Р°РЅРєРѕРІСЃРєРёРјРё РїР»Р°С‚РµР¶Р°РјРё, РїСЂРёРІСЏР·Р°РЅРЅС‹Рµ Рє СЃРґРµР»РєР°Рј
         $this->fillBankIncomeDeal($args);
 
-        // Доходы с поступлениями в кассу, привязанными к сделкам
+        // Р”РѕС…РѕРґС‹ СЃ РїРѕСЃС‚СѓРїР»РµРЅРёСЏРјРё РІ РєР°СЃСЃСѓ, РїСЂРёРІСЏР·Р°РЅРЅС‹РјРё Рє СЃРґРµР»РєР°Рј
         $this->fillCashIncomeDeal($args);
 
-        // Доходы с банковскими платежами, непривязанными к сделкам
+        // Р”РѕС…РѕРґС‹ СЃ Р±Р°РЅРєРѕРІСЃРєРёРјРё РїР»Р°С‚РµР¶Р°РјРё, РЅРµРїСЂРёРІСЏР·Р°РЅРЅС‹РјРё Рє СЃРґРµР»РєР°Рј
         $this->fillBankIncomeNoDeal($args);
 
-        // Доходы с поступлениями в кассу, непривязанными к сделкам
+        // Р”РѕС…РѕРґС‹ СЃ РїРѕСЃС‚СѓРїР»РµРЅРёСЏРјРё РІ РєР°СЃСЃСѓ, РЅРµРїСЂРёРІСЏР·Р°РЅРЅС‹РјРё Рє СЃРґРµР»РєР°Рј
         $this->fillCashIncomeNoDeal($args);
 
-        // ЖО
+        // Р–Рћ
         $this->fillManJo($args);
 
-        // Расходы из сделок
+        // Р Р°СЃС…РѕРґС‹ РёР· СЃРґРµР»РѕРє
         sav('rashods');
 
         $this->fillExpense($args);
 
-        // Расходы из корректировочных сделок
+        // Р Р°СЃС…РѕРґС‹ РёР· РєРѕСЂСЂРµРєС‚РёСЂРѕРІРѕС‡РЅС‹С… СЃРґРµР»РѕРє
         $this->fillExpenseSBCorrection($args);
 
-        // Расходы непривязанные банковские
+        // Р Р°СЃС…РѕРґС‹ РЅРµРїСЂРёРІСЏР·Р°РЅРЅС‹Рµ Р±Р°РЅРєРѕРІСЃРєРёРµ
         $this->fillExpenseBankNoDeal($args);
 
-        // Расходы непривязанные кассовые
+        // Р Р°СЃС…РѕРґС‹ РЅРµРїСЂРёРІСЏР·Р°РЅРЅС‹Рµ РєР°СЃСЃРѕРІС‹Рµ
         $this->fillExpenseCashNoDeal($args);
 
-        // Амортизация ОС
+        // РђРјРѕСЂС‚РёР·Р°С†РёСЏ РћРЎ
         $this->fillFAAmortization($args);
 
-        // Расходы - сделки перепродаж
+        // Р Р°СЃС…РѕРґС‹ - СЃРґРµР»РєРё РїРµСЂРµРїСЂРѕРґР°Р¶
         $textReport = $this->fillReSaleDeal($args);
 
         $this->fillSalary($args);
@@ -1191,11 +1188,11 @@ class kudir extends \businessmodels\repo
         return $textReport;
     }
 
-    /* Блок заполнения раздела 1 - Начало */
+    /* Р‘Р»РѕРє Р·Р°РїРѕР»РЅРµРЅРёСЏ СЂР°Р·РґРµР»Р° 1 - РќР°С‡Р°Р»Рѕ */
 
     /**
      * Method fillSalary
-     * Автоматическое заполнение Раздела 1 - Зарплата.
+     * РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ Р·Р°РїРѕР»РЅРµРЅРёРµ Р Р°Р·РґРµР»Р° 1 - Р—Р°СЂРїР»Р°С‚Р°.
      *
      * @param $args
      */
@@ -1227,7 +1224,7 @@ class kudir extends \businessmodels\repo
 
     /**
      * Method fillFAAmortization
-     * Автоматическое заполнение Раздела 1 - амортизация ОС.
+     * РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ Р·Р°РїРѕР»РЅРµРЅРёРµ Р Р°Р·РґРµР»Р° 1 - Р°РјРѕСЂС‚РёР·Р°С†РёСЏ РћРЎ.
      *
      * @param array $args
      */
@@ -1273,24 +1270,24 @@ class kudir extends \businessmodels\repo
 
     /**
      * Method fillReSaleDeal
-     * Автоматическое заполнение Раздела 1 - расходы из сделок перепродаж.
+     * РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ Р·Р°РїРѕР»РЅРµРЅРёРµ Р Р°Р·РґРµР»Р° 1 - СЂР°СЃС…РѕРґС‹ РёР· СЃРґРµР»РѕРє РїРµСЂРµРїСЂРѕРґР°Р¶.
      *
      *
      * @param array $args
      */
     private function fillReSaleDeal($args)
     {
-        // var $sum_buy_kv - Сумма покупок поквартально.
-        // var $sum_pay_kv - Сумма платежей поквартально.
-        // var $sum_seb_kv - Сумма себестоимости поквартально.
-        // var $sum_pay_buy - Сумма оплат покупок.
+        // var $sum_buy_kv - РЎСѓРјРјР° РїРѕРєСѓРїРѕРє РїРѕРєРІР°СЂС‚Р°Р»СЊРЅРѕ.
+        // var $sum_pay_kv - РЎСѓРјРјР° РїР»Р°С‚РµР¶РµР№ РїРѕРєРІР°СЂС‚Р°Р»СЊРЅРѕ.
+        // var $sum_seb_kv - РЎСѓРјРјР° СЃРµР±РµСЃС‚РѕРёРјРѕСЃС‚Рё РїРѕРєРІР°СЂС‚Р°Р»СЊРЅРѕ.
+        // var $sum_pay_buy - РЎСѓРјРјР° РѕРїР»Р°С‚ РїРѕРєСѓРїРѕРє.
         $sum_buy_kv = $sum_pay_kv = 0;
         $sum_seb_kv = $args['sum1'];
         $sum_pay_buy = $args['sum2'];
         $text_rep = " *!* =============" . chr(10);
 
-//        $sprav_text = iconv("UTF-8", "Windows-1251", 'Справка по расчету с/ст-ти товаров');
-        $sprav_text = 'Справка по расчету с/ст-ти товаров';
+//        $sprav_text = iconv("UTF-8", "Windows-1251", 'РЎРїСЂР°РІРєР° РїРѕ СЂР°СЃС‡РµС‚Сѓ СЃ/СЃС‚-С‚Рё С‚РѕРІР°СЂРѕРІ');
+        $sprav_text = 'РЎРїСЂР°РІРєР° РїРѕ СЂР°СЃС‡РµС‚Сѓ СЃ/СЃС‚-С‚Рё С‚РѕРІР°СЂРѕРІ';
 
         $year = strftime('%Y', strtotime($args['d_beg']));
         $kvb1 = $year . '-01-01';
@@ -1311,17 +1308,17 @@ class kudir extends \businessmodels\repo
                         FROM tmp_tr_sp_sod_user 
                         WHERE (id_analit2=5 AND id_gr!=14 AND id_gr!=6 AND (id_orig!=113 OR id_orig IS NULL)) AND UserId=:uid)";
 
-        // Точка начала отсчета времени выполнения.
+        // РўРѕС‡РєР° РЅР°С‡Р°Р»Р° РѕС‚СЃС‡РµС‚Р° РІСЂРµРјРµРЅРё РІС‹РїРѕР»РЅРµРЅРёСЏ.
         $start_time = microtime(true);
 
-        // Список ID контрагентов в сделках.
+        // РЎРїРёСЃРѕРє ID РєРѕРЅС‚СЂР°РіРµРЅС‚РѕРІ РІ СЃРґРµР»РєР°С….
         $data = $this->databaseOper->rowset($sql, [
             ['uid', $args['uid']]
         ]);
 
         if ($data) {
             foreach ($data as $datum) {
-                // Покупки за 1 квартал - начало
+                // РџРѕРєСѓРїРєРё Р·Р° 1 РєРІР°СЂС‚Р°Р» - РЅР°С‡Р°Р»Рѕ
                 $sql = "SELECT 
                             SUM(ifnull(b.summa, 0)) AS summa, 
                             SUM(ifnull(c.summa_pay, 0)) AS summa_pay  
@@ -1359,9 +1356,9 @@ class kudir extends \businessmodels\repo
                 ]);
 
                 $sum_buy_kv = isset($subDataBuy['summa']) ? $subDataBuy['summa'] : 0;
-                // Покупки за 1 квартал - окончание
+                // РџРѕРєСѓРїРєРё Р·Р° 1 РєРІР°СЂС‚Р°Р» - РѕРєРѕРЅС‡Р°РЅРёРµ
 
-                // Оплата 1 квартал - начало
+                // РћРїР»Р°С‚Р° 1 РєРІР°СЂС‚Р°Р» - РЅР°С‡Р°Р»Рѕ
                 $sql = "SELECT SUM(summav) AS summa 
                         FROM (
                             SELECT summav 
@@ -1405,7 +1402,7 @@ class kudir extends \businessmodels\repo
 
                 $sum_pay_kv = $subDataSell['summa'] + $subDataBuy['summa_pay'];
                 $sum_pay_buy += to_num(min($sum_pay_kv, $sum_buy_kv));
-                // Оплата 1 квартал - окончание
+                // РћРїР»Р°С‚Р° 1 РєРІР°СЂС‚Р°Р» - РѕРєРѕРЅС‡Р°РЅРёРµ
 
                 $text_rep .= " *!* 1 kv org " . $datum['org_id'] . chr(10);
                 $text_rep .= " *!* buy " . $sum_buy_kv . chr(10);
@@ -1415,9 +1412,9 @@ class kudir extends \businessmodels\repo
             }
         }
 
-        // Определение себестоимости
+        // РћРїСЂРµРґРµР»РµРЅРёРµ СЃРµР±РµСЃС‚РѕРёРјРѕСЃС‚Рё
         $sql = "SELECT id FROM tmp_tr_sp_sod_user WHERE (id_orig=38) AND UserId=:uid";
-        // Содержание операции
+        // РЎРѕРґРµСЂР¶Р°РЅРёРµ РѕРїРµСЂР°С†РёРё
         $row = $this->databaseOper->row($sql, [
             ['uid', $args['uid']]
         ]);
@@ -1449,7 +1446,7 @@ class kudir extends \businessmodels\repo
                                 a.typ_oper=2 AND 
                                 date(dat_ship) BETWEEN :dt1 AND :dt2";
 
-        // Себестоимость 1 квартал
+        // РЎРµР±РµСЃС‚РѕРёРјРѕСЃС‚СЊ 1 РєРІР°СЂС‚Р°Р»
         $r_seb = $this->databaseOper->rowset($sql, [
             ['uid', $args['uid']],
             ['dt1', $dt1],
@@ -1535,7 +1532,7 @@ class kudir extends \businessmodels\repo
 
             $sum_seb_kv = to_num($sum_seb_kv);
 
-            // Себестоимость за 1 квартал
+            // РЎРµР±РµСЃС‚РѕРёРјРѕСЃС‚СЊ Р·Р° 1 РєРІР°СЂС‚Р°Р»
             sav(' 1 kv seb sum ' . $sum_seb_kv);
             sav(' 1 kv seb sumpay ' . $sum_pay_buy);
             $sumkv1 = to_num(min(to_num($sum_seb_kv), to_num($sum_pay_buy)));
@@ -1563,7 +1560,7 @@ class kudir extends \businessmodels\repo
                 }
             }
 
-            // 2 квартал
+            // 2 РєРІР°СЂС‚Р°Р»
             $text_rep .= " *!* =============" . chr(10);
 
             $sum_buy_kv = $sum_pay_kv = 0;
@@ -1670,7 +1667,7 @@ class kudir extends \businessmodels\repo
             $text_rep .= "  == total = " . $sum_pay_buy . chr(10);
             $text_rep .= "  =============" . chr(10);
 
-            /*определение себестоимости*/
+            /*РѕРїСЂРµРґРµР»РµРЅРёРµ СЃРµР±РµСЃС‚РѕРёРјРѕСЃС‚Рё*/
 
             $sql = "SELECT id FROM tmp_tr_sp_sod_user WHERE (id_orig=38) AND UserId=:uid";
             $row = $this->databaseOper->row($sql, [
@@ -1822,7 +1819,7 @@ class kudir extends \businessmodels\repo
             }
         }
 
-        // 3 квартал
+        // 3 РєРІР°СЂС‚Р°Р»
         $sum_buy_kv = $sum_pay_kv = 0;
         $sum_seb_kv = $args['sum1'];
         $sum_pay_buy = $args['sum2'];
@@ -1916,7 +1913,7 @@ class kudir extends \businessmodels\repo
             $sum_pay_buy += to_num(min($sum_pay_kv, $sum_buy_kv));
         }
 
-        /*определение себестоимости*/
+        /*РѕРїСЂРµРґРµР»РµРЅРёРµ СЃРµР±РµСЃС‚РѕРёРјРѕСЃС‚Рё*/
         $sql = "SELECT id FROM tmp_tr_sp_sod_user WHERE (id_orig=38) AND UserId=:uid";
         $row = $this->databaseOper->row($sql, [
             ['uid', $args['uid']]
@@ -2061,7 +2058,7 @@ class kudir extends \businessmodels\repo
             }
         }
 
-        // 4 квартал
+        // 4 РєРІР°СЂС‚Р°Р»
         $sum_buy_kv = $sum_pay_kv = 0;
         $sum_seb_kv = $args['sum1'];
         $sum_pay_buy = $args['sum2'];
@@ -2156,7 +2153,7 @@ class kudir extends \businessmodels\repo
             $sum_pay_buy += to_num(min($sum_pay_kv, $sum_buy_kv));
         }
 
-        /*определение себестоимости*/
+        /*РѕРїСЂРµРґРµР»РµРЅРёРµ СЃРµР±РµСЃС‚РѕРёРјРѕСЃС‚Рё*/
         $sql = "SELECT id FROM tmp_tr_sp_sod_user WHERE (id_orig=38) AND UserId=:uid";
         $row = $this->databaseOper->row($sql, [
             ['uid', $args['uid']]
@@ -2311,7 +2308,7 @@ class kudir extends \businessmodels\repo
 
     /**
      * Method fillExpenseCashNoDeal
-     * Автоматическое заполнение Раздела 1 - непривязанные к сделкам кассовые расходы.
+     * РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ Р·Р°РїРѕР»РЅРµРЅРёРµ Р Р°Р·РґРµР»Р° 1 - РЅРµРїСЂРёРІСЏР·Р°РЅРЅС‹Рµ Рє СЃРґРµР»РєР°Рј РєР°СЃСЃРѕРІС‹Рµ СЂР°СЃС…РѕРґС‹.
      *
      * @param array $args
      */
@@ -2354,7 +2351,7 @@ class kudir extends \businessmodels\repo
                         'userid' => $args['uid'],
                         'date' => $dt,
                         'n_doc' => $datum['n_doc'],
-                        'short_name' => to_utf('ПП'),
+                        'short_name' => to_utf('РџРџ'),
                         'id_sod' => $datum['id_j_dr'],
                         'summa' => (float)$datum['summa'],
                         'summa_orig' => (float)$datum['summa'],
@@ -2373,7 +2370,7 @@ class kudir extends \businessmodels\repo
 
     /**
      * Method fillExpenseBankNoDeal
-     * Автоматическое заполнение Раздела 1 - непривязанные к сделкам банковские расходы.
+     * РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ Р·Р°РїРѕР»РЅРµРЅРёРµ Р Р°Р·РґРµР»Р° 1 - РЅРµРїСЂРёРІСЏР·Р°РЅРЅС‹Рµ Рє СЃРґРµР»РєР°Рј Р±Р°РЅРєРѕРІСЃРєРёРµ СЂР°СЃС…РѕРґС‹.
      *
      * @param array $args
      */
@@ -2415,7 +2412,7 @@ class kudir extends \businessmodels\repo
                         'userid' => $args['uid'],
                         'date' => $dt,
                         'n_doc' => $datum['n_doc'],
-                        'short_name' => to_utf('ПП'),
+                        'short_name' => to_utf('РџРџ'),
                         'id_sod' => $datum['id_j_dr'],
                         'summa' => (float)$datum['summa'],
                         'summa_orig' => (float)$datum['summa'],
@@ -2434,7 +2431,7 @@ class kudir extends \businessmodels\repo
 
     /**
      * Method fillExpenseSBCorrection
-     * Автоматическое заполнение Раздела 1 - расходы корректированных сделок.
+     * РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ Р·Р°РїРѕР»РЅРµРЅРёРµ Р Р°Р·РґРµР»Р° 1 - СЂР°СЃС…РѕРґС‹ РєРѕСЂСЂРµРєС‚РёСЂРѕРІР°РЅРЅС‹С… СЃРґРµР»РѕРє.
      *
      * @param array $args
      */
@@ -2541,7 +2538,7 @@ class kudir extends \businessmodels\repo
 
     /**
      * Method calcExpense
-     * Подготовка суммы и даты расходной сделки.
+     * РџРѕРґРіРѕС‚РѕРІРєР° СЃСѓРјРјС‹ Рё РґР°С‚С‹ СЂР°СЃС…РѕРґРЅРѕР№ СЃРґРµР»РєРё.
      * @param array $args
      * @see Kudir::fillExpense()
      *
@@ -2613,10 +2610,10 @@ class kudir extends \businessmodels\repo
 
         $this->_log['Expense'][$args['sbid']]['data1'] = $data;
 
-        if ($data['nazn'] == "Возврат аванса покупателю") {
+        if ($data['nazn'] == "Р’РѕР·РІСЂР°С‚ Р°РІР°РЅСЃР° РїРѕРєСѓРїР°С‚РµР»СЋ") {
             $summa = (float)$data['summav'];
         } else {
-            // id_oper=9 исключили, чтобы все взаимозачеты формировались в одном месте. иначе идет дублирование
+            // id_oper=9 РёСЃРєР»СЋС‡РёР»Рё, С‡С‚РѕР±С‹ РІСЃРµ РІР·Р°РёРјРѕР·Р°С‡РµС‚С‹ С„РѕСЂРјРёСЂРѕРІР°Р»РёСЃСЊ РІ РѕРґРЅРѕРј РјРµСЃС‚Рµ. РёРЅР°С‡Рµ РёРґРµС‚ РґСѓР±Р»РёСЂРѕРІР°РЅРёРµ
             $sql = "SELECT 
                         SUM(summav) AS summa, 
                         MAX(dat) AS dat, 
@@ -2683,7 +2680,7 @@ class kudir extends \businessmodels\repo
 
     /**
      * Method fillExpense
-     * Автоматическое заполнение Раздела 1 - расходы.
+     * РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ Р·Р°РїРѕР»РЅРµРЅРёРµ Р Р°Р·РґРµР»Р° 1 - СЂР°СЃС…РѕРґС‹.
      *
      * @param array $args
      */
@@ -2763,7 +2760,7 @@ class kudir extends \businessmodels\repo
 
     /**
      * Method fillManJo
-     * Автоматическое заполнение Раздела 1 из Журнала операций.
+     * РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ Р·Р°РїРѕР»РЅРµРЅРёРµ Р Р°Р·РґРµР»Р° 1 РёР· Р–СѓСЂРЅР°Р»Р° РѕРїРµСЂР°С†РёР№.
      *
      * @param array $args
      */
@@ -2815,13 +2812,13 @@ class kudir extends \businessmodels\repo
 
     /**
      * Method fillComission
-     * Автоматическое заполнение Раздела 1 в части сделок комиссии.
+     * РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ Р·Р°РїРѕР»РЅРµРЅРёРµ Р Р°Р·РґРµР»Р° 1 РІ С‡Р°СЃС‚Рё СЃРґРµР»РѕРє РєРѕРјРёСЃСЃРёРё.
      *
      * @param array $args
      */
     private function fillComission($args)
     {
-        // Сделки с автоматическим расчетом вознаграждения
+        // РЎРґРµР»РєРё СЃ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРёРј СЂР°СЃС‡РµС‚РѕРј РІРѕР·РЅР°РіСЂР°Р¶РґРµРЅРёСЏ
         $_arr = $this->databaseOper->row("SELECT * FROM pu2014.tr_sp_sod_user WHERE userid=:uid AND id_orig=:origid",
             [
                 ['uid', $args['uid']],
@@ -2871,7 +2868,7 @@ class kudir extends \businessmodels\repo
             }
         }
 
-        // Сделки с ручным расчетом вознаграждения
+        // РЎРґРµР»РєРё СЃ СЂСѓС‡РЅС‹Рј СЂР°СЃС‡РµС‚РѕРј РІРѕР·РЅР°РіСЂР°Р¶РґРµРЅРёСЏ
         $sql = "SELECT 
                     id, 
                     org_id, 
@@ -2916,7 +2913,7 @@ class kudir extends \businessmodels\repo
 
     /**
      * Method fillNetting
-     * Автоматическое заполнение Раздела 1 в части сделок со взаимозачетом.
+     * РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ Р·Р°РїРѕР»РЅРµРЅРёРµ Р Р°Р·РґРµР»Р° 1 РІ С‡Р°СЃС‚Рё СЃРґРµР»РѕРє СЃРѕ РІР·Р°РёРјРѕР·Р°С‡РµС‚РѕРј.
      *
      * @param array $args
      */
@@ -2952,7 +2949,7 @@ class kudir extends \businessmodels\repo
                     'userid' => $args['uid'],
                     'date' => strftime('%Y-%m-$d', strtotime($datum['dat'])),
                     'n_doc' => $datum['n_doc'],
-                    'short_name' => to_utf('ПП'),
+                    'short_name' => to_utf('РџРџ'),
                     'id_sod' => $datum['dr'],
                     'summa' => (float)$datum['summa'],
                     'summa_orig' => (float)$datum['summa'],
@@ -2968,7 +2965,7 @@ class kudir extends \businessmodels\repo
 
     /**
      * Method fillElectronicPayment
-     * Автоматическое заполнение Раздела 1 в части сделок с электронными платежами.
+     * РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ Р·Р°РїРѕР»РЅРµРЅРёРµ Р Р°Р·РґРµР»Р° 1 РІ С‡Р°СЃС‚Рё СЃРґРµР»РѕРє СЃ СЌР»РµРєС‚СЂРѕРЅРЅС‹РјРё РїР»Р°С‚РµР¶Р°РјРё.
      *
      * @param array $args
      */
@@ -3002,7 +2999,7 @@ class kudir extends \businessmodels\repo
                     'userid' => $args['uid'],
                     'date' => strftime('%Y-%m-$d', strtotime($datum['dat'])),
                     'n_doc' => $datum['n_doc'],
-                    'short_name' => to_utf('ПП'),
+                    'short_name' => to_utf('РџРџ'),
                     'id_sod' => $datum['dr'],
                     'summa' => (float)$datum['summa'],
                     'summa_orig' => (float)$datum['summa'],
@@ -3017,8 +3014,8 @@ class kudir extends \businessmodels\repo
 
     /**
      * Method fillBankIncomeDeal
-     * Автоматическое заполнение Раздела 1 в части доходов, поступивших через банк и
-     * привязанных к сделкам.
+     * РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ Р·Р°РїРѕР»РЅРµРЅРёРµ Р Р°Р·РґРµР»Р° 1 РІ С‡Р°СЃС‚Рё РґРѕС…РѕРґРѕРІ, РїРѕСЃС‚СѓРїРёРІС€РёС… С‡РµСЂРµР· Р±Р°РЅРє Рё
+     * РїСЂРёРІСЏР·Р°РЅРЅС‹С… Рє СЃРґРµР»РєР°Рј.
      *
      * @param array $args
      */
@@ -3055,7 +3052,7 @@ class kudir extends \businessmodels\repo
                     'userid' => $args['uid'],
                     'date' => strftime('%Y-%m-$d', strtotime($datum['dat'])),
                     'n_doc' => $datum['n_doc'],
-                    'short_name' => to_utf('ПП'),
+                    'short_name' => to_utf('РџРџ'),
                     'id_sod' => $datum['dr'],
                     'summa' => (float)$sum,
                     'summa_orig' => (float)$sum,
@@ -3070,8 +3067,8 @@ class kudir extends \businessmodels\repo
 
     /**
      * Method fillCashIncomeDeal
-     * Автоматическое заполнение Раздела 1 в части доходов, поступивших через кассу и
-     * привязанных к сделкам.
+     * РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ Р·Р°РїРѕР»РЅРµРЅРёРµ Р Р°Р·РґРµР»Р° 1 РІ С‡Р°СЃС‚Рё РґРѕС…РѕРґРѕРІ, РїРѕСЃС‚СѓРїРёРІС€РёС… С‡РµСЂРµР· РєР°СЃСЃСѓ Рё
+     * РїСЂРёРІСЏР·Р°РЅРЅС‹С… Рє СЃРґРµР»РєР°Рј.
      *
      * @param array $args
      */
@@ -3110,7 +3107,7 @@ class kudir extends \businessmodels\repo
                     'userid' => $args['uid'],
                     'date' => strftime('%Y-%m-$d', strtotime($datum['dat'])),
                     'n_doc' => $datum['n_doc'],
-                    'short_name' => to_utf('ПКО'),
+                    'short_name' => to_utf('РџРљРћ'),
                     'id_sod' => $datum['dr'],
                     'summa' => (float)$sum,
                     'summa_orig' => (float)$sum,
@@ -3125,7 +3122,7 @@ class kudir extends \businessmodels\repo
 
     /**
      * Method fillBankIncomeNoDeal
-     * Автоматическое заполнение Раздела 1 в части непривязанных к сделкам доходов, поступивших через банк.
+     * РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ Р·Р°РїРѕР»РЅРµРЅРёРµ Р Р°Р·РґРµР»Р° 1 РІ С‡Р°СЃС‚Рё РЅРµРїСЂРёРІСЏР·Р°РЅРЅС‹С… Рє СЃРґРµР»РєР°Рј РґРѕС…РѕРґРѕРІ, РїРѕСЃС‚СѓРїРёРІС€РёС… С‡РµСЂРµР· Р±Р°РЅРє.
      *
      * @param array $args
      */
@@ -3167,7 +3164,7 @@ class kudir extends \businessmodels\repo
                     'userid' => $args['uid'],
                     'date' => strftime('%Y-%m-$d', strtotime($datum['dat'])),
                     'n_doc' => $datum['n_doc'],
-                    'short_name' => to_utf('ПП'),
+                    'short_name' => to_utf('РџРџ'),
                     'id_sod' => $datum['id_j_dr'],
                     'summa' => (float)$sum,
                     'summa_orig' => (float)$sum,
@@ -3183,7 +3180,7 @@ class kudir extends \businessmodels\repo
 
     /**
      * Method fillCashIncomeNoDeal
-     * Автоматическое заполнение Раздела 1 в части непривязанных к сделкам доходов, поступивших через кассу.
+     * РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ Р·Р°РїРѕР»РЅРµРЅРёРµ Р Р°Р·РґРµР»Р° 1 РІ С‡Р°СЃС‚Рё РЅРµРїСЂРёРІСЏР·Р°РЅРЅС‹С… Рє СЃРґРµР»РєР°Рј РґРѕС…РѕРґРѕРІ, РїРѕСЃС‚СѓРїРёРІС€РёС… С‡РµСЂРµР· РєР°СЃСЃСѓ.
      *
      * @param array $args
      */
@@ -3224,7 +3221,7 @@ class kudir extends \businessmodels\repo
                     'userid' => $args['uid'],
                     'date' => strftime('%Y-%m-$d', strtotime($datum['dat'])),
                     'n_doc' => $datum['n_doc'],
-                    'short_name' => to_utf('ПКО'),
+                    'short_name' => to_utf('РџРљРћ'),
                     'id_sod' => $datum['id_j_dr'],
                     'summa' => (float)$sum,
                     'summa_orig' => (float)$sum,
@@ -3238,13 +3235,13 @@ class kudir extends \businessmodels\repo
 
     }
 
-    /* Блок заполнения раздела 1 - Конец */
+    /* Р‘Р»РѕРє Р·Р°РїРѕР»РЅРµРЅРёСЏ СЂР°Р·РґРµР»Р° 1 - РљРѕРЅРµС† */
 
-    /* Блок заполнения раздела 2 - Начало */
+    /* Р‘Р»РѕРє Р·Р°РїРѕР»РЅРµРЅРёСЏ СЂР°Р·РґРµР»Р° 2 - РќР°С‡Р°Р»Рѕ */
 
     /**
-     * Метод fillSection2.
-     * Заполнение 2 раздела КуДиР.
+     * РњРµС‚РѕРґ fillSection2.
+     * Р—Р°РїРѕР»РЅРµРЅРёРµ 2 СЂР°Р·РґРµР»Р° РљСѓР”РёР .
      *
      * @param $args
      */
@@ -3323,13 +3320,13 @@ class kudir extends \businessmodels\repo
 
     }
 
-    /* Блок заполнения раздела 2 - Конец */
+    /* Р‘Р»РѕРє Р·Р°РїРѕР»РЅРµРЅРёСЏ СЂР°Р·РґРµР»Р° 2 - РљРѕРЅРµС† */
 
-    /* Блок заполнения раздела 4 - Начало */
+    /* Р‘Р»РѕРє Р·Р°РїРѕР»РЅРµРЅРёСЏ СЂР°Р·РґРµР»Р° 4 - РќР°С‡Р°Р»Рѕ */
 
     /**
-     * Метод fillSection4.
-     * Заполнение 4 раздела КуДиР.
+     * РњРµС‚РѕРґ fillSection4.
+     * Р—Р°РїРѕР»РЅРµРЅРёРµ 4 СЂР°Р·РґРµР»Р° РљСѓР”РёР .
      *
      * @param $args
      */
@@ -3337,13 +3334,13 @@ class kudir extends \businessmodels\repo
     {
     }
 
-    /* Блок заполнения раздела 4 - Конец */
+    /* Р‘Р»РѕРє Р·Р°РїРѕР»РЅРµРЅРёСЏ СЂР°Р·РґРµР»Р° 4 - РљРѕРЅРµС† */
 
-    /* Блок заполнения раздела 5 - Начало */
+    /* Р‘Р»РѕРє Р·Р°РїРѕР»РЅРµРЅРёСЏ СЂР°Р·РґРµР»Р° 5 - РќР°С‡Р°Р»Рѕ */
 
     /**
-     * Метод fillSection5.
-     * Заполнение 5 раздела КуДиР.
+     * РњРµС‚РѕРґ fillSection5.
+     * Р—Р°РїРѕР»РЅРµРЅРёРµ 5 СЂР°Р·РґРµР»Р° РљСѓР”РёР .
      *
      * @param $args
      */
@@ -3359,7 +3356,7 @@ class kudir extends \businessmodels\repo
                 FROM tr_bank_pay 
                 WHERE userid=:uid 
                     AND dat BETWEEN :d_beg AND :d_end 
-                    AND id_j_dr IN (SELECT id FROM pu2014.tr_sp_sod_user WHERE userid=:uid AND name LIKE '%Торговый сбор%') 
+                    AND id_j_dr IN (SELECT id FROM pu2014.tr_sp_sod_user WHERE userid=:uid AND name LIKE '%РўРѕСЂРіРѕРІС‹Р№ СЃР±РѕСЂ%') 
                 ORDER BY dat";
 
         $data = $this->databaseOper->rowset($sql, [
@@ -3381,7 +3378,7 @@ class kudir extends \businessmodels\repo
                     'userid' => $args['uid'],
                     'date' => $datum['df'],
                     'n_doc' => $datum['n_doc'],
-                    'short_name' => to_utf('ПП'),
+                    'short_name' => to_utf('РџРџ'),
                     'id_sod' => $datum['id_sod'],
                     'summa' => (float)$datum['summa'],
                     'summa_orig' => (float)$datum['summa'],
@@ -3393,12 +3390,12 @@ class kudir extends \businessmodels\repo
         }
     }
 
-    /* Блок заполнения раздела 5 - Конец */
+    /* Р‘Р»РѕРє Р·Р°РїРѕР»РЅРµРЅРёСЏ СЂР°Р·РґРµР»Р° 5 - РљРѕРЅРµС† */
 
     /**
-     * Метод setLayout.
-     * Расширение базового метода.
-     * Выставляет метаданные таблицы.
+     * РњРµС‚РѕРґ setLayout.
+     * Р Р°СЃС€РёСЂРµРЅРёРµ Р±Р°Р·РѕРІРѕРіРѕ РјРµС‚РѕРґР°.
+     * Р’С‹СЃС‚Р°РІР»СЏРµС‚ РјРµС‚Р°РґР°РЅРЅС‹Рµ С‚Р°Р±Р»РёС†С‹.
      *
      * @param array $layout
      * @return Kudir|void
@@ -3414,22 +3411,22 @@ class kudir extends \businessmodels\repo
     }
 
     /**
-     * Метод getPaymentDocs.
-     * Автономный метод для получения структуры, содержащей данные хранилища app/store/kudir/PaymentDocs.js:
-     * 1. ID документа (pu2014.tr_sp_doc)
-     * 2. Полное наименование документа
-     * 3. Краткое наименование документа
+     * РњРµС‚РѕРґ getPaymentDocs.
+     * РђРІС‚РѕРЅРѕРјРЅС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ СЃС‚СЂСѓРєС‚СѓСЂС‹, СЃРѕРґРµСЂР¶Р°С‰РµР№ РґР°РЅРЅС‹Рµ С…СЂР°РЅРёР»РёС‰Р° app/store/kudir/PaymentDocs.js:
+     * 1. ID РґРѕРєСѓРјРµРЅС‚Р° (pu2014.tr_sp_doc)
+     * 2. РџРѕР»РЅРѕРµ РЅР°РёРјРµРЅРѕРІР°РЅРёРµ РґРѕРєСѓРјРµРЅС‚Р°
+     * 3. РљСЂР°С‚РєРѕРµ РЅР°РёРјРµРЅРѕРІР°РЅРёРµ РґРѕРєСѓРјРµРЅС‚Р°
      *
-     * Ограничение выборки - кассовые (parent_id=7) и банковские (parent_id=9) документы.
+     * РћРіСЂР°РЅРёС‡РµРЅРёРµ РІС‹Р±РѕСЂРєРё - РєР°СЃСЃРѕРІС‹Рµ (parent_id=7) Рё Р±Р°РЅРєРѕРІСЃРєРёРµ (parent_id=9) РґРѕРєСѓРјРµРЅС‚С‹.
      *
-     * @return array|void Массив документов или пустой массив.
+     * @return array|void РњР°СЃСЃРёРІ РґРѕРєСѓРјРµРЅС‚РѕРІ РёР»Рё РїСѓСЃС‚РѕР№ РјР°СЃСЃРёРІ.
      */
     public function getPaymentDocs()
     {
         $this->databaseOper->utf8();
 
         $data = $this->databaseOper->rowset("
-            SELECT 0 AS id, '" . iconv("Windows-1251", "UTF-8", 'Без документа') . "' AS name, '' AS short_name
+            SELECT 0 AS id, '" . iconv("Windows-1251", "UTF-8", 'Р‘РµР· РґРѕРєСѓРјРµРЅС‚Р°') . "' AS name, '' AS short_name
             UNION ALL
             SELECT * 
             FROM (SELECT id, name, shortnm AS short_name
@@ -3477,11 +3474,11 @@ class kudir extends \businessmodels\repo
                     ['details', $args['details']]
                 ];
 
-                save_log(58, 1, 'Добавление записи в КуДиР.');
+                save_log(58, 1, 'Р”РѕР±Р°РІР»РµРЅРёРµ Р·Р°РїРёСЃРё РІ РљСѓР”РёР .');
                 $ret = createScript($this->tableName, 1, $values, "");
                 $id = $ret['new_id'];
                 sav_log('tr_kn_dr', $id, 3, 'new tr_kn_dr', $args['doc_date']);
-                save_log(58, 2, 'Запись добавлена в КуДиР.');
+                save_log(58, 2, 'Р—Р°РїРёСЃСЊ РґРѕР±Р°РІР»РµРЅР° РІ РљСѓР”РёР .');
             } else {
                 $values = [
                     ['userid', $args['uid']],
@@ -3502,7 +3499,7 @@ class kudir extends \businessmodels\repo
                     ['details', $args['details']]
                 ];
 
-                save_log(59, 1, 'Обновление записи в КуДиР.');
+                save_log(59, 1, 'РћР±РЅРѕРІР»РµРЅРёРµ Р·Р°РїРёСЃРё РІ РљСѓР”РёР .');
                 $conditions = [
                     ['userid', $args['uid']],
                     ['id', $id]
@@ -3510,7 +3507,7 @@ class kudir extends \businessmodels\repo
 
                 $ret = createScript($this->tableName, 2, $values, $conditions);
                 sav_log('tr_kn_dr', $id, 3, 'edit tr_kn_dr', $args['doc_date']);
-                save_log(59, 2, 'Запись обновлена в КуДиР.');
+                save_log(59, 2, 'Р—Р°РїРёСЃСЊ РѕР±РЅРѕРІР»РµРЅР° РІ РљСѓР”РёР .');
 
                 if ($args['tab_id'] == 1 && !empty($args['source']) && !empty($args['source_id'])) {
                     if ($args['source'] == 1000009) {
@@ -3537,7 +3534,7 @@ class kudir extends \businessmodels\repo
 
                                 $ret = createScript($this->tableName, 2, $values, $conditions);
                                 sav_log('tr_kn_dr', $id, 3, 'edit tr_kn_dr', $args['doc_date']);
-                                save_log(59, 2, 'Запись обновлена в КуДиР.');
+                                save_log(59, 2, 'Р—Р°РїРёСЃСЊ РѕР±РЅРѕРІР»РµРЅР° РІ РљСѓР”РёР .');
                             }
                         }
                     }
@@ -3551,8 +3548,8 @@ class kudir extends \businessmodels\repo
     }
 
     /**
-     * Метод rollBackRecord
-     * Полный откат исправлений указанной записи.
+     * РњРµС‚РѕРґ rollBackRecord
+     * РџРѕР»РЅС‹Р№ РѕС‚РєР°С‚ РёСЃРїСЂР°РІР»РµРЅРёР№ СѓРєР°Р·Р°РЅРЅРѕР№ Р·Р°РїРёСЃРё.
      *
      * @param array ...$args
      * @return array|false
@@ -3586,7 +3583,7 @@ class kudir extends \businessmodels\repo
                     ['at_period', $data['at_period_orig']]
                 ];
 
-                save_log(59, 1, 'Обновление записи в КуДиР.');
+                save_log(59, 1, 'РћР±РЅРѕРІР»РµРЅРёРµ Р·Р°РїРёСЃРё РІ РљСѓР”РёР .');
                 $conditions = [
                     ['userid', $args['uid']],
                     ['id', $id]
@@ -3594,7 +3591,7 @@ class kudir extends \businessmodels\repo
 
                 $ret = createScript($this->tableName, 2, $values, $conditions);
                 sav_log('tr_kn_dr', $id, 3, 'edit tr_kn_dr', $args['doc_date']);
-                save_log(59, 2, 'Запись обновлена в КуДиР.');
+                save_log(59, 2, 'Р—Р°РїРёСЃСЊ РѕР±РЅРѕРІР»РµРЅР° РІ РљСѓР”РёР .');
 
                 if ($args['tab_id'] == 1 && !empty($args['source']) && !empty($args['source_id'])) {
                     if ($args['source'] == 1000009) {
@@ -3621,7 +3618,7 @@ class kudir extends \businessmodels\repo
                                     ['is_dirty', $args['is_dirty']]
                                 ];
 
-                                save_log(59, 1, 'Обновление записи в КуДиР.');
+                                save_log(59, 1, 'РћР±РЅРѕРІР»РµРЅРёРµ Р·Р°РїРёСЃРё РІ РљСѓР”РёР .');
                                 $conditions = [
                                     ['userid', $args['uid']],
                                     ['id', $datum['id']]
@@ -3629,7 +3626,7 @@ class kudir extends \businessmodels\repo
 
                                 $ret = createScript($this->tableName, 2, $values, $conditions);
                                 sav_log('tr_kn_dr', $id, 3, 'edit tr_kn_dr', $args['doc_date']);
-                                save_log(59, 2, 'Запись обновлена в КуДиР.');
+                                save_log(59, 2, 'Р—Р°РїРёСЃСЊ РѕР±РЅРѕРІР»РµРЅР° РІ РљСѓР”РёР .');
                             }
                         }
                     }
@@ -3654,7 +3651,7 @@ class kudir extends \businessmodels\repo
 
             $this->databaseOper->utf8();
 
-            save_log(59, 1, 'Обновление записи в КуДиР.');
+            save_log(59, 1, 'РћР±РЅРѕРІР»РµРЅРёРµ Р·Р°РїРёСЃРё РІ РљСѓР”РёР .');
             $conditions = [
                 ['userid', $args['uid']],
                 ['id', $id]
@@ -3662,7 +3659,7 @@ class kudir extends \businessmodels\repo
 
             $ret = createScript($this->tableName, 2, $values, $conditions);
             sav_log('tr_kn_dr', $id, 3, 'edit tr_kn_dr', $args['doc_date']);
-            save_log(59, 2, 'Запись обновлена в КуДиР.');
+            save_log(59, 2, 'Р—Р°РїРёСЃСЊ РѕР±РЅРѕРІР»РµРЅР° РІ РљСѓР”РёР .');
 
             if ($args['tab_id'] == 1 && !empty($args['source']) && !empty($args['source_id'])) {
                 if ($args['source'] == 1000009) {
@@ -3683,7 +3680,7 @@ class kudir extends \businessmodels\repo
                         ];
 
                         foreach ($data as $datum) {
-                            save_log(59, 1, 'Обновление записи в КуДиР.');
+                            save_log(59, 1, 'РћР±РЅРѕРІР»РµРЅРёРµ Р·Р°РїРёСЃРё РІ РљСѓР”РёР .');
                             $conditions = [
                                 ['userid', $args['uid']],
                                 ['id', $datum['id']]
@@ -3691,7 +3688,7 @@ class kudir extends \businessmodels\repo
 
                             $ret = createScript($this->tableName, 2, $values, $conditions);
                             sav_log('tr_kn_dr', $id, 3, 'edit tr_kn_dr', $args['doc_date']);
-                            save_log(59, 2, 'Запись обновлена в КуДиР.');
+                            save_log(59, 2, 'Р—Р°РїРёСЃСЊ РѕР±РЅРѕРІР»РµРЅР° РІ РљСѓР”РёР .');
                         }
                     }
                 }
@@ -3704,9 +3701,9 @@ class kudir extends \businessmodels\repo
     }
 
     /**
-     * Метод processSumManual
-     * Обработка данных Справки и Раздела 3.
-     * Эти разделы КУДиР расчетные с большой долей данных, вводимых вручную.
+     * РњРµС‚РѕРґ processSumManual
+     * РћР±СЂР°Р±РѕС‚РєР° РґР°РЅРЅС‹С… РЎРїСЂР°РІРєРё Рё Р Р°Р·РґРµР»Р° 3.
+     * Р­С‚Рё СЂР°Р·РґРµР»С‹ РљРЈР”РёР  СЂР°СЃС‡РµС‚РЅС‹Рµ СЃ Р±РѕР»СЊС€РѕР№ РґРѕР»РµР№ РґР°РЅРЅС‹С…, РІРІРѕРґРёРјС‹С… РІСЂСѓС‡РЅСѓСЋ.
      *
      * @param mixed ...$args
      * @return array|false
@@ -3784,7 +3781,7 @@ class kudir extends \businessmodels\repo
                             ['userid', $args['uid']],
                             ['id', $datum['id']]
                         ];
-                        save_log(59, 1, 'Обновление записи в КуДиР.');
+                        save_log(59, 1, 'РћР±РЅРѕРІР»РµРЅРёРµ Р·Р°РїРёСЃРё РІ РљСѓР”РёР .');
                         $ret = createScript($this->tableName, 2, $values, $conditions);
                     }
                 }
@@ -3804,7 +3801,7 @@ class kudir extends \businessmodels\repo
                             ['userid', $args['uid']],
                             ['id', $datum['id']]
                         ];
-                        save_log(59, 1, 'Обновление записи в КуДиР.');
+                        save_log(59, 1, 'РћР±РЅРѕРІР»РµРЅРёРµ Р·Р°РїРёСЃРё РІ РљСѓР”РёР .');
                         $ret = createScript($this->tableName, 2, $values, $conditions);
                     }
                 }
@@ -3813,12 +3810,12 @@ class kudir extends \businessmodels\repo
                     ['userid', $args['uid']],
                     ['id', $id]
                 ];
-                save_log(59, 1, 'Обновление записи в КуДиР.');
+                save_log(59, 1, 'РћР±РЅРѕРІР»РµРЅРёРµ Р·Р°РїРёСЃРё РІ РљСѓР”РёР .');
                 $ret = createScript($this->tableName, 2, $values, $conditions);
             }
 
 //            sav_log('tr_kn_dr', $id, 3, 'edit tr_kn_dr', $args['doc_date']);
-            save_log(59, 2, 'Запись обновлена в КуДиР.');
+            save_log(59, 2, 'Р—Р°РїРёСЃСЊ РѕР±РЅРѕРІР»РµРЅР° РІ РљСѓР”РёР .');
             return ['id' => $id];
         }
 
@@ -3935,7 +3932,7 @@ class kudir extends \businessmodels\repo
 
             $this->databaseOper->utf8();
 
-            save_log(59, 1, 'Копирование записи в КуДиР.');
+            save_log(59, 1, 'РљРѕРїРёСЂРѕРІР°РЅРёРµ Р·Р°РїРёСЃРё РІ РљСѓР”РёР .');
             $this->databaseOper->exec($sql, $conditions);
             $id = $this->databaseOper->lastInsertId();
 
@@ -3998,7 +3995,7 @@ class kudir extends \businessmodels\repo
                 $this->databaseOper->exec($sql, $conditions);
             }
 
-            save_log(59, 2, 'Запись обновлена в КуДиР.');
+            save_log(59, 2, 'Р—Р°РїРёСЃСЊ РѕР±РЅРѕРІР»РµРЅР° РІ РљСѓР”РёР .');
             return ['id' => $id];
         }
 
@@ -4006,36 +4003,36 @@ class kudir extends \businessmodels\repo
     }
 
     /**
-     * Метод paymentDocsMap.
-     * Вспомогательный метод. Содержит фиксированный набор пар наименований документов (полное - краткое).
-     * Ключ массива - "Полное наименование документа".
-     * Возвращает найденную по ключу пару или пустую строку, если документ не найден.
+     * РњРµС‚РѕРґ paymentDocsMap.
+     * Р’СЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹Р№ РјРµС‚РѕРґ. РЎРѕРґРµСЂР¶РёС‚ С„РёРєСЃРёСЂРѕРІР°РЅРЅС‹Р№ РЅР°Р±РѕСЂ РїР°СЂ РЅР°РёРјРµРЅРѕРІР°РЅРёР№ РґРѕРєСѓРјРµРЅС‚РѕРІ (РїРѕР»РЅРѕРµ - РєСЂР°С‚РєРѕРµ).
+     * РљР»СЋС‡ РјР°СЃСЃРёРІР° - "РџРѕР»РЅРѕРµ РЅР°РёРјРµРЅРѕРІР°РЅРёРµ РґРѕРєСѓРјРµРЅС‚Р°".
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РЅР°Р№РґРµРЅРЅСѓСЋ РїРѕ РєР»СЋС‡Сѓ РїР°СЂСѓ РёР»Рё РїСѓСЃС‚СѓСЋ СЃС‚СЂРѕРєСѓ, РµСЃР»Рё РґРѕРєСѓРјРµРЅС‚ РЅРµ РЅР°Р№РґРµРЅ.
      *
-     * @param $name Полное наименование документа
-     * @return string|void  Массив, пара значений "Полное наименование документа" - "Краткое наименование локумента"
-     *                      или пустая строка.
+     * @param $name РџРѕР»РЅРѕРµ РЅР°РёРјРµРЅРѕРІР°РЅРёРµ РґРѕРєСѓРјРµРЅС‚Р°
+     * @return string|void  РњР°СЃСЃРёРІ, РїР°СЂР° Р·РЅР°С‡РµРЅРёР№ "РџРѕР»РЅРѕРµ РЅР°РёРјРµРЅРѕРІР°РЅРёРµ РґРѕРєСѓРјРµРЅС‚Р°" - "РљСЂР°С‚РєРѕРµ РЅР°РёРјРµРЅРѕРІР°РЅРёРµ Р»РѕРєСѓРјРµРЅС‚Р°"
+     *                      РёР»Рё РїСѓСЃС‚Р°СЏ СЃС‚СЂРѕРєР°.
      */
     private function paymentDocsMap($name)
     {
         if (!$name) return;
 
         $docsMap = [
-            'Приходный кассовый ордер' => 'ПКО',
-            'Расходный кассовый ордер' => 'РКО',
-            'Платежное поручение' => 'ПП',
-            'Платежное требование' => 'ПТ'
+            'РџСЂРёС…РѕРґРЅС‹Р№ РєР°СЃСЃРѕРІС‹Р№ РѕСЂРґРµСЂ' => 'РџРљРћ',
+            'Р Р°СЃС…РѕРґРЅС‹Р№ РєР°СЃСЃРѕРІС‹Р№ РѕСЂРґРµСЂ' => 'Р РљРћ',
+            'РџР»Р°С‚РµР¶РЅРѕРµ РїРѕСЂСѓС‡РµРЅРёРµ' => 'РџРџ',
+            'РџР»Р°С‚РµР¶РЅРѕРµ С‚СЂРµР±РѕРІР°РЅРёРµ' => 'РџРў'
         ];
 
         return isset($docsMap[$name]) ? $docsMap[$name] : '';
     }
 
     /**
-     * Метод PaymentDocsNamesShortened.
-     * Поставщик данных для метода Kudir->getPaymentDocs() (classes/businessmodels/kudir.php).
-     * Возвращает структуру документов, упорядоченную в части кратких наименований.
+     * РњРµС‚РѕРґ PaymentDocsNamesShortened.
+     * РџРѕСЃС‚Р°РІС‰РёРє РґР°РЅРЅС‹С… РґР»СЏ РјРµС‚РѕРґР° Kudir->getPaymentDocs() (classes/businessmodels/kudir.php).
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃС‚СЂСѓРєС‚СѓСЂСѓ РґРѕРєСѓРјРµРЅС‚РѕРІ, СѓРїРѕСЂСЏРґРѕС‡РµРЅРЅСѓСЋ РІ С‡Р°СЃС‚Рё РєСЂР°С‚РєРёС… РЅР°РёРјРµРЅРѕРІР°РЅРёР№.
      *
-     * @param array $docs Массив документов из справочника `pu2014.tr_sp_doc`.
-     * @return array|void Массив документов или пустой массив.
+     * @param array $docs РњР°СЃСЃРёРІ РґРѕРєСѓРјРµРЅС‚РѕРІ РёР· СЃРїСЂР°РІРѕС‡РЅРёРєР° `pu2014.tr_sp_doc`.
+     * @return array|void РњР°СЃСЃРёРІ РґРѕРєСѓРјРµРЅС‚РѕРІ РёР»Рё РїСѓСЃС‚РѕР№ РјР°СЃСЃРёРІ.
      */
     public function PaymentDocsNamesShortened($docs = [])
     {
@@ -4139,7 +4136,7 @@ class kudir extends \businessmodels\repo
             $this->databaseOper->utf8();
 
             if (!$id) {
-                save_log(58, 1, 'Добавление записи в КуДиР.');
+                save_log(58, 1, 'Р”РѕР±Р°РІР»РµРЅРёРµ Р·Р°РїРёСЃРё РІ РљСѓР”РёР .');
 
                 $values = [
                     ['userid', $args['uid']],
@@ -4198,9 +4195,9 @@ class kudir extends \businessmodels\repo
                 createScript('tr_kndr_os_nma', 1, $auxValues, "");
 
                 sav_log('tr_kn_dr', $id, 3, 'new tr_kn_dr', date('d.m.Y'));
-                save_log(58, 2, 'Запись добавлена в КуДиР.');
+                save_log(58, 2, 'Р—Р°РїРёСЃСЊ РґРѕР±Р°РІР»РµРЅР° РІ РљСѓР”РёР .');
             } else {
-                save_log(59, 1, 'Обновление записи в КуДиР.');
+                save_log(59, 1, 'РћР±РЅРѕРІР»РµРЅРёРµ Р·Р°РїРёСЃРё РІ РљСѓР”РёР .');
                 $conditions = [
                     ['userid', $args['uid']],
                     ['id', $id]
@@ -4292,7 +4289,7 @@ class kudir extends \businessmodels\repo
                 createScript('tr_kndr_os_nma', 2, $auxValues, $conditions);
 
                 sav_log('tr_kn_dr', $id, 3, 'edit tr_kn_dr', date('d.m.Y'));
-                save_log(59, 2, 'Запись обновлена в КуДиР.');
+                save_log(59, 2, 'Р—Р°РїРёСЃСЊ РѕР±РЅРѕРІР»РµРЅР° РІ РљСѓР”РёР .');
             }
 
             return ['id' => $id];
@@ -4302,8 +4299,8 @@ class kudir extends \businessmodels\repo
     }
 
     /**
-     * Метод getFillPreset
-     * Подготовка данных для настройки автозаполнения КУДиР.
+     * РњРµС‚РѕРґ getFillPreset
+     * РџРѕРґРіРѕС‚РѕРІРєР° РґР°РЅРЅС‹С… РґР»СЏ РЅР°СЃС‚СЂРѕР№РєРё Р°РІС‚РѕР·Р°РїРѕР»РЅРµРЅРёСЏ РљРЈР”РёР .
      *
      * @param array ...$args
      */
@@ -4317,7 +4314,7 @@ class kudir extends \businessmodels\repo
 
         $this->databaseOper->utf8();
 
-        // Исключенные автозаписи 1 раздела.
+        // РСЃРєР»СЋС‡РµРЅРЅС‹Рµ Р°РІС‚РѕР·Р°РїРёСЃРё 1 СЂР°Р·РґРµР»Р°.
         $sql = "SELECT COUNT(*) AS cnt FROM tr_kn_dr WHERE userid=:uid AND tab_id=1 AND auto=2 AND iskl=1 AND date BETWEEN :d_beg AND :d_end";
         $_ = $this->databaseOper->row($sql, [
             ['uid', $args['uid']],
@@ -4327,7 +4324,7 @@ class kudir extends \businessmodels\repo
 
         $data['excl_section1'] = $_['cnt'];
 
-        // Исправленные автозаписи 1 раздела.
+        // РСЃРїСЂР°РІР»РµРЅРЅС‹Рµ Р°РІС‚РѕР·Р°РїРёСЃРё 1 СЂР°Р·РґРµР»Р°.
         $sql = "SELECT COUNT(*) AS cnt FROM tr_kn_dr WHERE userid=:uid AND tab_id=1 AND auto=2 AND is_dirty=1 AND date BETWEEN :d_beg AND :d_end";
         $_ = $this->databaseOper->row($sql, [
             ['uid', $args['uid']],
@@ -4337,7 +4334,7 @@ class kudir extends \businessmodels\repo
 
         $data['dirty_section1'] = $_['cnt'];
 
-        // Записи 1 раздела, добавленные вручную.
+        // Р—Р°РїРёСЃРё 1 СЂР°Р·РґРµР»Р°, РґРѕР±Р°РІР»РµРЅРЅС‹Рµ РІСЂСѓС‡РЅСѓСЋ.
         $sql = "SELECT COUNT(*) AS cnt FROM tr_kn_dr WHERE userid=:uid AND auto=0 AND tab_id=1 AND date BETWEEN :d_beg AND :d_end";
         $_ = $this->databaseOper->row($sql, [
             ['uid', $args['uid']],
@@ -4347,9 +4344,9 @@ class kudir extends \businessmodels\repo
 
         $data['manual_section1'] = $_['cnt'];
 
-        /** Доходы и расходы. */
+        /** Р”РѕС…РѕРґС‹ Рё СЂР°СЃС…РѕРґС‹. */
         if ($args['tax_mode'] == 0) {
-            // Все исключенные автозаписи.
+            // Р’СЃРµ РёСЃРєР»СЋС‡РµРЅРЅС‹Рµ Р°РІС‚РѕР·Р°РїРёСЃРё.
             $sql = "SELECT COUNT(*) AS cnt FROM tr_kn_dr WHERE userid=:uid AND tab_id IN (1,2) AND auto=2 AND iskl=1 AND date BETWEEN :d_beg AND :d_end";
             $_ = $this->databaseOper->row($sql, [
                 ['uid', $args['uid']],
@@ -4359,7 +4356,7 @@ class kudir extends \businessmodels\repo
 
             $data['excl_all'] = $_['cnt'];
 
-            // Исключенные автозаписи 2 раздела.
+            // РСЃРєР»СЋС‡РµРЅРЅС‹Рµ Р°РІС‚РѕР·Р°РїРёСЃРё 2 СЂР°Р·РґРµР»Р°.
             $sql = "SELECT COUNT(*) AS cnt FROM tr_kn_dr WHERE userid=:uid AND tab_id=2 AND auto=2 AND iskl=1 AND date BETWEEN :d_beg AND :d_end";
             $_ = $this->databaseOper->row($sql, [
                 ['uid', $args['uid']],
@@ -4369,7 +4366,7 @@ class kudir extends \businessmodels\repo
 
             $data['excl_section2'] = $_['cnt'];
 
-            // Все исправленные автозаписи.
+            // Р’СЃРµ РёСЃРїСЂР°РІР»РµРЅРЅС‹Рµ Р°РІС‚РѕР·Р°РїРёСЃРё.
             $sql = "SELECT COUNT(*) AS cnt FROM tr_kn_dr WHERE userid=:uid AND tab_id IN (1,2) AND auto=2 AND is_dirty=1 AND date BETWEEN :d_beg AND :d_end";
             $_ = $this->databaseOper->row($sql, [
                 ['uid', $args['uid']],
@@ -4379,7 +4376,7 @@ class kudir extends \businessmodels\repo
 
             $data['dirty_all'] = $_['cnt'];
 
-            // Исправленные автозаписи 2 раздела.
+            // РСЃРїСЂР°РІР»РµРЅРЅС‹Рµ Р°РІС‚РѕР·Р°РїРёСЃРё 2 СЂР°Р·РґРµР»Р°.
             $sql = "SELECT COUNT(*) AS cnt FROM tr_kn_dr WHERE userid=:uid AND tab_id=2 AND auto=2 AND is_dirty=1 AND date BETWEEN :d_beg AND :d_end";
             $_ = $this->databaseOper->row($sql, [
                 ['uid', $args['uid']],
@@ -4389,7 +4386,7 @@ class kudir extends \businessmodels\repo
 
             $data['dirty_section2'] = $_['cnt'];
 
-            // Все записи, добавленные вручную.
+            // Р’СЃРµ Р·Р°РїРёСЃРё, РґРѕР±Р°РІР»РµРЅРЅС‹Рµ РІСЂСѓС‡РЅСѓСЋ.
             $sql = "SELECT COUNT(*) AS cnt FROM tr_kn_dr WHERE userid=:uid AND auto=0 AND tab_id IN (1,2) AND date BETWEEN :d_beg AND :d_end";
             $_ = $this->databaseOper->row($sql, [
                 ['uid', $args['uid']],
@@ -4399,7 +4396,7 @@ class kudir extends \businessmodels\repo
 
             $data['manual_all'] = $_['cnt'];
 
-            // Записи 2 раздела, добавленные вручную.
+            // Р—Р°РїРёСЃРё 2 СЂР°Р·РґРµР»Р°, РґРѕР±Р°РІР»РµРЅРЅС‹Рµ РІСЂСѓС‡РЅСѓСЋ.
             $sql = "SELECT COUNT(*) AS cnt FROM tr_kn_dr WHERE userid=:uid AND auto=0 AND tab_id=2 AND date BETWEEN :d_beg AND :d_end";
             $_ = $this->databaseOper->row($sql, [
                 ['uid', $args['uid']],
@@ -4410,8 +4407,8 @@ class kudir extends \businessmodels\repo
             $data['manual_section2'] = $_['cnt'];
 
         } else {
-            /** Доходы */
-            // Все исключенные автозаписи.
+            /** Р”РѕС…РѕРґС‹ */
+            // Р’СЃРµ РёСЃРєР»СЋС‡РµРЅРЅС‹Рµ Р°РІС‚РѕР·Р°РїРёСЃРё.
             $sql = "SELECT COUNT(*) AS cnt FROM tr_kn_dr WHERE userid=:uid AND tab_id IN (1,4,5) AND auto=2 AND iskl=1 AND date BETWEEN :d_beg AND :d_end";
             $_ = $this->databaseOper->row($sql, [
                 ['uid', $args['uid']],
@@ -4421,7 +4418,7 @@ class kudir extends \businessmodels\repo
 
             $data['excl_all'] = $_['cnt'];
 
-            // Исключенные автозаписи 4 раздела.
+            // РСЃРєР»СЋС‡РµРЅРЅС‹Рµ Р°РІС‚РѕР·Р°РїРёСЃРё 4 СЂР°Р·РґРµР»Р°.
             $sql = "SELECT COUNT(*) AS cnt FROM tr_kn_dr WHERE userid=:uid AND tab_id=4 AND auto=2 AND iskl=1 AND date BETWEEN :d_beg AND :d_end";
             $_ = $this->databaseOper->row($sql, [
                 ['uid', $args['uid']],
@@ -4431,7 +4428,7 @@ class kudir extends \businessmodels\repo
 
             $data['excl_section4'] = $_['cnt'];
 
-            // Исключенные автозаписи 5 раздела.
+            // РСЃРєР»СЋС‡РµРЅРЅС‹Рµ Р°РІС‚РѕР·Р°РїРёСЃРё 5 СЂР°Р·РґРµР»Р°.
             $sql = "SELECT COUNT(*) AS cnt FROM tr_kn_dr WHERE userid=:uid AND tab_id=5 AND auto=2 AND iskl=1 AND date BETWEEN :d_beg AND :d_end";
             $_ = $this->databaseOper->row($sql, [
                 ['uid', $args['uid']],
@@ -4441,7 +4438,7 @@ class kudir extends \businessmodels\repo
 
             $data['excl_section5'] = $_['cnt'];
 
-            // Все исправленные автозаписи.
+            // Р’СЃРµ РёСЃРїСЂР°РІР»РµРЅРЅС‹Рµ Р°РІС‚РѕР·Р°РїРёСЃРё.
             $sql = "SELECT COUNT(*) AS cnt FROM tr_kn_dr WHERE userid=:uid AND tab_id IN (1,4,5) AND auto=2 AND is_dirty=1 AND date BETWEEN :d_beg AND :d_end";
             $_ = $this->databaseOper->row($sql, [
                 ['uid', $args['uid']],
@@ -4451,7 +4448,7 @@ class kudir extends \businessmodels\repo
 
             $data['dirty_all'] = $_['cnt'];
 
-            // Исправленные автозаписи 4 раздела.
+            // РСЃРїСЂР°РІР»РµРЅРЅС‹Рµ Р°РІС‚РѕР·Р°РїРёСЃРё 4 СЂР°Р·РґРµР»Р°.
             $sql = "SELECT COUNT(*) AS cnt FROM tr_kn_dr WHERE userid=:uid AND tab_id=4 AND auto=2 AND is_dirty=1 AND date BETWEEN :d_beg AND :d_end";
             $_ = $this->databaseOper->row($sql, [
                 ['uid', $args['uid']],
@@ -4461,7 +4458,7 @@ class kudir extends \businessmodels\repo
 
             $data['dirty_section4'] = $_['cnt'];
 
-            // Исправленные автозаписи 5 раздела.
+            // РСЃРїСЂР°РІР»РµРЅРЅС‹Рµ Р°РІС‚РѕР·Р°РїРёСЃРё 5 СЂР°Р·РґРµР»Р°.
             $sql = "SELECT COUNT(*) AS cnt FROM tr_kn_dr WHERE userid=:uid AND tab_id=5 AND auto=2 AND is_dirty=1 AND date BETWEEN :d_beg AND :d_end";
             $_ = $this->databaseOper->row($sql, [
                 ['uid', $args['uid']],
@@ -4471,7 +4468,7 @@ class kudir extends \businessmodels\repo
 
             $data['dirty_section5'] = $_['cnt'];
 
-            // Все записи, добавленные вручную.
+            // Р’СЃРµ Р·Р°РїРёСЃРё, РґРѕР±Р°РІР»РµРЅРЅС‹Рµ РІСЂСѓС‡РЅСѓСЋ.
             $sql = "SELECT COUNT(*) AS cnt FROM tr_kn_dr WHERE userid=:uid AND auto=0 AND tab_id IN (1,4,5) AND date BETWEEN :d_beg AND :d_end";
             $_ = $this->databaseOper->row($sql, [
                 ['uid', $args['uid']],
@@ -4481,7 +4478,7 @@ class kudir extends \businessmodels\repo
 
             $data['manual_all'] = $_['cnt'];
 
-            // Записи 4 раздела, добавленные вручную.
+            // Р—Р°РїРёСЃРё 4 СЂР°Р·РґРµР»Р°, РґРѕР±Р°РІР»РµРЅРЅС‹Рµ РІСЂСѓС‡РЅСѓСЋ.
             $sql = "SELECT COUNT(*) AS cnt FROM tr_kn_dr WHERE userid=:uid AND auto=0 AND tab_id=4 AND date BETWEEN :d_beg AND :d_end";
             $_ = $this->databaseOper->row($sql, [
                 ['uid', $args['uid']],
@@ -4491,7 +4488,7 @@ class kudir extends \businessmodels\repo
 
             $data['manual_section4'] = $_['cnt'];
 
-            // Записи 5 раздела, добавленные вручную.
+            // Р—Р°РїРёСЃРё 5 СЂР°Р·РґРµР»Р°, РґРѕР±Р°РІР»РµРЅРЅС‹Рµ РІСЂСѓС‡РЅСѓСЋ.
             $sql = "SELECT COUNT(*) AS cnt FROM tr_kn_dr WHERE userid=:uid AND auto=0 AND tab_id=5 AND date BETWEEN :d_beg AND :d_end";
             $_ = $this->databaseOper->row($sql, [
                 ['uid', $args['uid']],

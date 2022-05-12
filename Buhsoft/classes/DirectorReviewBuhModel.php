@@ -7,7 +7,7 @@ namespace controller\model;
  *
  *
  * @package controller\model
- * @author А.Шендеров (ashenderov@action-press.ru)
+ * @author Рђ.РЁРµРЅРґРµСЂРѕРІ (ashenderov@action-press.ru)
  * @date 11/13/2020
  */
 class DirectorReviewBuhModel
@@ -28,11 +28,11 @@ class DirectorReviewBuhModel
 
     /**
      * Method readKudir
-     * Выполняет сборку массива данных для формирования узла <КнигаУчетаДоходовИРасходов> директорских проверок.
+     * Р’С‹РїРѕР»РЅСЏРµС‚ СЃР±РѕСЂРєСѓ РјР°СЃСЃРёРІР° РґР°РЅРЅС‹С… РґР»СЏ С„РѕСЂРјРёСЂРѕРІР°РЅРёСЏ СѓР·Р»Р° <РљРЅРёРіР°РЈС‡РµС‚Р°Р”РѕС…РѕРґРѕРІРР Р°СЃС…РѕРґРѕРІ> РґРёСЂРµРєС‚РѕСЂСЃРєРёС… РїСЂРѕРІРµСЂРѕРє.
      *
-     * @param int $id ID пользователя
-     * @param array $period Массив данных, определяющих бухгалтерский период
-     * @return mixed array|bool Массив данных или false
+     * @param int $id ID РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+     * @param array $period РњР°СЃСЃРёРІ РґР°РЅРЅС‹С…, РѕРїСЂРµРґРµР»СЏСЋС‰РёС… Р±СѓС…РіР°Р»С‚РµСЂСЃРєРёР№ РїРµСЂРёРѕРґ
+     * @return mixed array|bool РњР°СЃСЃРёРІ РґР°РЅРЅС‹С… РёР»Рё false
      */
     public function readKudir($uid)
     {
@@ -95,13 +95,13 @@ class DirectorReviewBuhModel
 
     /**
      * Method readReports
-     * Возвращает данные для узла директорских проверок <Отчеты>.
-     * Входной массив $taxData содержит данные:
-     * 1. 'typ_nalog' = 1 (признак юрлица)
-     * 2. 'obj_nal' = 0 (Доходы минус расходы) или 1 (Доходы).
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РґР°РЅРЅС‹Рµ РґР»СЏ СѓР·Р»Р° РґРёСЂРµРєС‚РѕСЂСЃРєРёС… РїСЂРѕРІРµСЂРѕРє <РћС‚С‡РµС‚С‹>.
+     * Р’С…РѕРґРЅРѕР№ РјР°СЃСЃРёРІ $taxData СЃРѕРґРµСЂР¶РёС‚ РґР°РЅРЅС‹Рµ:
+     * 1. 'typ_nalog' = 1 (РїСЂРёР·РЅР°Рє СЋСЂР»РёС†Р°)
+     * 2. 'obj_nal' = 0 (Р”РѕС…РѕРґС‹ РјРёРЅСѓСЃ СЂР°СЃС…РѕРґС‹) РёР»Рё 1 (Р”РѕС…РѕРґС‹).
      *
-     * @param $uid ID пользователя
-     * @param array $taxData Тип и объект налогообложения УСН
+     * @param $uid ID РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+     * @param array $taxData РўРёРї Рё РѕР±СЉРµРєС‚ РЅР°Р»РѕРіРѕРѕР±Р»РѕР¶РµРЅРёСЏ РЈРЎРќ
      * @return array
      * @see directorReviewCtrl::output()
      *
@@ -129,10 +129,10 @@ class DirectorReviewBuhModel
 
     /**
      * Method readReportsUsn
-     * Возвращает данные атрибутов "НаименованиеОтчет="УСН"" для узла директорских проверок <Отчеты>.
-     * Входной массив $taxData содержит данные:
-     * 1. 'typ_nalog' = 1 (признак юрлица)
-     * 2. 'obj_nal' = 0 (Доходы минус расходы) или 1 (Доходы).
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РґР°РЅРЅС‹Рµ Р°С‚СЂРёР±СѓС‚РѕРІ "РќР°РёРјРµРЅРѕРІР°РЅРёРµРћС‚С‡РµС‚="РЈРЎРќ"" РґР»СЏ СѓР·Р»Р° РґРёСЂРµРєС‚РѕСЂСЃРєРёС… РїСЂРѕРІРµСЂРѕРє <РћС‚С‡РµС‚С‹>.
+     * Р’С…РѕРґРЅРѕР№ РјР°СЃСЃРёРІ $taxData СЃРѕРґРµСЂР¶РёС‚ РґР°РЅРЅС‹Рµ:
+     * 1. 'typ_nalog' = 1 (РїСЂРёР·РЅР°Рє СЋСЂР»РёС†Р°)
+     * 2. 'obj_nal' = 0 (Р”РѕС…РѕРґС‹ РјРёРЅСѓСЃ СЂР°СЃС…РѕРґС‹) РёР»Рё 1 (Р”РѕС…РѕРґС‹).
      *
      * @param $uid
      * @param $taxData
@@ -150,73 +150,73 @@ class DirectorReviewBuhModel
         $quarter = $this->_buhPeriod['year'] != date('Y') ? 4 : $this->_buhPeriod['quarter'];
 
         if ($taxData['obj_nal'] == 0) {
-            // Доходы минус расходы
+            // Р”РѕС…РѕРґС‹ РјРёРЅСѓСЃ СЂР°СЃС…РѕРґС‹
 
-            // Заглушка для УСН - Доходы
+            // Р—Р°РіР»СѓС€РєР° РґР»СЏ РЈРЎРќ - Р”РѕС…РѕРґС‹
             /*            $data = [
-                            ['name' => 'УСН', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'П002110013303', 'sum' => '0.00'],
-                            ['name' => 'УСН', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'П002120013303', 'sum' => '0.00']
+                            ['name' => 'РЈРЎРќ', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'Рџ002110013303', 'sum' => '0.00'],
+                            ['name' => 'РЈРЎРќ', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'Рџ002120013303', 'sum' => '0.00']
                         ];*/
 
-            // Код строки П000220021303 (сумма полученных доходов нарастающим итогом)
+            // РљРѕРґ СЃС‚СЂРѕРєРё Рџ000220021303 (СЃСѓРјРјР° РїРѕР»СѓС‡РµРЅРЅС‹С… РґРѕС…РѕРґРѕРІ РЅР°СЂР°СЃС‚Р°СЋС‰РёРј РёС‚РѕРіРѕРј)
             $data[] = $this->databaseOper->row("
                         SELECT 
-                            'УСН' AS name,
+                            'РЈРЎРќ' AS name,
                             '{$this->_buhPeriod['reportDate']}' AS date, 
-                            'П000220021303' AS lineCode, 
+                            'Рџ000220021303' AS lineCode, 
                             p1_dohod AS sum
                         FROM {$tableName} 
                         WHERE userid=:uid AND kvartal=:quarter",
                 [['uid', $uid], ['quarter', $quarter]]);
 
-            // Код строки П000220027303 (сумма исчисленного налога (авансового платежа по налогу))
+            // РљРѕРґ СЃС‚СЂРѕРєРё Рџ000220027303 (СЃСѓРјРјР° РёСЃС‡РёСЃР»РµРЅРЅРѕРіРѕ РЅР°Р»РѕРіР° (Р°РІР°РЅСЃРѕРІРѕРіРѕ РїР»Р°С‚РµР¶Р° РїРѕ РЅР°Р»РѕРіСѓ))
             $data[] = $this->databaseOper->row("
                         SELECT 
-                            'УСН' AS name,
+                            'РЈРЎРќ' AS name,
                             '{$this->_buhPeriod['reportDate']}' AS date, 
-                            'П000220027303' AS lineCode, 
+                            'Рџ000220027303' AS lineCode, 
                             p1_nalog_to_pay AS sum
                         FROM {$tableName} 
                         WHERE userid=:uid AND kvartal=:quarter",
                 [['uid', $uid], ['quarter', $quarter]]);
 
-            // Код строки П000220028003 (сумма исчисленного минимального налога за налоговый период (ставка налога 1%)))
+            // РљРѕРґ СЃС‚СЂРѕРєРё Рџ000220028003 (СЃСѓРјРјР° РёСЃС‡РёСЃР»РµРЅРЅРѕРіРѕ РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ РЅР°Р»РѕРіР° Р·Р° РЅР°Р»РѕРіРѕРІС‹Р№ РїРµСЂРёРѕРґ (СЃС‚Р°РІРєР° РЅР°Р»РѕРіР° 1%)))
             $data[] = $this->databaseOper->row("
                         SELECT 
-                            'УСН' AS name,
+                            'РЈРЎРќ' AS name,
                             '{$this->_buhPeriod['reportDate']}' AS date, 
-                            'П000220028003' AS lineCode, 
+                            'Рџ000220028003' AS lineCode, 
                             p1_summa_min_nalog AS sum
                         FROM {$tableName} 
                         WHERE userid=:uid AND kvartal=:quarter",
                 [['uid', $uid], ['quarter', $quarter]]);
         } else {
-            // Доходы
+            // Р”РѕС…РѕРґС‹
 
-            // Заглушка для УСН - Доходы минус расходы
+            // Р—Р°РіР»СѓС€РєР° РґР»СЏ РЈРЎРќ - Р”РѕС…РѕРґС‹ РјРёРЅСѓСЃ СЂР°СЃС…РѕРґС‹
             /*            $data = [
-                            ['name' => 'УСН', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'П000220021303', 'sum' => '0.00'],
-                            ['name' => 'УСН', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'П000220027303', 'sum' => '0.00'],
-                            ['name' => 'УСН', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'П000220028003', 'sum' => '0.00']
+                            ['name' => 'РЈРЎРќ', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'Рџ000220021303', 'sum' => '0.00'],
+                            ['name' => 'РЈРЎРќ', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'Рџ000220027303', 'sum' => '0.00'],
+                            ['name' => 'РЈРЎРќ', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'Рџ000220028003', 'sum' => '0.00']
                         ];*/
 
-            // Код строки П002110013303 (сумма исчисленного налога (авансового платежа по налогу))
+            // РљРѕРґ СЃС‚СЂРѕРєРё Рџ002110013303 (СЃСѓРјРјР° РёСЃС‡РёСЃР»РµРЅРЅРѕРіРѕ РЅР°Р»РѕРіР° (Р°РІР°РЅСЃРѕРІРѕРіРѕ РїР»Р°С‚РµР¶Р° РїРѕ РЅР°Р»РѕРіСѓ))
             $data[] = $this->databaseOper->row("
                         SELECT 
-                            'УСН' AS name,
+                            'РЈРЎРќ' AS name,
                             '{$this->_buhPeriod['reportDate']}' AS date, 
-                            'П002110013303' AS lineCode, 
+                            'Рџ002110013303' AS lineCode, 
                             p2_nalog_to_pay AS sum
                         FROM {$tableName} 
                         WHERE userid=:uid AND kvartal=:quarter",
                 [['uid', $uid], ['quarter', $quarter]]);
 
-            // Код строки П002120013303 (сумма исчисленного налога (авансового платежа по налогу))
+            // РљРѕРґ СЃС‚СЂРѕРєРё Рџ002120013303 (СЃСѓРјРјР° РёСЃС‡РёСЃР»РµРЅРЅРѕРіРѕ РЅР°Р»РѕРіР° (Р°РІР°РЅСЃРѕРІРѕРіРѕ РїР»Р°С‚РµР¶Р° РїРѕ РЅР°Р»РѕРіСѓ))
             $data[] = $this->databaseOper->row("
                         SELECT 
-                            'УСН' AS name,
+                            'РЈРЎРќ' AS name,
                             '{$this->_buhPeriod['reportDate']}' AS date, 
-                            'П002120013303' AS lineCode, 
+                            'Рџ002120013303' AS lineCode, 
                             p2_nalog_to_pay AS sum
                         FROM {$tableName} 
                         WHERE userid=:uid AND kvartal=:quarter",
@@ -229,9 +229,9 @@ class DirectorReviewBuhModel
 
     /**
      * Method readReportsBalance
-     * Возвращает данные атрибутов "НаименованиеОтчет="Баланс"" для узла директорских проверок <Отчеты>.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РґР°РЅРЅС‹Рµ Р°С‚СЂРёР±СѓС‚РѕРІ "РќР°РёРјРµРЅРѕРІР°РЅРёРµРћС‚С‡РµС‚="Р‘Р°Р»Р°РЅСЃ"" РґР»СЏ СѓР·Р»Р° РґРёСЂРµРєС‚РѕСЂСЃРєРёС… РїСЂРѕРІРµСЂРѕРє <РћС‚С‡РµС‚С‹>.
      *
-     * @param $uid ID пользователя
+     * @param $uid ID РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
      * @return array
      */
     private function readReportsBalance($uid)
@@ -241,7 +241,7 @@ class DirectorReviewBuhModel
 
         $this->databaseOper->utf8();
 
-        // Код строки П000100160004 (итого по Активу)
+        // РљРѕРґ СЃС‚СЂРѕРєРё Рџ000100160004 (РёС‚РѕРіРѕ РїРѕ РђРєС‚РёРІСѓ)
         $rawData = PDO_rowset("call {$db}.getOSV(:uid, :sc, :d1, :d2, 1, -1, :type)",
             [
                 ['uid', $uid],
@@ -266,9 +266,9 @@ class DirectorReviewBuhModel
         }
 
         $total = $totalDt - $totalCt;
-        $data[] = ['name' => 'Баланс', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'П000100160004', 'sum' => $total];
+        $data[] = ['name' => 'Р‘Р°Р»Р°РЅСЃ', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'Рџ000100160004', 'sum' => $total];
 
-        // Код строки П000100211004 (выручка)
+        // РљРѕРґ СЃС‚СЂРѕРєРё Рџ000100211004 (РІС‹СЂСѓС‡РєР°)
         $rawData = PDO_rowset("call {$db}.getOSV(:uid, :sc, :d1, :d2,  2, 0, 0)",
             [
                 ['uid', $uid],
@@ -291,11 +291,11 @@ class DirectorReviewBuhModel
 
         $total = $totalCt - $totalDt;
         $balance['2120'] = $total;
-        $data[] = ['name' => 'Баланс', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'П000100211004', 'sum' => $total];
+        $data[] = ['name' => 'Р‘Р°Р»Р°РЅСЃ', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'Рџ000100211004', 'sum' => $total];
 
-        // Код строки П000100212004 (себестоимость продаж)
-        // Д. 90.2
-        // К. 20, 21, 23, 29, 40, 41, 43, 45
+        // РљРѕРґ СЃС‚СЂРѕРєРё Рџ000100212004 (СЃРµР±РµСЃС‚РѕРёРјРѕСЃС‚СЊ РїСЂРѕРґР°Р¶)
+        // Р”. 90.2
+        // Рљ. 20, 21, 23, 29, 40, 41, 43, 45
         $rawData = PDO_row("SELECT SUM(summa) AS sum
                                 FROM {$db}.tr_journal
                                 WHERE UserId=:uid AND
@@ -318,11 +318,11 @@ class DirectorReviewBuhModel
 
         $total = $rawData['sum'];
         $balance['2110'] = $total;
-        $data[] = ['name' => 'Баланс', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'П000100212004', 'sum' => $total];
+        $data[] = ['name' => 'Р‘Р°Р»Р°РЅСЃ', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'Рџ000100212004', 'sum' => $total];
 
-        // Код строки П000100221004 (коммерческие расходы)
-        // Д.90.2
-        // К.44
+        // РљРѕРґ СЃС‚СЂРѕРєРё Рџ000100221004 (РєРѕРјРјРµСЂС‡РµСЃРєРёРµ СЂР°СЃС…РѕРґС‹)
+        // Р”.90.2
+        // Рљ.44
         $rawData = PDO_row("SELECT SUM(summa) AS sum
                                 FROM {$db}.tr_journal
                                 WHERE UserId=:uid AND
@@ -337,11 +337,11 @@ class DirectorReviewBuhModel
 
         $total = $rawData['sum'] == null ? '0.00' : $rawData['sum'];
         $balance['2210'] = $total;
-        $data[] = ['name' => 'Баланс', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'П000100221004', 'sum' => $total];
+        $data[] = ['name' => 'Р‘Р°Р»Р°РЅСЃ', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'Рџ000100221004', 'sum' => $total];
 
-        // Код строки П000100222004 (управленческие расходы)
-        // Д.90.2
-        // К.26
+        // РљРѕРґ СЃС‚СЂРѕРєРё Рџ000100222004 (СѓРїСЂР°РІР»РµРЅС‡РµСЃРєРёРµ СЂР°СЃС…РѕРґС‹)
+        // Р”.90.2
+        // Рљ.26
         $rawData = PDO_row("SELECT SUM(summa) AS sum
                                 FROM {$db}.tr_journal
                                 WHERE UserId=:uid AND
@@ -356,16 +356,16 @@ class DirectorReviewBuhModel
 
         $total = $rawData['sum'] == null ? '0.00' : $rawData['sum'];
         $balance['2220'] = $total;
-        $data[] = ['name' => 'Баланс', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'П000100222004', 'sum' => $total];
+        $data[] = ['name' => 'Р‘Р°Р»Р°РЅСЃ', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'Рџ000100222004', 'sum' => $total];
 
-        // Код строки П000100220004 (прибыль (убыток) от продаж)
+        // РљРѕРґ СЃС‚СЂРѕРєРё Рџ000100220004 (РїСЂРёР±С‹Р»СЊ (СѓР±С‹С‚РѕРє) РѕС‚ РїСЂРѕРґР°Р¶)
         $total = $balance['2110'] - ($balance['2120'] + $balance['2210'] + $balance['2220']);
         $balance['2200'] = $total;
-        $data[] = ['name' => 'Баланс', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'П000100220004', 'sum' => $total];
+        $data[] = ['name' => 'Р‘Р°Р»Р°РЅСЃ', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'Рџ000100220004', 'sum' => $total];
 
-        // Код строки П000100230004 (прибыль (убыток) до налогообложения)
-        // Обороты Д.91.2, 91.3
-        // Обороты К. 91.1, 91.4
+        // РљРѕРґ СЃС‚СЂРѕРєРё Рџ000100230004 (РїСЂРёР±С‹Р»СЊ (СѓР±С‹С‚РѕРє) РґРѕ РЅР°Р»РѕРіРѕРѕР±Р»РѕР¶РµРЅРёСЏ)
+        // РћР±РѕСЂРѕС‚С‹ Р”.91.2, 91.3
+        // РћР±РѕСЂРѕС‚С‹ Рљ. 91.1, 91.4
         $rawData = PDO_row("SELECT SUM(summa) AS sum
                                 FROM {$db}.tr_journal
                                 WHERE UserId=:uid AND
@@ -395,16 +395,16 @@ class DirectorReviewBuhModel
         $totalDt = $rawData['sum'] == null ? '0.00' : $rawData['sum'];
 
         $total = $totalCt - $totalDt + $balance['2220'];
-        $data[] = ['name' => 'Баланс', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'П000100230004', 'sum' => $total];
+        $data[] = ['name' => 'Р‘Р°Р»Р°РЅСЃ', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'Рџ000100230004', 'sum' => $total];
 
         return $data;
     }
 
     /**
      * Method readReportsNds
-     * Возвращает данные атрибутов "НаименованиеОтчет="НДС"" для узла директорских проверок <Отчеты>.
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ РґР°РЅРЅС‹Рµ Р°С‚СЂРёР±СѓС‚РѕРІ "РќР°РёРјРµРЅРѕРІР°РЅРёРµРћС‚С‡РµС‚="РќР”РЎ"" РґР»СЏ СѓР·Р»Р° РґРёСЂРµРєС‚РѕСЂСЃРєРёС… РїСЂРѕРІРµСЂРѕРє <РћС‚С‡РµС‚С‹>.
      *
-     * @param $uid ID пользователя
+     * @param $uid ID РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
      * @return array
      */
     private function readReportsNds($uid)
@@ -430,9 +430,9 @@ class DirectorReviewBuhModel
                         date('d', $obj->end->getTimestamp()),
                         $this->_buhPeriod['year'])));
 
-                // Код строки П000300011805 (общая сумма налога, исчисленная с учетом восстановленных сумм налога)
-                // Д.*
-                // К.68.2
+                // РљРѕРґ СЃС‚СЂРѕРєРё Рџ000300011805 (РѕР±С‰Р°СЏ СЃСѓРјРјР° РЅР°Р»РѕРіР°, РёСЃС‡РёСЃР»РµРЅРЅР°СЏ СЃ СѓС‡РµС‚РѕРј РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРЅС‹С… СЃСѓРјРј РЅР°Р»РѕРіР°)
+                // Р”.*
+                // Рљ.68.2
                 $rawData = PDO_row("SELECT SUM(summa) AS sum
                                 FROM {$db}.tr_journal
                                 WHERE UserId=:uid AND
@@ -446,11 +446,11 @@ class DirectorReviewBuhModel
                     ]);
 
                 $total1 = $rawData['sum'] == null ? '0.00' : $rawData['sum'];
-                $data[] = ['name' => 'НДС', 'date' => $d2->format('d.m.Y'), 'lineCode' => 'П000300011805', 'sum' => $total1];
+                $data[] = ['name' => 'РќР”РЎ', 'date' => $d2->format('d.m.Y'), 'lineCode' => 'Рџ000300011805', 'sum' => $total1];
 
-                // Код строки П000300019003 (общая сумма налога, исчисленная с учетом восстановленных сумм налога)
-                // Д.*
-                // К.68.2
+                // РљРѕРґ СЃС‚СЂРѕРєРё Рџ000300019003 (РѕР±С‰Р°СЏ СЃСѓРјРјР° РЅР°Р»РѕРіР°, РёСЃС‡РёСЃР»РµРЅРЅР°СЏ СЃ СѓС‡РµС‚РѕРј РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРЅС‹С… СЃСѓРјРј РЅР°Р»РѕРіР°)
+                // Р”.*
+                // Рљ.68.2
                 $rawData = PDO_row("SELECT SUM(summa) AS sum
                                 FROM {$db}.tr_journal
                                 WHERE UserId=:uid AND
@@ -464,11 +464,11 @@ class DirectorReviewBuhModel
                     ]);
 
                 $total2 = $rawData['sum'] == null ? '0.00' : $rawData['sum'];
-                $data[] = ['name' => 'НДС', 'date' => $d2->format('d.m.Y'), 'lineCode' => 'П000300019003', 'sum' => $total2];
+                $data[] = ['name' => 'РќР”РЎ', 'date' => $d2->format('d.m.Y'), 'lineCode' => 'Рџ000300019003', 'sum' => $total2];
 
-                // Код строки П000100004003 (общая сумма налога, подлежащая вычету)
-                // = П000300011805 - П000300019003
-                $data[] = ['name' => 'НДС', 'date' => $d2->format('d.m.Y'), 'lineCode' => 'П000100004003', 'sum' => $total2];
+                // РљРѕРґ СЃС‚СЂРѕРєРё Рџ000100004003 (РѕР±С‰Р°СЏ СЃСѓРјРјР° РЅР°Р»РѕРіР°, РїРѕРґР»РµР¶Р°С‰Р°СЏ РІС‹С‡РµС‚Сѓ)
+                // = Рџ000300011805 - Рџ000300019003
+                $data[] = ['name' => 'РќР”РЎ', 'date' => $d2->format('d.m.Y'), 'lineCode' => 'Рџ000100004003', 'sum' => $total2];
             } else {
                 break;
             }
@@ -485,10 +485,10 @@ class DirectorReviewBuhModel
         $this->databaseOper->utf8();
 
         if ($taxData['typ_nalog'] == 1) {
-            // Только для ОСНО
-            // Код строки П000200018003 (сумма исчисленного налога на прибыль)
-            // Д.99.1
-            // К.68.1
+            // РўРѕР»СЊРєРѕ РґР»СЏ РћРЎРќРћ
+            // РљРѕРґ СЃС‚СЂРѕРєРё Рџ000200018003 (СЃСѓРјРјР° РёСЃС‡РёСЃР»РµРЅРЅРѕРіРѕ РЅР°Р»РѕРіР° РЅР° РїСЂРёР±С‹Р»СЊ)
+            // Р”.99.1
+            // Рљ.68.1
             $rawData = PDO_row("SELECT SUM(summa) AS sum
                                 FROM {$db}.tr_journal
                                 WHERE UserId=:uid AND
@@ -502,12 +502,12 @@ class DirectorReviewBuhModel
                 ]);
 
             $total = $rawData['sum'] == null ? '0.00' : $rawData['sum'];
-            $data[] = ['name' => 'ПРИБ', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'П000200018003', 'sum' => $total];
+            $data[] = ['name' => 'РџР РР‘', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'Рџ000200018003', 'sum' => $total];
         }
 
-        // Код строки П000020022003 (сумма налога на имущество за налоговый период (в рублях))
-        // Д.*
-        // К.68.8
+        // РљРѕРґ СЃС‚СЂРѕРєРё Рџ000020022003 (СЃСѓРјРјР° РЅР°Р»РѕРіР° РЅР° РёРјСѓС‰РµСЃС‚РІРѕ Р·Р° РЅР°Р»РѕРіРѕРІС‹Р№ РїРµСЂРёРѕРґ (РІ СЂСѓР±Р»СЏС…))
+        // Р”.*
+        // Рљ.68.8
         $rawData = PDO_row("SELECT SUM(summa) AS sum
                                 FROM {$db}.tr_journal
                                 WHERE UserId=:uid AND
@@ -521,15 +521,15 @@ class DirectorReviewBuhModel
             ]);
 
         $total = $rawData['sum'] == null ? '0.00' : $rawData['sum'];
-        $data[] = ['name' => 'ИМУД', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'П000020022003', 'sum' => $total];
+        $data[] = ['name' => 'РРњРЈР”', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'Рџ000020022003', 'sum' => $total];
 
-        // Код строки П000020026003 (Исчисленная сумма налога на имущество, подлежащая уплате в бюджет за налоговый период (в рублях))
-        // = П000020022003
-        $data[] = ['name' => 'ИМУД', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'П000020026003', 'sum' => $total];
+        // РљРѕРґ СЃС‚СЂРѕРєРё Рџ000020026003 (РСЃС‡РёСЃР»РµРЅРЅР°СЏ СЃСѓРјРјР° РЅР°Р»РѕРіР° РЅР° РёРјСѓС‰РµСЃС‚РІРѕ, РїРѕРґР»РµР¶Р°С‰Р°СЏ СѓРїР»Р°С‚Рµ РІ Р±СЋРґР¶РµС‚ Р·Р° РЅР°Р»РѕРіРѕРІС‹Р№ РїРµСЂРёРѕРґ (РІ СЂСѓР±Р»СЏС…))
+        // = Рџ000020022003
+        $data[] = ['name' => 'РРњРЈР”', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'Рџ000020026003', 'sum' => $total];
 
-        // Код строки П000010002103 (исчисленная сумма земельного налога, подлежащая уплате в бюджет за налоговый период (руб))
-        // Д.*
-        // К.68.5
+        // РљРѕРґ СЃС‚СЂРѕРєРё Рџ000010002103 (РёСЃС‡РёСЃР»РµРЅРЅР°СЏ СЃСѓРјРјР° Р·РµРјРµР»СЊРЅРѕРіРѕ РЅР°Р»РѕРіР°, РїРѕРґР»РµР¶Р°С‰Р°СЏ СѓРїР»Р°С‚Рµ РІ Р±СЋРґР¶РµС‚ Р·Р° РЅР°Р»РѕРіРѕРІС‹Р№ РїРµСЂРёРѕРґ (СЂСѓР±))
+        // Р”.*
+        // Рљ.68.5
         $rawData = PDO_row("SELECT SUM(summa) AS sum
                                 FROM {$db}.tr_journal
                                 WHERE UserId=:uid AND
@@ -543,11 +543,11 @@ class DirectorReviewBuhModel
             ]);
 
         $total = $rawData['sum'] == null ? '0.00' : $rawData['sum'];
-        $data[] = ['name' => 'ЗЕМД', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'П000010002103', 'sum' => $total];
+        $data[] = ['name' => 'Р—Р•РњР”', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'Рџ000010002103', 'sum' => $total];
 
-        // Код строки П000010002103_1 (исчисленная сумма налога, подлежащая уплате в бюджет)
-        // Д.*
-        // К.68.10
+        // РљРѕРґ СЃС‚СЂРѕРєРё Рџ000010002103_1 (РёСЃС‡РёСЃР»РµРЅРЅР°СЏ СЃСѓРјРјР° РЅР°Р»РѕРіР°, РїРѕРґР»РµР¶Р°С‰Р°СЏ СѓРїР»Р°С‚Рµ РІ Р±СЋРґР¶РµС‚)
+        // Р”.*
+        // Рљ.68.10
         $rawData = PDO_row("SELECT SUM(summa) AS sum
                                 FROM {$db}.tr_journal
                                 WHERE UserId=:uid AND
@@ -561,7 +561,7 @@ class DirectorReviewBuhModel
             ]);
 
         $total = $rawData['sum'] == null ? '0.00' : $rawData['sum'];
-        $data[] = ['name' => 'ТРАНД', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'П000010002103_1', 'sum' => $total];
+        $data[] = ['name' => 'РўР РђРќР”', 'date' => $this->_buhPeriod['reportDate'], 'lineCode' => 'Рџ000010002103_1', 'sum' => $total];
 
         return $data;
     }
