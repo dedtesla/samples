@@ -1,4 +1,4 @@
-# А.Шендеров. Примеры кода. 2020г.
+# Александр Владимирович Шендеров. Примеры кода.
 
 Стек технологий
 >PHP7, PostgreSQL, memcached, websocket, SOAP, xmpp, jQuery, React.js,
