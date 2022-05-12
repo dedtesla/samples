@@ -1,0 +1,32 @@
+<div class="contact-block">
+   <div class="row row-wrap">
+      <div class="col-1">
+
+         {% for item in address %}
+         <div class="col-md-4">
+            <div class="address-box">
+               <a class="address-box-remove" href="#" title="Удалить адрес" data-id="{{ item.id }}"><i class="fa fa-times"></i></a>
+               <a class="address-box-edit popup-text" href="/profile/address/edit" data-effect="mfp-move-from-top" data-toggle="tooltip" data-placement="right" title="Редактировать адрес" data-id="{{ item.id }}"><i class="fa fa-pencil"></i></a>
+               <ul>
+                  <li>{{ item.address }}</li>
+               </ul>
+               <div class="radio-box">
+                  <input type="radio" name="delivery" value="{{ item.id }}" class="radio"{% if loop.first == true %} checked{% endif %}>
+                  <p>Адрес по умолчанию</p>
+               </div>
+            </div>
+         </div>
+         {% endfor %}
+
+      </div>
+
+      <div class="col-md-4">
+         <a class="address-box address-box-new popup-text" id="profile-address-add" href="/profile/address/new" data-effect="mfp-move-from-top">
+            <div class="vert-center"><i class="fa fa-plus address-box-new-icon"></i>
+               <p>Добавить адрес</p>
+            </div>
+         </a>
+      </div>
+
+   </div>
+</div>

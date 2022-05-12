@@ -1,0 +1,26 @@
+{% extends "inner.twig" %}
+
+{% block leftbannersblock %}{% endblock leftbannersblock %}
+
+{% block title %}{{ pageName }}{% endblock %}
+
+{% block loginform %}
+
+<div class="check-left-block1">
+   <form class="form-block1" id="form-login" action="/login">
+      <input type="hidden" id="sitename" value="{{ appTitle }}">
+      <input type="text" id="login" name="login" class="form-control validate[required]" required="required" data-prompt-position="topRight" placeholder="e-mail">
+      <input type="password" id="password" name="password" class="form-control validate[required] text-input" required="required" placeholder="Пароль">
+   </form>
+   <div id="reconfirm" class="forget"><a href="{{ reconfirm_url }}" class="link">Повторить подтверждение e-mail?</a></div>
+   <div class="forget"><a href="{{ pass_recover_url }}" class="link">Забыли пароль?</a></div>
+   <div><a id="btn-login" class="article-button-more1 hvr-bounce-to-bottom" href="">Войти</a></div>
+</div>
+
+<div class="check-left-block1">
+   <h2 class="left-razdel-h2">Нет аккаунта?</h2>
+   <p class="center-in">Создай свой аккаунт на {{ appTitle }}.</p>
+   <div class="center-in"><a id="btn-go-register" class="article-button-more1 hvr-bounce-to-bottom" href="{{ register_url }}">Продолжить</a></div>
+</div>
+
+{% endblock loginform %}

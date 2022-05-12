@@ -1,0 +1,102 @@
+<div class="contact-block">
+   <div class="form-block1">
+
+      <div class="table-div">
+         <table>
+            <tr>
+               <th>Имя:</th>
+               <td>{{ user.firstname }}</td>
+            </tr>
+            <tr>
+               <th>Фамилия:</th>
+               <td>{{ user.lastname }}</td>
+            </tr>
+            <tr>
+               <th>Отчество:</th>
+               <td>{{ user.middlename }}</td>
+            </tr>
+            <tr>
+               <th>E-mail:</th>
+               <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+               <th>Телефон:</th>
+               <td>{{ user.phone1 }}</td>
+            </tr>
+            <tr>
+               <th>Пароль:</th>
+               <td>******</td>
+            </tr>
+            {% if user.customer_type == 1 %}
+            <tr>
+               <th colspan=2>Реквизиты</th>
+            </tr>
+            <tr>
+               <th>Компания:</th>
+               <td>{{ user.b_type }} {{ user.firm_name }}</td>
+            </tr>
+            <tr>
+               <th>ИНН:</th>
+               <td>{{ user.inn }}</td>
+            </tr>
+            <tr>
+               <th>КПП:</th>
+               <td>{{ user.kpp }}</td>
+            </tr>
+            <tr>
+               <th>ОГРН (ОГРИП):</th>
+               <td>{{ user.ogrn }}</td>
+            </tr>
+            <tr>
+               <th>Расчетный счет:</th>
+               <td>{{ user.r_acc }}</td>
+            </tr>
+            <tr>
+               <th>Корр. счет:</th>
+               <td>{{ user.kr_acc }}</td>
+            </tr>
+            <tr>
+               <th>Название банка:</th>
+               <td>{{ user.bank }}</td>
+            </tr>
+            <tr>
+               <th>БИК:</th>
+               <td>{{ user.bik }}</td>
+            </tr>
+            <tr>
+               <th colspan=2>Юридический адрес</th>
+            </tr>
+            <tr>
+               <th>Почтовый индекс:</th>
+               <td>{{ user.zip }}</td>
+            </tr>
+            <tr>
+               <th>Область (край, республика):</th>
+               <td>{{ user.region }}</td>
+            </tr>
+            <tr>
+               <th>Город (населенный пункт):</th>
+               <td>{{ user.city }}</td>
+            </tr>
+            <tr>
+               <th>Улица:</th>
+               <td>{{ user.street }}</td>
+            </tr>
+            <tr>
+               <th>Дом:</th>
+               <td>{{ user.bldng }}</td>
+            </tr>
+            <tr>
+               <th>Офис:</th>
+               <td>{{ user.apartment }}</td>
+            </tr>
+            {% endif %}
+         </table>
+      </div>
+
+      <div class="pad-top-10">
+         <a id="go-profile-edit" class="article-button-more1 hvr-bounce-to-bottom" href="/profile/edit">Изменить</a>
+      </div>
+
+   </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="contact-block">
+   <div class="form-block1">
+
+      <form id="form-profile-address" method="POST" action="/portajax">
+         <input type="hidden" name="action" value="saveaddress">
+         <input type="hidden" name="address_id" value="{{ address.id }}">
+
+         <div class="form-title-div">
+            <p>Почтовый индекс <b class="red-b">*</b></p>
+         </div>
+         <input id="zip" name="zip" type="text" class="form-control validate[required,custom[onlyNumberSp]] text-input" required="required" value="{{ address.zip }}">
+
+         <div class="form-title-div">
+            <p>Область (край, республика) <b class="red-b">*</b></p>
+         </div>
+         <input id="region" name="region" type="text" class="form-control validate[required] text-input" required="required"  value="{{ address.region }}">
+
+         <div class="form-title-div">
+            <p>Город (населенный пункт) <b class="red-b">*</b></p>
+         </div>
+         <input id="city" name="city" type="text" class="form-control validate[required] " required="required" value="{{ address.city }}">
+
+         <div class="form-title-div">
+            <p>Улица <b class="red-b">*</b></p>
+         </div>
+         <input id="street" name="street" type="text" class="form-control validate[required] text-input" required="required" value="{{ address.street }}">
+
+         <div class="form-title-div">
+            <p>Дом <b class="red-b">*</b></p>
+         </div>
+         <input id="bldng" name="bldng" type="text" class="form-control validate[required] text-input" required="required" value="{{ address.bldng }}">
+
+         <div class="form-title-div">
+            <p>Квартира (офис) <b class="red-b">*</b></p>
+         </div>
+         <input id="apartment" name="apartment" type="text" class="form-control validate[required] text-input" required="required" value="{{ address.apartment }}">
+
+         <div class="form-title-div">
+            <p>Подъезд</p>
+         </div>
+         <input id="section" name="section" type="text" class="form-control" required="required" value="{{ address.section }}">
+
+         <div class="form-title-div">
+            <p>Этаж</p>
+         </div>
+         <input id="floor" name="floor" type="text" class="form-control" required="required" value="{{ address.floor }}">
+
+         <div class="form-title-div">
+            <p>Код домофона</p>
+         </div>
+         <input id="intercom" name="intercom" type="text" class="form-control" required="required" value="{{ address.intercom }}">
+
+      </form>
+
+      <a class="article-button-more2 hvr-bounce-to-bottom" href="/profile/address"><i class="fa fa-arrow-left"></i>Назад</a>
+      <a id="address-profile-save" class="article-button-more1 hvr-bounce-to-bottom" href="#">Сохранить</a>
+
+   </div>
+</div>

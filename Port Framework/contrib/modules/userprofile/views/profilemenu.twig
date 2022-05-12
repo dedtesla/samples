@@ -1,0 +1,9 @@
+<div id='cssmenu'>
+   <ul>
+      {% for item in menu %}
+         <li{% if item.url is empty %} class="active"{% endif %}>
+            <a href="{{ item.url }}"><span>{{ item.name }}</span></a>
+         </li>
+      {% endfor %}
+      </ul>
+   </div>

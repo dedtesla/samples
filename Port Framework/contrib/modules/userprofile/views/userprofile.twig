@@ -1,0 +1,25 @@
+{% extends "inner.twig" %}
+
+{% block leftbannersblock %}{% endblock leftbannersblock %}
+
+{% block title %}{{ pageName }}{% endblock %}
+
+{% block column1 %}
+<div class="content-box2-left">
+
+   {{ profile_menu|raw }}
+
+</div>
+{% endblock column1 %}
+
+{% block column2 %}
+<div class="content-box2-right">
+
+   {% block userprofile %}
+
+      {{ profile_content|raw }}
+
+   {% endblock userprofile %}
+
+</div>
+{% endblock column2 %}

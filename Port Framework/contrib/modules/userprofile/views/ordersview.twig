@@ -1,0 +1,22 @@
+<div class="table-div scrollbar-light">
+   <table>
+      <thead>
+         <tr>
+            <th>№ заказа</th>
+            <th>Дата</th>
+            <th>Сумма</th>
+            {#<th>Печать</th>#}
+            </tr>
+         </thead>
+         <tbody>
+            {% for row in orders %}
+               <tr>
+                  <td>{{ row.id }}</td>
+                  <td>{{ row.date }}</td>
+                  <td>{{ row.full_price }} {{ currency_label }}</td>
+               {#<td><a class="order-view-print" href="#" data-id="{{ row.id }}"><i class="glyphicon glyphicon-print"></i></a></td>#}
+               </tr>
+         {% endfor %}
+            </tbody>
+         </table>
+      </div>

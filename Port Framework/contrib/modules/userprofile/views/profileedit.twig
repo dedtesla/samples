@@ -1,0 +1,143 @@
+<div class="contact-block">
+   <div class="form-block1">
+
+      <form id="form-edit-profile" method="post" action="/portajax" class="form-block1" data-user-type="{{ user.customer_type }}">
+
+         <input type="hidden" name="action" value="saveuser">
+         <input type="hidden" name="legal_id" value="{{ user.legal_id }}">
+         <input type="hidden" name="address_id" value="{{ user.address_id }}">
+
+         <div class="form-title-div">
+            <p>E-mail <b class="red-b">(нельзя изменить)</b></p>
+         </div>
+         <input type="text" id="email" name="email" value="{{ user.email }}" class="form-control validate[required,custom[email]]" required="required" data-prompt-position="topRight" readonly>
+
+         <div class="form-title-div">
+            <p>Пароль <b class="red-b">*</b></p>
+         </div>
+         <input type="password" value="{{ user.passwd }}" class="form-control validate[required,minSize[6]] text-input" required="required" id="password" name="password" data-prompt-position="topRight">
+
+         <div class="form-title-div">
+            <p>Повтор пароля <b class="red-b">*</b></p>
+         </div>
+         <input type="password" value="{{ user.passwd }}"class="form-control validate[required,minSize[6],equals[password]] text-input" required="required" id="password2" name="password2" data-prompt-position="topRight">
+
+         <div class="form-title-div">
+            <p>Имя <b class="red-b">*</b></p>
+         </div>
+         <input type="text" id="firstname" name="firstname" value="{{ user.firstname }}" class="form-control validate[required] text-input" required="required">
+
+         <div class="form-title-div">
+            <p>Фамилия <b class="red-b">*</b></p>
+         </div>
+         <input type="text" id="lastname" name="lastname" value="{{ user.lastname }}" class="form-control validate[required] text-input" required="required">
+
+         <div class="form-title-div">
+            <p>Отчество</p>
+         </div>
+         <input type="text" id="middlename" name="middlename" value="{{ user.middlename }}" class="form-control" required="required">
+
+         <div class="form-title-div">
+            <p>Телефон <b class="red-b">*</b></p>
+         </div>
+         <input type="text" id="phone1" name="phone1" value="{{ user.phone1 }}" class="form-control validate[required,custom[phone]]" required="required">
+
+         {% if user.customer_type == 1 %}
+
+         <h2 data-user-type=1>Реквизиты</h2>
+
+         {% if legalTypes is defined %}
+         <div class="choose-s" data-user-type=1>
+            <p>Форма собственности</p>
+            <select id="legaltypes" name="legaltypes" class="validate[custom[requiredSelect]]">
+                  {% for item in legalTypes %}
+                  <option value="{{ item }}"{% if item == user.b_type %} selected{% endif %}>{{ item }}</option>
+                  {% endfor %}
+               </select>
+            </div>
+            {% endif %}
+
+            <div class="form-title-div" data-user-type=1>
+               <p>Название (ФИО для ИП) <b class="red-b">*</b></p>
+            </div>
+            <input type="text" id="firmname" name="firmname" value="{{ user.firm_name }}" class="form-control validate[required] text-input" required="required" data-user-type=1>
+
+            <div class="form-title-div" data-user-type=1>
+               <p>ИНН <b class="red-b">*</b></p>
+            </div>
+            <input type="text" id="inn" name="inn" value="{{ user.inn }}" class="form-control validate[required,custom[requisits]] text-input" required="required" data-user-type=1>
+
+            <div class="form-title-div" data-user-type=1>
+               <p>КПП <b class="red-b">*</b></p>
+            </div>
+            <input type="text" id="kpp" name="kpp" value="{{ user.kpp }}" class="form-control validate[required,custom[requisits]] text-input" required="required" data-user-type=1>
+
+            <div class="form-title-div" data-user-type=1>
+               <p>ОГРН (ОГРИП) <b class="red-b">*</b></p>
+            </div>
+            <input type="text" id="ogrn" name="ogrn" value="{{ user.ogrn }}" class="form-control validate[required,custom[requisits]] text-input" required="required" data-user-type=1>
+
+            <div class="form-title-div" data-user-type=1>
+               <p>Расчетный счет <b class="red-b">*</b></p>
+            </div>
+            <input type="text" id="racc" name="racc" value="{{ user.r_acc }}" class="form-control validate[required,custom[requisits]] text-input" required="required" data-user-type=1>
+
+            <div class="form-title-div" data-user-type=1>
+               <p>Корр. счет <b class="red-b">*</b></p>
+            </div>
+            <input type="text" id="cacc" name="cacc" value="{{ user.kr_acc }}" class="form-control validate[required,custom[requisits]] text-input" required="required" data-user-type=1>
+
+            <div class="form-title-div" data-user-type=1>
+               <p>Название банка <b class="red-b">*</b></p>
+            </div>
+            <input type="text" id="bank" name="bank" value="{{ user.bank }}" class="form-control validate[required] text-input" required="required" data-user-type=1>
+
+            <div class="form-title-div" data-user-type=1>
+               <p>БИК <b class="red-b">*</b></p>
+            </div>
+            <input type="text" id="bik" name="bik" value="{{ user.bik }}" class="form-control validate[required,custom[requisits]] text-input" required="required" data-user-type=1>
+
+            <h2 data-user-type=1>Юридический адрес</h2>
+
+            <div class="form-title-div" data-user-type=1>
+               <p>Почтовый индекс <b class="red-b">*</b></p>
+            </div>
+            <input type="text" id="zipcode" name="zipcode" value="{{ user.zip }}" class="form-control validate[required,custom[requisits]] text-input" required="required" data-user-type=1>
+
+            <div class="form-title-div" data-user-type=1>
+               <p>Область (край, республика)<b class="red-b">*</b></p>
+            </div>
+            <input type="text" id="region" name="region" value="{{ user.region }}" class="form-control validate[required] text-input" required="required" data-user-type=1>
+
+            <div class="form-title-div" data-user-type=1>
+               <p>Город (населенный пункт) <b class="red-b">*</b></p>
+            </div>
+            <input type="text" id="city" name="city" value="{{ user.city }}" class="form-control validate[required] text-input" required="required" data-user-type=1>
+
+            <div class="form-title-div" data-user-type=1>
+               <p>Улица <b class="red-b">*</b></p>
+            </div>
+            <input type="text" id="street" name="street" value="{{ user.street }}" class="form-control validate[required] text-input" required="required" data-user-type=1>
+
+            <div class="form-title-div" data-user-type=1>
+               <p>Дом <b class="red-b">*</b></p>
+            </div>
+            <input type="text" id="bldn" name="bldn" value="{{ user.bldng }}" class="form-control validate[required] text-input" required="required" data-user-type=1>
+
+            <div class="form-title-div" data-user-type=1>
+               <p>Квартира (офис) <b class="red-b">*</b></p>
+            </div>
+            <input type="text" id="office" name="office" value="{{ user.apartment }}" class="form-control validate[required] text-input" required="required" data-user-type=1>
+
+            {% endif %}
+
+            <div class="pad-top-20">
+               <p><b class="red-b">*</b> — поля, обязательные для заполнения</p>
+            </div>
+         </form>
+
+         <a class="article-button-more2 hvr-bounce-to-bottom" href="/profile"><i class="fa fa-arrow-left"></i>Назад</a>
+         <a id="user-profile-save" class="article-button-more1 hvr-bounce-to-bottom" href="#">Сохранить</a>
+
+      </div>
+   </div>
