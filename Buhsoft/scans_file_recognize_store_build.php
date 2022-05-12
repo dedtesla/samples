@@ -1,16 +1,12 @@
 <?php
 
-ini_set('display_errors', 0);
-error_reporting(E_ALL);
+/**
+ * Интеграция с API сервиса сканирования cloud42
+ */
 
 require_once("./auth.php");
 require_once("./php_func.php");
 require_once "classes/recognition/cloud42/cloud42.class.php";
-
-defined('CLOUD42_LOGIN') || define('CLOUD42_LOGIN', 'vva1972');
-defined('CLOUD42_PASSWORD') || define('CLOUD42_PASSWORD', 'Vva_1972');
-defined('SCANS_DIR') || define('SCANS_DIR', '../../../data/online/buh/scans/');
-defined('SCANS_WEB_DIR') || define('SCANS_WEB_DIR', '../scans/');
 
 $UserId = $user['id'];
 $rawDocId = to_num($_REQUEST['rawdoc_id']);
