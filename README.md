@@ -1,7 +1,7 @@
 # Александр Владимирович Шендеров. Примеры кода.
 
 Стек технологий
->PHP5-7, PostgreSQL, memcached, websocket, SOAP, xmpp, jQuery, React.js, ExtJS, MongoDB, RabbitMQ.
+>PHP5-7, PostgreSQL, MySQL, memcached, websocket, SOAP, xmpp, jQuery, React.js, ExtJS, MongoDB, RabbitMQ.
 
 ## Структура
 
